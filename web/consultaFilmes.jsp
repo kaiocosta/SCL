@@ -9,25 +9,58 @@
 	<form>
 		<input type="submit" value="Alterar" />	
 		<input type="submit" value="Cadastrar" />
-		<p>Adicionar/Editar</p>
-		<input type="submit" value="Categoria" />
-		<input type="submit" value="Genero" />
 		
-		<table border="1px">
-                    <td>Codigo</td>
-                    <td>Titulo</td>
-                    <td>Categoria</td>
-                    <td>Genero</td>
-		    <td>Qtd</td>    
-		    <td>Disponivel</td>
-                </table>
-		Codigo: <select> <option value="default">1</option>
-			<option value="default">2</option>
-			<option value="default">3</option>
+                Adicionar/Editar
+		<input type="submit" value="Categoria" />
+		<input type="submit" value="Genero" /></br>
+		
+		</br><table border="1px">
+                    <tr>
+                        <td>Codigo</td>
+                        <td>Titulo</td>
+                        <td>Categoria</td>
+                        <td>Genero</td>
+                        <td>Qtd</td>    
+                        <td>Disponivel</td>
+                    </tr>
+                    <tr>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>    
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>    
+                        <td>---</td>
+                    </tr>
+                   <tr>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>    
+                        <td>---</td>
+                    </tr>
+                </table></br>
+                
+		Codigo: <select> <option value="default"></option>
+			<option value="default"></option>
+			<option value="default"></option>
 			</select>
-		Titulo: <input type="text"/>
-		Categoria: <option value="default">Lancamento</option>
-		Genero: <option value="default">Aventura</option>
+                
+		Titulo: <input type="text"/></br>
+		Categoria:  <select>
+                               <option value="default" input type="text"></option>
+                            </select>    
+                Genero: <select>
+                            <option value="default"></option>
+                        </select>    
 		<input type="submit" value="Redefinir" />
 		<input type="submit" value="Pesquisar" />
 		
