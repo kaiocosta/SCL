@@ -13,5 +13,7 @@ and open the template in the editor.
     <body>
         <h1>FUNCIONA CARAI!!!!!!!!!</h1>
         <div>Saporra ta incompleta</div>
+        <a href="consultaFilmes.jsp">Clique aqui</a>
+        
     </body>
 </html>
