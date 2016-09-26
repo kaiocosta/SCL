@@ -1,4 +1,4 @@
-/*package dao;
+package dao;
 
 import static dao.BD.fecharConexao;
 import java.sql.Connection;
@@ -19,26 +19,19 @@ public class LocadoraDAO {
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from filmes");
+            ResultSet rs = comando.executeQuery("select * from locadora");
             while (rs.next()){
                 Locadora locadora = new Locadora
-                                   (rs.getString("titulo"),
-                                    rs.getString("tituloOriginal"),
-                                    rs.getString("nomeDiretor"),
-                                    rs.getString("nomeAtorPrincipal"),       
-                                    rs.getString("nomePremiacoes"),       
-                                    rs.getString("anoProducao"),
-                                    rs.getString("anoLancamento"),       
-                                    rs.getInt("id_filmes"),
-                                    null,
+                                   (rs.getString("dataLocacao"),
+                                    rs.getInt("id_locadora"),
                                     null,
                                     null,
                                     null);
-           filme.setId_tipoDeMidia(rs.getInt("id_tipoDeMidia"));
-           filme.setId_genero(rs.getInt("id_genero")); 
-           filme.setId_fornecedor(rs.getInt("id_fornecedor"));
-           filme.setId_categoria(rs.getInt("id_categoria"));
-           filmes.add(filme);
+           locadora.setId_usuario(rs.getInt("id_usuario"));
+           locadora.setId_filmes(rs.getInt("id_filmes")); 
+           locadora.setId_cliente(rs.getInt("id_cliente"));
+          
+           locadoras.add(locadora);
             }
             
         }
@@ -48,7 +41,7 @@ public class LocadoraDAO {
                     fecharConexao(conexao, comando);
     
         }
-        return filmes;
+        return locadoras;
     }
     
-}*/
+}

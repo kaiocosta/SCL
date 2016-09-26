@@ -6,11 +6,17 @@
 
 package modelo;
 
+import dao.FornecedorDAO;
+import java.sql.SQLException;
+import java.util.List;
+
 /**
  *
  * @author Aluno
  */
 public class Fornecedor {
+
+    
     private int id_fornecedor;
     private String razaoSocial;
     private String nomeFantasia;
@@ -32,6 +38,11 @@ public class Fornecedor {
         this.endereco = endereco;
     }
     
+    public static List<Fornecedor> obterFornecedores() 
+        throws ClassNotFoundException, SQLException {
+        
+        return FornecedorDAO.obterFornecedores();
+    }
 
     public String getRazaoSocial() {
         return razaoSocial;
