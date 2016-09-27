@@ -1,72 +1,40 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <html>
-<head>
-	<meta charset="UTF-8"/>
-	<title>Consulta Filmes</title>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+ 
+  <body>
+    <h1>Pesquisa Filme</h1>
+    <table>
+      <tr>
+        <td>Cod.</td>
+      </tr>
+      <tr>
+        <td>Nome</td>
+      </tr>
+      <tr>
+        <td>Ação</td>
+      </tr>
 
-</head>
-<body>
-	<h2>Filmes</h2>
-	<form>
-		<input type="submit" value="Alterar" />	
-		<input type="submit" value="Cadastrar" />
-		
-                Adicionar/Editar
-		<input type="submit" value="Categoria" />
-		<input type="submit" value="Genero" /></br>
-		
-		</br><table border="1px">
-                    <tr>
-                        <td>Codigo</td>
-                        <td>Titulo</td>
-                        <td>Categoria</td>
-                        <td>Genero</td>
-                        <td>Qtd</td>    
-                        <td>Disponivel</td>
-                    </tr>
-                    <tr>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>    
-                        <td>---</td>
-                    </tr>
-                    <tr>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>    
-                        <td>---</td>
-                    </tr>
-                   <tr>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>
-                        <td>---</td>    
-                        <td>---</td>
-                    </tr>
-                </table></br>
-                
-		Codigo: <select> <option value="default"></option>
-			<option value="default"></option>
-			<option value="default"></option>
-			</select>
-                
-		Titulo: <input type="text"/></br>
-		Categoria:  <select>
-                               <option value="default" input type="text"></option>
-                            </select>    
-                Genero: <select>
-                            <option value="default"></option>
-                        </select>    
-		<input type="submit" value="Redefinir" />
-		<input type="submit" value="Pesquisar" />
-		
-	</form>
-
-</body>
+      <c:forEach items="${filme}" var="filme">
+        <tr>
+          <td><c:out value="filme.id_filme"></td>
+          <td><c:out value="filme.nome"></td>
+          <td><a href="ManterFilmeController?acao=prepararEditar&codFilme=<c:out value="${filme.id_filme}/>">Editar</a></td>
+          <td><a href="ManterFilmeController?acao=prepararExcluir&codFilme=<c:out value="${filme.id_filme}/>">Excluir</a></td>
+        </tr>
+      </c:forEach>
 
 
+    </table>
+    <form class="" action="ManterFilmeController?acao=prepararIncluir" method="post">
+      <input type="submit" name="btnIncluir" value="Incluir">
+    </form>
+  </body>
 </html>

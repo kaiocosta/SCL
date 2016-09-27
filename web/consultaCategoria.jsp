@@ -1,6 +1,8 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib url="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib url="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -21,7 +23,7 @@
 
       <c:forEach items="${categoria}" var="categoria">
         <tr>
-          <td><c:out value="categoria.codCategoria"></td>
+          <td><c:out value="categoria.id_Categoria"></td>
           <td><c:out value="categoria.nome"></td>
           <td><a href="ManterCategoriaController?acao=prepararEditar&codCliente=<c:out value="${cliente.codCliente}"/>">Editar</a></td>
           <td><a href="ManterCategoriaController?acao=prepararExcluir&codCliente=<c:out value="${cliente.codCliente}"/>">Excluir</a></td>
