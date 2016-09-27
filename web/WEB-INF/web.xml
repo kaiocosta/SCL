@@ -12,6 +12,10 @@
         <servlet-name>ConsultaFornecedorController</servlet-name>
         <servlet-class>controller.ConsultaFornecedorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>consultaHistoricoClienteController</servlet-name>
+        <servlet-class>controller.consultaHistoricoClienteController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmesController</servlet-name>
         <url-pattern>/ConsultaFilmesController</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ConsultaFornecedorController</servlet-name>
         <url-pattern>/ConsultaFornecedorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>consultaHistoricoClienteController</servlet-name>
+        <url-pattern>/consultaHistoricoClienteController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
