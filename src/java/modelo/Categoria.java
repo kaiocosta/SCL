@@ -1,7 +1,12 @@
 package modelo;
 
+import dao.CategoriaDAO;
+import java.sql.SQLException;
+import java.util.List;
+
 public class Categoria {
 
+    
     private String nome;
     private String descricao;
     private int periodoDeTroca;
@@ -51,4 +56,9 @@ public class Categoria {
     public void setProxCategoria(String proxCategoria) {
         this.proxCategoria = proxCategoria;
     }
+    
+    public static List<Categoria> obterCategorias() throws ClassNotFoundException, SQLException {
+        return CategoriaDAO.obterCategorias();
+    }
+
 }

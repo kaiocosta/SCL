@@ -16,6 +16,10 @@
         <servlet-name>consultaHistoricoClienteController</servlet-name>
         <servlet-class>controller.consultaHistoricoClienteController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>consultaCategoriaController</servlet-name>
+        <servlet-class>controller.consultaCategoriaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmesController</servlet-name>
         <url-pattern>/ConsultaFilmesController</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>consultaHistoricoClienteController</servlet-name>
         <url-pattern>/consultaHistoricoClienteController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>consultaCategoriaController</servlet-name>
+        <url-pattern>/consultaCategoriaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
