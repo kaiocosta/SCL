@@ -7,7 +7,7 @@
 <body>
 	<h2>Cadastro de clientes</h2>
 	<form>
-		C�digo <input type="text" id="codigo" /><br/>
+		Código <input type="text" id="codigo" /><br/>
 		Nome <input type="text" id=""/>
 		Senha <input type="password" id=""/><br/>
 		CPF <input type="text" id=""/>
@@ -29,7 +29,7 @@
 
 		CEP <input type="text" id="" /><br/>
 		Logradouro <input type="text" id=""/>
-		Nº <input type="number" id=""/>
+		NÂº <input type="number" id=""/>
 		Complemento <input type="text" id=""/><br/>
 		Telefone 1 <input type="number" id=""/>
 		Telefone 2 <input type="number" id=""/>
