@@ -1,10 +1,10 @@
 <html>
 <head>
 	<meta charset="UTF-8"/>
-	<title>Consulta de Usu�rios</title>
+	<title>Consulta de Usuários</title>
 </head>
 <body>
-<h3>Consulta de Usu�rio</h3>
+<h3>Consulta de Usuário</h3>
 <form>
 	Usuario <input type="text"/>
 	<input type="submit" value="Procurar"/>
@@ -40,7 +40,7 @@
 <h3>Dados Pessoais</h3>
 
 <form>
-		Código <input type="text" id="codigo" /><br/>
+		CÃ³digo <input type="text" id="codigo" /><br/>
 		Nome <input type="text" id=""/>
 		Senha <input type="password" id=""/><br/>
 		CPF <input type="text" id=""/>
@@ -62,7 +62,7 @@
 
 		CEP <input type="text" id="" /><br/>
 		Logradouro <input type="text" id=""/>
-		Nº <input type="number" id=""/>
+		NÂº <input type="number" id=""/>
 		Complemento <input type="text" id=""/><br/>
 		Telefone 1 <input type="number" id=""/>
 		Telefone 2 <input type="number" id=""/>
