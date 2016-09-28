@@ -1,40 +1,34 @@
-<html>
-<head>
-	<meta charset="UTF-8"/>
-	<title>Cadastro de Filmes</title>
-
-</head>
 <body>
 	<h2>Cadastro de Filmes</h2>
 	<form>
-		TÃ­tulo <input type="text" id="titulo" /><br/>
-		TÃ­tulo original <input type="text" id=""/>
-		CÃ³digo <input type="text" id="codigo" /><br/>
+		Título <input type="text" id="titulo" /><br/>
+		Título original <input type="text" id=""/>
+		Código <input type="text" id="codigo" /><br/>
 		CÃ³d. CÃ³pia <input type="text" id="cÃ³pia" /><br/>
-		MÃ­dia <input type="text" id="midia" /><br/>
+		Mídia <input type="text" id="midia" /><br/>
 		Custo <input type="text" id="custo" /><br/>
 		
 		Categoria <select>
 				<option value="default">Selecione</option>
-  				<option value="LanÃ§">LanÃ§amento</option>
+  				<option value="Lança">Lançaamento</option>
   				<option value="Norm">Normal</option>
   				<option value="Ant">Antigo</option>
 			</select><br/>
 
-		GÃªnero <select>
+		Gênero <select>
 				<option value="default">Selecione</option>
   				<option value="Av">Aventura</option>
-  				<option value="AÃ§Ã£o">AÃ§Ã£o</option>
+  				<option value="Ação">Ação</option>
   				<option value="Romance">Romance</option>
 			</select><br/>	
 
 		Diretor(a) <input type="text" id="diretor" /><br/>
 		Ator Principal <input type="text" id="ator" /><br/>
-		PremiaÃ§Ãµes <input type="text" id="premiaÃ§Ãµes" /><br/>	
+		Premiações <input type="text" id="premiações" /><br/>	
 		
 		
-		Ano de ProduÃ§Ã£o <input type="date" id=""/>
-		Ano de LanÃ§amento <input type="date" id=""/>		
+		Ano de Produção <input type="date" id=""/>
+		Ano de Lançamento <input type="date" id=""/>		
 		Fornecedor <input type="text" id="fornecedor" /><br/>
 		
 		<br/>

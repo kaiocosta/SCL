@@ -16,7 +16,7 @@ import java.util.List;
  * @author Aluno
  */
 public class Filmes {
-    private int id_filmes;
+    private int id_filme;
     private String titulo;
     private String tituloOriginal;
     private String nomeDiretor;
@@ -42,7 +42,7 @@ public class Filmes {
         this.nomePremiacoes = nomePremiacoes;
         this.anoProducao = anoProducao;
         this.anoLancamento = anoLancamento;
-        this.id_filmes = id_filmes;
+        this.id_filme = id_filme;
         this.tipoDeMidia = tipoDeMidia;
         this.genero = genero;
         this.fornecedor = fornecedor;
@@ -57,11 +57,11 @@ public class Filmes {
     }
     
     public int getId() {
-        return id_filmes;
+        return id_filme;
     }
 
     public void setId(int id) {
-        this.id_filmes = id;
+        this.id_filme = id;
     }
 
     public String getTitulo() {
