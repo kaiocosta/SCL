@@ -34,7 +34,7 @@ public class Filmes {
     private int id_categoria;
     //private Cadastro cadastro; criar classe cadastro
 
-    public Filmes(String titulo, String tituloOriginal, String nomeDiretor, String nomeAtorPrincipal, String nomePremiacoes, String anoProducao, String anoLancamento, int id_filmes, TipoDeMidia tipoDeMidia, Genero genero, Fornecedor fornecedor, Categoria categoria) {
+    public Filmes(String titulo, String tituloOriginal, String nomeDiretor, String nomeAtorPrincipal, String nomePremiacoes, String anoProducao, String anoLancamento, int id_filme, TipoDeMidia tipoDeMidia, Genero genero, Fornecedor fornecedor, Categoria categoria) {
         this.titulo = titulo;
         this.tituloOriginal = tituloOriginal;
         this.nomeDiretor = nomeDiretor;
@@ -42,7 +42,7 @@ public class Filmes {
         this.nomePremiacoes = nomePremiacoes;
         this.anoProducao = anoProducao;
         this.anoLancamento = anoLancamento;
-        this.id_filme = id_filmes;
+        this.id_filme = id_filme;
         this.tipoDeMidia = tipoDeMidia;
         this.genero = genero;
         this.fornecedor = fornecedor;
