@@ -42,7 +42,7 @@ public class Filmes {
         this.nomePremiacoes = nomePremiacoes;
         this.anoProducao = anoProducao;
         this.anoLancamento = anoLancamento;
-        this.id_filme = id_filme;
+        this.id_filme = id_filmes;
         this.tipoDeMidia = tipoDeMidia;
         this.genero = genero;
         this.fornecedor = fornecedor;
@@ -56,11 +56,11 @@ public class Filmes {
     
     }
     
-    public int getId() {
+    public int getId_filme() {
         return id_filme;
     }
 
-    public void setId(int id) {
+    public void setId_filme(int id) {
         this.id_filme = id;
     }
 

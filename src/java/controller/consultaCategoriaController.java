@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Categoria;
 
-/**
- *
- * @author Kaio
- */
+
 public class consultaCategoriaController extends HttpServlet {
 
     /**

@@ -31,18 +31,18 @@ public class FilmesDAO {
                                     rs.getString("tituloOriginal"),
                                     rs.getString("nomeDiretor"),
                                     rs.getString("nomeAtorPrincipal"),       
-                                    rs.getString("nomePremiacoes"),       
+                                    rs.getString("nomesPremiacoes"),       
                                     rs.getString("anoProducao"),
-                                    rs.getString("anoLancamento"),       
+                                    rs.getString("anolancamento"),       
                                     rs.getInt("id_filmes"),
                                     null,
                                     null,
                                     null,
                                     null);
-           filme.setId_tipoDeMidia(rs.getInt("id_tipoDeMidia"));
-           filme.setId_genero(rs.getInt("id_genero")); 
-           filme.setId_fornecedor(rs.getInt("id_fornecedor"));
-           filme.setId_categoria(rs.getInt("id_categoria"));
+           filme.setId_tipoDeMidia(rs.getInt("tipoDeMidia_idtipoDeMidia"));
+           filme.setId_genero(rs.getInt("genero_id_genero")); 
+           filme.setId_fornecedor(rs.getInt("fornecedor_id_fornecedor"));
+           filme.setId_categoria(rs.getInt("categoria_id_categoria1"));
            filmes.add(filme);
             }
             

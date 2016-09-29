@@ -6,14 +6,14 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Página Principal SCL</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <h1>FUNCIONA CARAI!!!!!!!!!</h1>
-        <div>Saporra ta incompleta</div>
-        <a href="consultaFilmes.jsp">Clique aqui</a>
+        <h1>Index</h1>
+        <div>Pesquisa De Filmes</div>
+        <a href="ConsultaFilmesController"><button>Consultar Filmes</button></a>
         
     </body>
 </html>

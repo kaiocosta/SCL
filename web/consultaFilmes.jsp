@@ -12,25 +12,19 @@
   <body>
     <h1>Pesquisa Filme</h1>
     <table border = 1>
-      <tr>
-        <td>Cod.</td>
-      </tr>
-      <tr>
-        <td>Nome</td>
-      </tr>
-      <tr>
-        <td>Ação</td>
-      </tr>
-    </table>  
-      <c:forEach items="${filmes}" var="filmes">
+        <th>Cod.</th>
+        <th>Nome</th>
+        <th colspan="2">Ação</th>
+      <c:forEach items="${filmes}" var="filme">
         <tr>
-          <td><c:out value="filmes.id_filmes"></c:out></td>
-          <td><c:out value="filmes.titulo"></c:out></td>
-          <td><a href="ConsultaFilmesController?acao=prepararEditar&id_Filme=<c:out value="${filmes.id_filme}>"></c:out>"Editar</a></td>
-          <td><a href="ConsultaFilmesController?acao=prepararExcluir&id_Filme=<c:out value="${filmes.id_filme}>"></c:out>"Excluir</a></td>
+          <td><c:out value="${filme.id_filme}"></c:out></td>
+          <td><c:out value="${filme.titulo}"></c:out></td>
+          <td><a href="ConsultaFilmesController?acao=prepararEditar&id_Filme=<c:out value="${filme.id_filme}"></c:out>">Editar</a></td>
+          <td><a href="ConsultaFilmesController?acao=prepararExcluir&id_Filme=<c:out value="${filme.id_filme}"></c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
-        
+       </table>  
+     
       <form action="ConsultaFilmesController?acao=prepararIncluir" method="post">
         <input type="submit" name="btnIncluir" value="Incluir">
       </form>
