@@ -13,7 +13,7 @@ public class BD {
         throws ClassNotFoundException, SQLException{
         Connection conexao = null;
         Class.forName("com.mysql.jdbc.Driver");
-        conexao = DriverManager.getConnection("jdbc:mysql://localhost/sclbd", "root", "");
+        conexao = DriverManager.getConnection("jdbc:mysql:http://localhost/phpmyadmin/db_structure.php?server=1&db=sclbd&token=6e6d16333eeb8e7bbd3b29174da505aa", "root", "");
         return conexao;
     }
     
