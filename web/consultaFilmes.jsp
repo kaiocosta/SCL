@@ -26,12 +26,12 @@
         <tr>
           <td><c:out value="filmes.id_filmes"></c:out></td>
           <td><c:out value="filmes.titulo"></c:out></td>
-          <td><a href="ManterFilmesController?acao=prepararEditar&id_Filme=<c:out value="${filmes.id_filmes}>"></c:out>"Editar</a></td>
-          <td><a href="ManterFilmesController?acao=prepararExcluir&id_Filme=<c:out value="${filmes.id_filmes}>"></c:out>"Excluir</a></td>
+          <td><a href="ConsultaFilmesController?acao=prepararEditar&id_Filme=<c:out value="${filmes.id_filme}>"></c:out>"Editar</a></td>
+          <td><a href="ConsultaFilmesController?acao=prepararExcluir&id_Filme=<c:out value="${filmes.id_filme}>"></c:out>"Excluir</a></td>
         </tr>
       </c:forEach>
         
-      <form action="ManterFilmesController?acao=prepararIncluir" method="post">
+      <form action="ConsultaFilmesController?acao=prepararIncluir" method="post">
         <input type="submit" name="btnIncluir" value="Incluir">
       </form>
   </body>
