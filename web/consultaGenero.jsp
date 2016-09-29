@@ -21,10 +21,10 @@
 
       <c:forEach items="${genero}" var="genero">
         <tr>
-          <td><c:out value="genero.codGenero"></td>
-          <td><c:out value="genero.nome"></td>
-          <td><a href="ManterGeneroController?acao=prepararEditar&codGenero=<c:out value="${cliente.codGenero}"/>">Editar</a></td>
-          <td><a href="ManterGeneroController?acao=prepararExcluir&codGenero=<c:out value="${cliente.codGenero}"/>">Excluir</a></td>
+          <td><c:out value="genero.codGenero"></c:out></td>
+          <td><c:out value="genero.nome"></c:out></td>
+          <td><a href="ManterGeneroController?acao=prepararEditar&codGenero=<c:out value="${cliente.codGenero}"> </c:out>">Editar</a></td>
+          <td><a href="ManterGeneroController?acao=prepararExcluir&codGenero=<c:out value="${cliente.codGenero}"> </c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
 

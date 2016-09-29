@@ -22,10 +22,10 @@
 
       <c:forEach items="${fornecedores}" var="fornecedores">
         <tr>
-          <td><c:out value="fornecedores.id_fornecedores"></td>
-          <td><c:out value="fornecedores.nome"></td>
-          <td><a href="ManterFornecedoresController?acao=prepararEditar&codFornecedores=<c:out value="${fornecedores.codFornecedores}"/>">Editar</a></td>
-          <td><a href="ManterFornecedoresController?acao=prepararExcluir&codFornecedores=<c:out value="${fornecedores.codFornecedores}"/>">Excluir</a></td>
+          <td><c:out value="fornecedores.id_fornecedores"></c:out></td>
+          <td><c:out value="fornecedores.nome"></c:out></td>
+          <td><a href="ManterFornecedoresController?acao=prepararEditar&codFornecedores=<c:out value="${fornecedores.codFornecedores}"></c:out>">Editar</a></td>
+          <td><a href="ManterFornecedoresController?acao=prepararExcluir&codFornecedores=<c:out value="${fornecedores.codFornecedores}"></c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
 
