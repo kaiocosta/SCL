@@ -28,16 +28,16 @@ public class FornecedorDAO {
             ResultSet rs = comando.executeQuery("select * from fornecedor");
             while (rs.next()){
                 Fornecedor fornecedor = new Fornecedor
-                                   (rs.getInt("id_fornecedor"),
+                                   (rs.getInt("codFornecedor"),
                                     rs.getString("razaoSocial"),
                                     rs.getString("nomeFantasia"),
                                     rs.getString("cnpj"),
                                     rs.getString("nomeDoContato"),       
                                     null,
                                     null);
-           fornecedor.setId_contato(rs.getInt("id_contato"));
-           fornecedor.setId_endereco(rs.getInt("id_endereco")); 
-           fornecedores.add(fornecedor);
+             fornecedor.setCodEndereco(rs.getInt("codEndereco"));
+            fornecedor.setCodContato(rs.getInt("codContato")); 
+            fornecedores.add(fornecedor);
             }
             
         }

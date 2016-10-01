@@ -22,15 +22,14 @@ public class LocadoraDAO {
             ResultSet rs = comando.executeQuery("select * from locadora");
             while (rs.next()){
                 Locadora locadora = new Locadora
-                                   (rs.getString("dataLocacao"),
-                                    rs.getInt("id_locadora"),
+                                   (rs.getInt("id_locadora"),
+                                    rs.getString("dataLocacao"),
                                     null,
                                     null,
                                     null);
-           locadora.setId_usuario(rs.getInt("id_usuario"));
-           locadora.setId_filmes(rs.getInt("id_filmes")); 
-           locadora.setId_cliente(rs.getInt("id_cliente"));
-          
+           locadora.setCodUsuario(rs.getInt("codUsuario"));
+           locadora.setCodCliente(rs.getInt("codCliente"));
+           locadora.setCodFilme(rs.getInt("codFilme"));
            locadoras.add(locadora);
             }
             

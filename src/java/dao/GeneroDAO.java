@@ -23,9 +23,9 @@ public class GeneroDAO {
             ResultSet rs = comando.executeQuery("select * from genero");
             while (rs.next()){
                 Genero genero = new Genero
-                                   (rs.getString("nome"),
-                                    rs.getString("descricao"),
-                                    rs.getInt("id_genero"));
+                                   (rs.getInt("codGenero"),
+                                    rs.getString("nome"),
+                                    rs.getString("descricao"));
                 generos.add(genero);
             }
             

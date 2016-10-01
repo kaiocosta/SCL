@@ -1,46 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package modelo;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Aluno
- */
 public class Locadora {
+    
+    private int codLocadora;
     private String dataLocacao;
-    private int id_locadora;
     private Usuario usuario;
-    private int id_usuario;
-    private Filmes filme;
-    private int id_filmes;
+    private int codUsuario;
     private Cliente cliente;
-    private int id_cliente;
+    private int codCliente;
+    private Filme filme;
+    private int codFilme;
 
-    public Locadora(String dataLocacao, int id_locadora, Usuario usuario, Filmes filmes, Cliente cliente) {
+    public Locadora( int codLocadora, String dataLocacao, Usuario usuario, Cliente cliente,Filme filme) {
+        
+        this.codLocadora = codLocadora;
         this.dataLocacao = dataLocacao;
-        this.id_locadora = id_locadora;
-        this.id_usuario = id_usuario;
-        this.id_filmes = id_filmes;
-        this.id_cliente = id_cliente;
+        this.codUsuario = codUsuario;
+        this.codFilme = codFilme;
+        this.codCliente = codCliente;
+        
     }
     
-    
-    
-    private ArrayList<Filmes> locacoes;
+    private ArrayList<Filme> locacoes;
     private ArrayList<Cliente> clientes;
     private ArrayList<Usuario> usuarios;
 
-    public ArrayList<Filmes> getLocacoes() {
+    public ArrayList<Filme> getLocacoes() {
         return locacoes;
     }
 
-    public void setLocacoes(ArrayList<Filmes> locacoes) {
+    public void setLocacoes(ArrayList<Filme> locacoes) {
         this.locacoes.add(filme);
     }
 
@@ -60,28 +52,28 @@ public class Locadora {
         this.usuarios.add(usuario);
     }
    
-    public int getId_usuario() {
-        return id_usuario;
+    public int getCodUsuario() {
+        return codUsuario;
     }
 
-    public void setId_usuario(int id) {
-        this.id_usuario = id;
+    public void setCodUsuario(int codUsuario) {
+        this.codUsuario = codUsuario;
     }
 
-    public int getId_filmes() {
-        return id_filmes;
+    public int getCodFilme() {
+        return codFilme;
     }
 
-    public void setId_filmes(int id_filmes) {
-        this.id_filmes = id_filmes;
+    public void setCodFilme(int codFilme) {
+        this.codFilme = codFilme;
     }
 
-    public int getId_cliente() {
-        return id_cliente;
+    public int getCodCliente() {
+        return codCliente;
     }
 
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setCodCliente(int codCliente) {
+        this.codCliente = codCliente;
     }
     
     public String getData() {

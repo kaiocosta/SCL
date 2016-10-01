@@ -27,15 +27,19 @@ public class UsuarioDAO {
             ResultSet rs = comando.executeQuery("select * from usuario");
             while (rs.next()){
                 Usuario usuario = new Usuario
-                                   (rs.getString("nome"),
+                                   (rs.getInt("codUsuario"),
+                                    rs.getString("nome"),
                                     rs.getString("sexo"),
                                     rs.getString("dataDeNasc"),
                                     rs.getString("estadoCivil"),       
                                     rs.getString("cpf"),       
                                     rs.getString("rg"),
                                     rs.getString("login"),
-                                    rs.getString("senha"),       
-                                    rs.getInt("id_usuario"));
+                                    rs.getString("senha"),
+                                    null,
+                                    null);
+                usuario.setCodEndereco(rs.getInt("codEndereco"));
+                usuario.setCodEndereco(rs.getInt("codContato"));
                 usuarios.add(usuario);
             }
             

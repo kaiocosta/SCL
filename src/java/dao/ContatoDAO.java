@@ -31,11 +31,11 @@ public class ContatoDAO {
             ResultSet rs = comando.executeQuery("select * from contato");
             while (rs.next()){
                 Contato contato = new Contato
-                                   (rs.getString("telefone1"),
+                                   (rs.getInt("codContato"),
+                                    rs.getString("telefone1"),
                                     rs.getString("telefone2"),
-                                    rs.getString("nomecelular"),
-                                    rs.getString("email"),  
-                                    rs.getInt("id_contato"));
+                                    rs.getString("celular"),
+                                    rs.getString("email"));
                 contatos.add(contato);
             }
             

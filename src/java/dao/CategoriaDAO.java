@@ -27,7 +27,7 @@ public class CategoriaDAO {
             ResultSet rs = comando.executeQuery("select * from categoria");
             while (rs.next()){
                 Categoria categoria = new Categoria
-                                   (rs.getInt("id_categoria"),
+                                   (rs.getInt("CodCategoria"),
                                     rs.getString("nome"),
                                     rs.getString("descricao"),
                                     rs.getInt("PeriodoDeTroca"),

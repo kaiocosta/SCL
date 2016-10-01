@@ -27,10 +27,10 @@ public class DependenteDAO {
             ResultSet rs = comando.executeQuery("select * from dependente");
             while (rs.next()){
                 Dependente dependente = new Dependente
-                                   (rs.getString("nome"),
+                                   (rs.getInt("codDependente"),
+                                    rs.getString("nome"),
                                     rs.getString("grauDeParentesco"),
-                                    rs.getString("dataDeNascimento"),       
-                                    rs.getInt("id_dependente"));
+                                    rs.getString("dataDeNascimento"));
                 dependentes.add(dependente);
             }
             

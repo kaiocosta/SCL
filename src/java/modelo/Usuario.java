@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package modelo;
 
-/**
- *
- * @author Aluno
- */
 public class Usuario extends Pessoa{
+    
+    private int codUsuario;
     private String login;
     private String senha;
-    private int id_usuario;
-
-    public Usuario(String nome, String sexo, String dataDeNasc, String estadoCivil, String cpf, String rg, String login, String senha, int id_usuario) {
+    
+    private Endereco endereco;
+    private int codEndereco;
+    private Contato contato;
+    private int codContato;
+    
+    public Usuario(int codUsuario, String nome, String sexo, String dataDeNasc, String estadoCivil, String cpf, String rg, String login, String senha, Endereco endereco, Contato contato) {
+        
+        this.codUsuario = codUsuario;
         this.setNome(nome);
         this.setSexo(sexo);
         this.setDataDeNasc(dataDeNasc);
@@ -24,9 +23,27 @@ public class Usuario extends Pessoa{
         this.setRg(rg);
         this.login = login;
         this.senha = senha;
-        this.id_usuario = id_usuario;
+        this.endereco = endereco;
+        this.contato = contato;
+        
     }
 
+    public int getCodEndereco() {
+        return codEndereco;
+    }
+
+    public void setCodEndereco(int codEndereco) {
+        this.codEndereco = codEndereco;
+    }
+
+    public int getCodContato() {
+        return codContato;
+    }
+
+    public void setCodContato(int codContato) {
+        this.codContato = codContato;
+    }
+    
     public String getLogin() {
         return login;
     }
@@ -41,5 +58,9 @@ public class Usuario extends Pessoa{
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    
+    public int getCodUsuario(){
+        return this.codUsuario;
     }
 }

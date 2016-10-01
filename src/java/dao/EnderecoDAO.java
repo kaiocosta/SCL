@@ -28,14 +28,14 @@ public class EnderecoDAO {
             ResultSet rs = comando.executeQuery("select * from endereco");
             while (rs.next()){
                 Endereco endereco = new Endereco
-                                   (rs.getString("cep"),
+                                   (rs.getInt("codEndereco"),
+                                    rs.getString("cep"),
                                     rs.getString("bairro"),
                                     rs.getString("logradouro"),       
                                     rs.getInt("numero"),
                                     rs.getString("complemento"),
                                     rs.getString("cidade"),
-                                    rs.getString("estado"),       
-                                    rs.getInt("id_endereco"));   
+                                    rs.getString("estado"));   
                 enderecos.add(endereco);
             }
             

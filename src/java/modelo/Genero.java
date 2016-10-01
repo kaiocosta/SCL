@@ -1,24 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package modelo;
 
-/**
- *
- * @author Aluno
- */
 public class Genero {
+   
+    private int codGenero;
     private String nome;
     private String descricao;
-    private int id_genero;
+   
 
-    public Genero(String nome, String descricao, int id_genero) {
+    public Genero(int codGenero, String nome, String descricao) {
+        
+        this.codGenero = codGenero;
         this.nome = nome;
         this.descricao = descricao;
-        this.id_genero = id_genero;
     }
     
     public String getNome() {

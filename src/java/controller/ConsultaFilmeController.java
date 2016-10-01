@@ -15,13 +15,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Filmes;
+import modelo.Filme;
 
 /**
  *
  * @author Kaio
  */
-public class ConsultaFilmesController extends HttpServlet {
+public class ConsultaFilmeController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,7 +35,7 @@ public class ConsultaFilmesController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         try {
-            request.setAttribute("filmes", Filmes.obterFilmes());
+            request.setAttribute("filme", Filme.obterFilmes());
             RequestDispatcher view = 
                     request.getRequestDispatcher("/consultaFilmes.jsp");
             view.forward(request, response);
@@ -59,7 +59,7 @@ public class ConsultaFilmesController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultaFilmesController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -77,7 +77,7 @@ public class ConsultaFilmesController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultaFilmesController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

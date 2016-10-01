@@ -23,9 +23,9 @@ public class TipoDeMidiaDAO {
             ResultSet rs = comando.executeQuery("select * from tipodemidia");
             while (rs.next()){
                 TipoDeMidia tipodemidia = new TipoDeMidia
-                                   (rs.getString("nome"),
-                                    rs.getString("descricao"),
-                                    rs.getInt("id_tipoDeMidia"));
+                                   (rs.getInt("codTipoDeMidia"),
+                                    rs.getString("nome"),
+                                    rs.getString("descricao"));
                 tiposdemidias.add(tipodemidia);
             }
             

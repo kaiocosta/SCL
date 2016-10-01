@@ -6,25 +6,30 @@ import java.util.List;
 
 public class Categoria {
 
-    
     private String nome;
     private String descricao;
     private int periodoDeTroca;
-    private int id_categoria;
+    private int codCategoria;
+    private String proxCategoria;
     
-    public Categoria(int id_categoria, String nome, String descricao, int periodoDeTroca, String proxCategoria) {
-        this.id_categoria = id_categoria;
+    public Categoria(int codCategoria, String nome, String descricao, int periodoDeTroca, String proxCategoria) {
+        
+        this.codCategoria = codCategoria;
         this.nome = nome;
         this.descricao = descricao;
         this.periodoDeTroca = periodoDeTroca;
         this.proxCategoria = proxCategoria;
+        
     }
-    public Categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    
+    public int getCodCategoria(){
+        return this.codCategoria;
     }
-    private String proxCategoria;
 
-   
+    public void setCodCategoria(int codCategoria) {
+        this.codCategoria = codCategoria;
+    }
+    
     public String getNome() {
         return nome;
     }

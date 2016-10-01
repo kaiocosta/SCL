@@ -1,26 +1,34 @@
-/*
-
- */
 
 package modelo;
 
 public class Contato {
+    
+    private int codContato;
     private String telefone1;
     private String telefone2;
     private String celular;
     private String email;
 
-    public Contato(String telefone1, String telefone2, String celular, String email, int id_contato) {
+    
+    public Contato(int codContato, String telefone1, String telefone2, String celular, String email) {
+        
+        this.codContato = codContato;
         this.telefone1 = telefone1;
         this.telefone2 = telefone2;
         this.celular = celular;
         this.email = email;
-        this.id_contato = id_contato;
+     
     }
-    private int id_contato;
-    
 
+    public int getCodContato() {
+        return codContato;
+    }
+
+    public void setCodContato(int codContato) {
+        this.codContato = codContato;
+    }
    
+
     public void setTelefone1(String telefone1) {
         this.telefone1 = telefone1;
     }

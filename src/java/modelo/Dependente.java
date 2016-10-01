@@ -1,35 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package modelo;
 
-/**
- *
- * @author Aluno
- */
 public class Dependente {
+    
+    private int codDependente;
     private String nome;
     private String grauDeParentesco;
     private String dataDeNascimento;
-    private int id_dependente;
     
 
-    public Dependente(String nome, String grauDeParentesco, String dataDeNascimento, int id_dependente) {
+    public Dependente(int codDependente, String nome, String grauDeParentesco, String dataDeNascimento) {
+        
+        this.codDependente = codDependente;
         this.nome = nome;
         this.grauDeParentesco = grauDeParentesco;
         this.dataDeNascimento = dataDeNascimento;
-        this.id_dependente = id_dependente;
+        
     }
    
-    public int getId() {
-        return id_dependente;
+    public int getCodDependente() {
+        return codDependente;
     }
     
-    public void setId(int id_dependente) {
-        this.id_dependente = id_dependente;
+    public void setCodDependente(int codDependente) {
+        this.codDependente = codDependente;
     }
 
     public String getNome() {

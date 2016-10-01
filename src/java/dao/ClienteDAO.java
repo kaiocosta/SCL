@@ -28,13 +28,19 @@ public class ClienteDAO {
             ResultSet rs = comando.executeQuery("select * from clientes");
             while (rs.next()){
                 Cliente cliente = new Cliente
-                                   (rs.getString("nome"),
+                                   (rs.getInt("codCliente"),
+                                    rs.getString("nome"),
                                     rs.getString("sexo"),
                                     rs.getString("dataDeNasc"),
                                     rs.getString("estadoCivil"),       
                                     rs.getString("cpf"),       
-                                    rs.getString("rg"),     
-                                    rs.getInt("id_cliente"));
+                                    rs.getString("rg"),
+                                    null,
+                                    null,
+                                    null);
+                cliente.setCodEndereco(rs.getInt("codEndereco"));
+                cliente.setCodContato(rs.getInt("codContato"));
+                cliente.setCodDependente(rs.getInt("coddependente"));
                 clientes.add(cliente);
             }
             

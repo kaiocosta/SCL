@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <h1>Index</h1>
         <div>Pesquisa De Filmes</div>
-        <a href="ConsultaFilmesController"><button>Consultar Filmes</button></a>
+        <a href="ConsultaFilmeController"><button>Consultar Filmes</button></a>
         
     </body>
 </html>

@@ -1,32 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package modelo;
 
-/**
- *
- * @author Aluno
- */
 public class TipoDeMidia {
+    
+    private int codTipoDeMidia;
     private String nome;
     private String descricao;
-    private int id_tipoDeMidia;
 
-    public TipoDeMidia(String nome, String descricao, int id_tipoDeMidia) {
+    public TipoDeMidia(int codTipoDeMidia, String nome, String descricao) {
+        
+        this.codTipoDeMidia = codTipoDeMidia;
         this.nome = nome;
         this.descricao = descricao;
-        this.id_tipoDeMidia = id_tipoDeMidia;
+        
     }
 
-    public int getId_tipoDeMidia() {
-        return id_tipoDeMidia;
+    public int getCodTipoDeMidia() {
+        return codTipoDeMidia;
     }
 
-    public void setId_tipoDeMidia(int id_tipoDeMidia) {
-        this.id_tipoDeMidia = id_tipoDeMidia;
+    public void setCodTipoDeMidia(int codTipoDeMidia) {
+        this.codTipoDeMidia = codTipoDeMidia;
     }
 
     public String getNome() {

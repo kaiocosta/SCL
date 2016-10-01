@@ -1,22 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package modelo;
 
-import dao.FilmesDAO;
+import dao.FilmeDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Aluno
- */
-public class Filmes {
-    private int id_filme;
+public class Filme {
+    
+    private int codFilme;
     private String titulo;
     private String tituloOriginal;
     private String nomeDiretor;
@@ -24,17 +15,19 @@ public class Filmes {
     private String nomePremiacoes;
     private String anoProducao;
     private String anoLancamento;
-    private TipoDeMidia tipoDeMidia;
-    private int id_tipoDeMidia;
     private Genero genero;
-    private int id_genero;
-    private Fornecedor fornecedor;
-    private int id_fornecedor;
+    private int codGenero;
     private Categoria categoria;
-    private int id_categoria;
+    private int codCategoria;
+    private TipoDeMidia tipoDeMidia;
+    private int codTipoDeMidia;
+    private Fornecedor fornecedor;
+    private int codFornecedor;
     //private Cadastro cadastro; criar classe cadastro
 
-    public Filmes(String titulo, String tituloOriginal, String nomeDiretor, String nomeAtorPrincipal, String nomePremiacoes, String anoProducao, String anoLancamento, int id_filme, TipoDeMidia tipoDeMidia, Genero genero, Fornecedor fornecedor, Categoria categoria) {
+    public Filme(int codFilme, String titulo, String tituloOriginal, String nomeDiretor, String nomeAtorPrincipal, String nomePremiacoes, String anoProducao, String anoLancamento, Genero genero, Categoria categoria, TipoDeMidia tipoDeMidia,Fornecedor fornecedor) {
+        
+        this.codFilme = codFilme;
         this.titulo = titulo;
         this.tituloOriginal = tituloOriginal;
         this.nomeDiretor = nomeDiretor;
@@ -42,26 +35,24 @@ public class Filmes {
         this.nomePremiacoes = nomePremiacoes;
         this.anoProducao = anoProducao;
         this.anoLancamento = anoLancamento;
-        this.id_filme = id_filme;
-        this.tipoDeMidia = tipoDeMidia;
         this.genero = genero;
-        this.fornecedor = fornecedor;
         this.categoria = categoria;
-    }
-    
-    public static List<Filmes> obterFilmes() 
-        throws ClassNotFoundException, SQLException {
+        this.tipoDeMidia = tipoDeMidia;
+        this.fornecedor = fornecedor;
         
-        return FilmesDAO.obterFilmes();
-    
     }
     
-    public int getId_filme() {
-        return id_filme;
+    public static List<Filme> obterFilmes() 
+        throws ClassNotFoundException, SQLException {
+         return FilmeDAO.obterFilmes();
+    }
+    
+    public int getCodFilme() {
+        return codFilme;
     }
 
-    public void setId_filme(int id) {
-        this.id_filme = id;
+    public void setCodFilme(int id) {
+        this.codFilme = id;
     }
 
     public String getTitulo() {
@@ -135,14 +126,6 @@ public class Filmes {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
-/*
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }*/
     
     public Fornecedor getFornecedor() {
         return fornecedor;
@@ -152,59 +135,35 @@ public class Filmes {
         this.fornecedor = fornecedor;
     }
 
-    /**
-     * @return the id_tipoDeMidia
-     */
-    public int getId_tipoDeMidia() {
-        return id_tipoDeMidia;
+    public int getCodTipoDeMidia() {
+        return codTipoDeMidia;
     }
 
-    /**
-     * @param id_tipoDeMidia the id_tipoDeMidia to set
-     */
-    public void setId_tipoDeMidia(int id_tipoDeMidia) {
-        this.id_tipoDeMidia = id_tipoDeMidia;
+    public void setCodTipoDeMidia(int CodTipoDeMidia) {
+        this.codTipoDeMidia = codTipoDeMidia;
+    }
+    
+    public int getCodGenero() {
+        return codGenero;
     }
 
-    /**
-     * @return the id_genero
-     */
-    public int getId_genero() {
-        return id_genero;
+    public void setCodGenero(int codGenero) {
+        this.codGenero = codGenero;
     }
 
-    /**
-     * @param id_genero the id_genero to set
-     */
-    public void setId_genero(int id_genero) {
-        this.id_genero = id_genero;
+    public int getCodFornecedor() {
+        return codFornecedor;
     }
 
-    /**
-     * @return the id_fornecedor
-     */
-    public int getId_fornecedor() {
-        return id_fornecedor;
+    public void setCodFornecedor(int codFornecedor) {
+        this.codFornecedor = codFornecedor;
     }
 
-    /**
-     * @param id_fornecedor the id_fornecedor to set
-     */
-    public void setId_fornecedor(int id_fornecedor) {
-        this.id_fornecedor = id_fornecedor;
+    public int getCodCategoria() {
+        return codCategoria;
     }
 
-    /**
-     * @return the id_categoria
-     */
-    public int getId_categoria() {
-        return id_categoria;
-    }
-
-    /**
-     * @param id_categoria the id_categoria to set
-     */
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setCodCategoria(int codCategoria) {
+        this.codCategoria = codCategoria;
     }
 }
