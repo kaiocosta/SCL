@@ -40,5 +40,19 @@ public class Genero {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    /**
+     * @return the codGenero
+     */
+    public int getCodGenero() {
+        return codGenero;
+    }
+
+    /**
+     * @param codGenero the codGenero to set
+     */
+    public void setCodGenero(int codGenero) {
+        this.codGenero = codGenero;
+    }
     
 }
