@@ -98,4 +98,18 @@ public class Fornecedor {
     public void setCodEndereco(int codEndereco) {
         this.codEndereco = codEndereco;
     }
+
+    /**
+     * @return the codFornecedor
+     */
+    public int getCodFornecedor() {
+        return codFornecedor;
+    }
+
+    /**
+     * @param codFornecedor the codFornecedor to set
+     */
+    public void setCodFornecedor(int codFornecedor) {
+        this.codFornecedor = codFornecedor;
+    }
 }
