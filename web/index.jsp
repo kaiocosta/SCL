@@ -14,6 +14,8 @@ and open the template in the editor.
         <h1>Index</h1>
         <div>Pesquisa De Filmes</div>
         <a href="ConsultaFilmeController"><button>Consultar Filmes</button></a>
-        
+        <a href="ConsultarnecedorCategoriaController"><button>Consultar Fornecedores</button></a>
+        <a href="ConsultaGeneroController"><button>Consultar Generos</button></a>
+        <a href="ConsultaUsuarioController"><button>Consultar Usuarios</button></a>
     </body>
 </html>
