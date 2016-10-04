@@ -43,8 +43,7 @@ public class ConsultaFornecedorController extends HttpServlet {
         }catch (ClassNotFoundException e){
         }
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -58,9 +57,9 @@ public class ConsultaFornecedorController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (ClassNotFoundException ex) {
             Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -78,9 +77,9 @@ public class ConsultaFornecedorController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (ClassNotFoundException ex) {
             Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
