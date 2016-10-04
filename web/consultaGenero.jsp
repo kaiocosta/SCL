@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Pesquisa genero</h1>
-    <table>
+    <table border = 1>
       <th>Cod.</th>
       <th>Nome</th>
       <th colspan="2">Ação</th>
@@ -20,7 +20,7 @@
           <td><a href="ManterGeneroController?acao=prepararExcluir&codGenero=<c:out value="${genero.codGenero}"> </c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
-    </table>
+    </table></br>
     
     <form class="" action="ManterGeneroController?acao=prepararIncluir" method="post">
       <input type="submit" name="btnIncluir" value="Incluir">
