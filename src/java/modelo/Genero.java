@@ -19,6 +19,11 @@ public class Genero {
         this.descricao = descricao;
     }
     
+    public static List<Genero> obterGeneros()
+        throws ClassNotFoundException, SQLException {
+         return GeneroDAO.obterGeneros();
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -36,8 +41,4 @@ public class Genero {
         this.descricao = descricao;
     }
     
-    public static List<Genero> obterGeneros()
-        throws ClassNotFoundException, SQLException {
-         return GeneroDAO.obterGeneros();
-    }
 }

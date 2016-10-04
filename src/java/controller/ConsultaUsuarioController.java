@@ -37,7 +37,7 @@ public class ConsultaUsuarioController extends HttpServlet {
         try {
             request.setAttribute("usuario", Usuario.obterUsuarios());
             RequestDispatcher view = 
-                    request.getRequestDispatcher("/consultaUsuarios.jsp");
+                    request.getRequestDispatcher("/consultaUsuario.jsp");
             view.forward(request, response);
         }catch (ClassNotFoundException e){
         }

@@ -10,15 +10,15 @@
   <body>
     <h1>Pesquisa fornecedores</h1>
     <table>
-      <tr>
+      <th>
         <td>Cod.</td>
-      </tr>
-      <tr>
+      </th>
+      <th>
         <td>Nome</td>
-      </tr>
-      <tr>
+      </th>
+      <th>
         <td>Ação</td>
-      </tr>
+      </th>
 
       <c:forEach items="${fornecedores}" var="fornecedores">
         <tr>
