@@ -1,6 +1,10 @@
 
 package modelo;
 
+import dao.GeneroDAO;
+import java.sql.SQLException;
+import java.util.List;
+
 public class Genero {
    
     private int codGenero;
@@ -30,5 +34,10 @@ public class Genero {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    
+    public static List<Genero> obterGeneros()
+        throws ClassNotFoundException, SQLException {
+         return GeneroDAO.obterGeneros();
     }
 }

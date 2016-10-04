@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package controller;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -15,14 +14,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Fornecedor;
-
+import modelo.Genero;
 /**
  *
- * @author Kaio
+ * @author Ramon
  */
-public class ConsultaFornecedorController extends HttpServlet {
-
+public class ConsultaGeneroController  extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,13 +30,13 @@ public class ConsultaFornecedorController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ClassNotFoundException, SQLException {
-        response.setContentType("text/html;charset=UTF-8");
+            throws ServletException, IOException, SQLException {
         try {
-            request.setAttribute("fornecedor", Fornecedor.obterFornecedores());
+            request.setAttribute("genero", Genero.obterGeneros());
             RequestDispatcher view = 
-                    request.getRequestDispatcher("/consultaFornecedores.jsp");
+                    request.getRequestDispatcher("/consultaGenero.jsp");
             view.forward(request, response);
+            
         }catch (ClassNotFoundException e){
         }
     }
@@ -58,10 +55,8 @@ public class ConsultaFornecedorController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -78,10 +73,8 @@ public class ConsultaFornecedorController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -95,4 +88,5 @@ public class ConsultaFornecedorController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
 }

@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>consultaCategoriaController</servlet-name>
-        <servlet-class>controller.consultaCategoriaController</servlet-class>
+        <servlet-class>controller.ConsultaCategoriaController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ConsultaFilmeController</servlet-name>

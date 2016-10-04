@@ -1,7 +1,16 @@
 
 package modelo;
 
+import dao.UsuarioDAO;
+import java.sql.SQLException;
+import java.util.List;
+
 public class Usuario extends Pessoa{
+
+    public static List<Usuario> obterUsuarios() 
+        throws ClassNotFoundException, SQLException {
+         return UsuarioDAO.obterUsuarios();
+    }
     
     private int codUsuario;
     private String login;

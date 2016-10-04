@@ -9,7 +9,7 @@
 	<form>
 		Filme <input type="text" id="codigo" /><br/>
 		Data inicio <input type="text" id=""/>
-		Data fim <input type="password" id=""/><br/>
+		Data fim <input type="text" id=""/><br/>
 		<input type="submit" value=" Enviar " />
                 <table border="1px">
                     <td>Codigo</td>
