@@ -10,6 +10,11 @@
         <servlet-class>controller.ConsultaGeneroController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ConsultaUsuarioController</servlet-name>
+        <servlet-class>controller.ConsultaUsuarioController</servlet-class>
+    </servlet>
+    
+    <servlet>
         <servlet-name>ConsultaFornecedorController</servlet-name>
         <servlet-class>controller.ConsultaFornecedorController</servlet-class>
     </servlet>
@@ -48,6 +53,11 @@
     <servlet-mapping>
         <servlet-name>ConsultaGeneroController</servlet-name>
         <url-pattern>/ConsultaGeneroController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ConsultaUsuarioController</servlet-name>
+        <url-pattern>/ConsultaUsuarioController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

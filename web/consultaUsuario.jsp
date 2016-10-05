@@ -15,7 +15,7 @@
         <th>Cod.</th>
         <th>Nome</th>
         <th colspan="2">Ação</th>
-      <c:forEach items="${usuario}" var="usuario">
+      <c:forEach items="${usuario}" var="usuario" >
         <tr>
           <td><c:out value="${usuario.codUsuario}"></c:out></td>
           <td><c:out value="${usuario.nome}"></c:out></td>

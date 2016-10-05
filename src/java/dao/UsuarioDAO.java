@@ -29,17 +29,15 @@ public class UsuarioDAO {
                 Usuario usuario = new Usuario
                                    (rs.getInt("codUsuario"),
                                     rs.getString("nome"),
-                                    rs.getString("sexo"),
-                                    rs.getString("dataDeNasc"),
-                                    rs.getString("estadoCivil"),       
-                                    rs.getString("cpf"),       
-                                    rs.getString("rg"),
+                                    //rs.getString("sexo"),
+                                    //rs.getString("dataDeNasc"),
+                                    //rs.getString("estadoCivil"),       
+                                    //rs.getString("cpf"),       
+                                    //rs.getString("rg"),
                                     rs.getString("login"),
-                                    rs.getString("senha"),
-                                    null,
-                                    null);
-                usuario.setCodEndereco(rs.getInt("codEndereco"));
-                usuario.setCodEndereco(rs.getInt("codContato"));
+                                    rs.getString("senha"));
+                /*usuario.setCodEndereco(rs.getInt("codEndereco"));
+                usuario.setCodEndereco(rs.getInt("codContato"));*/
                 usuarios.add(usuario);
             }
             

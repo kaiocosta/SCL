@@ -17,14 +17,15 @@ public class Usuario extends Pessoa{
     private String senha;
     
     private Endereco endereco;
+    private String nome;
     private int codEndereco;
     private Contato contato;
     private int codContato;
     
-    public Usuario(int codUsuario, String nome, String sexo, String dataDeNasc, String estadoCivil, String cpf, String rg, String login, String senha, Endereco endereco, Contato contato) {
+    /*public Usuario(int codUsuario, String nome, String sexo, String dataDeNasc, String estadoCivil, String cpf, String rg, String login, String senha, Endereco endereco, Contato contato) {
         
         this.codUsuario = codUsuario;
-        this.setNome(nome);
+        this.nome = nome;
         this.setSexo(sexo);
         this.setDataDeNasc(dataDeNasc);
         this.setEstadoCivil(estadoCivil);
@@ -36,6 +37,15 @@ public class Usuario extends Pessoa{
         this.contato = contato;
         
     }
+*/
+    public Usuario(int codUsuario, String nome, String login, String senha){
+        this.codUsuario = codUsuario;
+        this.nome = nome;
+        this.login = login;
+        this.senha = senha;
+        
+    }
+   
 
     public int getCodEndereco() {
         return codEndereco;
@@ -71,5 +81,26 @@ public class Usuario extends Pessoa{
     
     public int getCodUsuario(){
         return this.codUsuario;
+    }
+
+    /**
+     * @param codUsuario the codUsuario to set
+     */
+    public void setCodUsuario(int codUsuario) {
+        this.codUsuario = codUsuario;
+    }
+
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

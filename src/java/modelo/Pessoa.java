@@ -3,6 +3,7 @@ package modelo;
 
 abstract class Pessoa {
     
+    private int codPessoa;
     private String nome;
     private String sexo;
     private String dataDeNasc;
@@ -75,5 +76,19 @@ abstract class Pessoa {
     
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    /**
+     * @return the codPessoa
+     */
+    public int getCodPessoa() {
+        return codPessoa;
+    }
+
+    /**
+     * @param codPessoa the codPessoa to set
+     */
+    public void setCodPessoa(int codPessoa) {
+        this.codPessoa = codPessoa;
     }
 }
