@@ -13,7 +13,7 @@
         <th>Cod.</th>
         <th>Nome</th>
         <th colspan="2">Ação</th>
-      <c:forEach items="${fornecedores}" var="fornecedores">
+      <c:forEach items="${fornecedor}" var="fornecedores">
         <tr>
           <td><c:out value="${fornecedores.codFornecedor}"></c:out></td>
           <td><c:out value="${fornecedores.nomeFantasia}"></c:out></td>
