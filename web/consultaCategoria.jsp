@@ -15,7 +15,7 @@
         <th>Cod.</th>
         <th>Nome</th>
         <th colspan="2">Ação</th>
-      <c:forEach items="${categoria}" var="filme">
+      <c:forEach items="${categoria}" var="categoria">
         <tr>
           <td><c:out value="${categoria.codCategoria}"></c:out></td>
           <td><c:out value="${categoria.nome}"></c:out></td>

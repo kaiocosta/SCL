@@ -62,8 +62,9 @@ public class Categoria {
         this.proxCategoria = proxCategoria;
     }
     
-    public static List<Categoria> obterCategorias() throws ClassNotFoundException, SQLException {
-        return CategoriaDAO.obterCategorias();
-    }
+    public static List<Categoria> obterCategorias() 
+        throws ClassNotFoundException, SQLException {
+         return CategoriaDAO.obterCategorias();
+        }
 
 }
