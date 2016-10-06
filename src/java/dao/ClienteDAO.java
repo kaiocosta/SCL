@@ -25,22 +25,14 @@ public class ClienteDAO {
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from clientes");
+            ResultSet rs = comando.executeQuery("select * from cliente");
             while (rs.next()){
                 Cliente cliente = new Cliente
                                    (rs.getInt("codCliente"),
                                     rs.getString("nome"),
-                                    rs.getString("sexo"),
-                                    rs.getString("dataDeNasc"),
-                                    rs.getString("estadoCivil"),       
-                                    rs.getString("cpf"),       
-                                    rs.getString("rg"),
-                                    null,
-                                    null,
-                                    null);
-                cliente.setCodEndereco(rs.getInt("codEndereco"));
-                cliente.setCodContato(rs.getInt("codContato"));
-                cliente.setCodDependente(rs.getInt("coddependente"));
+                                    rs.getInt("codEndereco"),
+                                    rs.getInt("codContato"),
+                                    rs.getInt("codDependente"));
                 clientes.add(cliente);
             }
             

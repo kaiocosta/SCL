@@ -18,5 +18,6 @@ and open the template in the editor.
         <a href="ConsultaGeneroController"><button>Consultar Generos</button></a>
         <a href="ConsultaUsuarioController"><button>Consultar Usuarios</button></a>
         <a href="ConsultaCategoriaController"><button>Consultar Categorias</button></a>
+        <a href="ConsultaClienteController"><button>Consultar Clientes</button></a>
     </body>
 </html>

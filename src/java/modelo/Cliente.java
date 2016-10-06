@@ -8,85 +8,99 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente extends Pessoa {
+public class Cliente {
     
     private int codCliente;
-    
-    private Endereco endereco;
+    private String nome;
     private int codEndereco;
-    private Contato contato;
     private int codContato;
-    private Dependente dependente;
     private int codDependente;
     
-    private ArrayList dependentes;
     
-    public Cliente(int codCliente, String nome, String sexo, String dataDeNasc, String estadoCivil, String cpf, String rg, Endereco endereco, Contato contato, Dependente dependente) {
+    public Cliente(int codCliente, String nome, int codEndereco, int codContato, int codDependente) {
         
         this.codCliente = codCliente;
-        this.setNome(nome);
-        this.setSexo(sexo);
-        this.setDataDeNasc(dataDeNasc);
-        this.setEstadoCivil(estadoCivil);
-        this.setCpf(cpf);
-        this.setRg(rg);
-        this.endereco = endereco;
-        this.contato = contato;
-        this.dependente = dependente;
-        
+        this.nome = nome;
+        this.codEndereco = codEndereco;
+        this.codContato = codContato;
+        this.codDependente = codDependente;
     }
     
     public static List<Cliente> obterClientes() 
         throws ClassNotFoundException, SQLException {
-        
         return ClienteDAO.obterClientes();
     } 
-
-    public int getCodEndereco() {
-        return codEndereco;
-    }
-
-    public void setCodEndereco(int codEndereco) {
-        this.codEndereco = codEndereco;
-    }
-
-    public int getCodContato() {
-        return codContato;
-    }
-
-    public void setCodContato(int codContato) {
-        this.codContato = codContato;
-    }
-
-    public Dependente getDependente() {
-        return dependente;
-    }
-
-    public void setDependente(Dependente dependente) {
-        this.dependente = dependente;
-    }
-
-    public int getCodDependente() {
-        return codDependente;
-    }
-
-    public void setCodDependente(int codDependente) {
-        this.codDependente = codDependente;
-    }
     
+   
+
+    /**
+     * @return the codCliente
+     */
     public int getCodCliente() {
         return codCliente;
     }
 
+    /**
+     * @param codCliente the codCliente to set
+     */
     public void setCodCliente(int codCliente) {
         this.codCliente = codCliente;
     }
 
-    public ArrayList getDependentes() {
-        return dependentes;
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
     }
 
-    public void setDependentes(ArrayList dependentes) {
-        this.dependentes.add(dependentes);
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
     }
+
+    /**
+     * @return the codEndereco
+     */
+    public int getCodEndereco() {
+        return codEndereco;
+    }
+
+    /**
+     * @param codEndereco the codEndereco to set
+     */
+    public void setCodEndereco(int codEndereco) {
+        this.codEndereco = codEndereco;
+    }
+
+    /**
+     * @return the codContato
+     */
+    public int getCodContato() {
+        return codContato;
+    }
+
+    /**
+     * @param codContato the codContato to set
+     */
+    public void setCodContato(int codContato) {
+        this.codContato = codContato;
+    }
+
+    /**
+     * @return the codDependente
+     */
+    public int getCodDependente() {
+        return codDependente;
+    }
+
+    /**
+     * @param codDependente the codDependente to set
+     */
+    public void setCodDependente(int codDependente) {
+        this.codDependente = codDependente;
+    }
+
 }
