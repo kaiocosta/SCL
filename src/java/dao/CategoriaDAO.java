@@ -27,11 +27,11 @@ public class CategoriaDAO {
             ResultSet rs = comando.executeQuery("select * from categoria");
             while (rs.next()){
                 Categoria categoria = new Categoria
-                                   (rs.getInt("CodCategoria"),
+                                   (rs.getInt("codCategoria"),
                                     rs.getString("nome"),
                                     rs.getString("descricao"),
-                                    rs.getInt("PeriodoDeTroca"),
-                                    rs.getString("proxCategoria")
+                                    rs.getString("periodoTrocaCategoria"),
+                                    rs.getString("proximaCategoria")
                                     );
                 categorias.add(categoria);
             }

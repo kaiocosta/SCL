@@ -6,13 +6,13 @@ import java.util.List;
 
 public class Categoria {
 
-    private String nome;
-    private String descricao;
-    private int periodoDeTroca;
     private int codCategoria;
+    private String nome;    
+    private String descricao;
+    private String periodoDeTroca;
     private String proxCategoria;
     
-    public Categoria(int codCategoria, String nome, String descricao, int periodoDeTroca, String proxCategoria) {
+    public Categoria(int codCategoria, String nome, String descricao, String periodoDeTroca, String proxCategoria) {
         
         this.codCategoria = codCategoria;
         this.nome = nome;
@@ -46,14 +46,11 @@ public class Categoria {
         this.descricao = descricao;
     }
 
-    public int getPeriodoDeTroca() {
+    public String getPeriodoDeTroca() {
         return periodoDeTroca;
     }
 
-    public void setPeriodoDeTroca(int periodoDeTroca) {
-        this.periodoDeTroca = periodoDeTroca;
-    }
-
+   
     public String getProxCategoria() {
         return proxCategoria;
     }
@@ -66,5 +63,12 @@ public class Categoria {
         throws ClassNotFoundException, SQLException {
          return CategoriaDAO.obterCategorias();
         }
+
+    /**
+     * @param periodoDeTroca the periodoDeTroca to set
+     */
+    public void setPeriodoDeTroca(String periodoDeTroca) {
+        this.periodoDeTroca = periodoDeTroca;
+    }
 
 }

@@ -33,8 +33,7 @@ public class ConsultaCategoriaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ClassNotFoundException, SQLException {
-        response.setContentType("text/html;charset=UTF-8");
+            throws ServletException, IOException, SQLException {
         try {
             request.setAttribute("categoria", Categoria.obterCategorias());
             RequestDispatcher view = 
@@ -44,7 +43,7 @@ public class ConsultaCategoriaController extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+   // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -58,10 +57,8 @@ public class ConsultaCategoriaController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsultaCategoriaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -78,13 +75,10 @@ public class ConsultaCategoriaController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultaFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsultaCategoriaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 
     /**
      * Returns a short description of the servlet.
@@ -95,5 +89,6 @@ public class ConsultaCategoriaController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 
 }
