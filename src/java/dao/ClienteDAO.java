@@ -30,9 +30,9 @@ public class ClienteDAO {
                 Cliente cliente = new Cliente
                                    (rs.getInt("codCliente"),
                                     rs.getString("nome"),
-                                    rs.getInt("codEndereco"),
-                                    rs.getInt("codContato"),
-                                    rs.getInt("codDependente"));
+                                    rs.getInt("pessoa_endereco_codEndereco"),
+                                    rs.getInt("pessoa_contato_codContato"),
+                                    rs.getInt("dependente_codDependente"));
                 clientes.add(cliente);
             }
             
