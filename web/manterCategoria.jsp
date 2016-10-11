@@ -1,17 +1,17 @@
-<%-- 
-    Document   : manterCategoria
-    Created on : 11/10/2016, 09:29:26
-    Author     : Ramon
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <title>Incluir Categoria</title>
+  </head>
+  <body>
+    <h2>Categoria Cadastro - ${operacao}</h2>
+Codigo: <input type="text" name="" value="${curso.codCategoria}"> <br>
+Nome: <input type="text" name="" value="${curso.nome}"> <br>
+Descrição <textarea name="" rows="8" cols="40" value="${curso.descricao}"></textarea> <br>
+<input type="button" name="" value="Cancelar">
+<input type="submit" name="" value="Concluir">
+  </body>
 </html>
