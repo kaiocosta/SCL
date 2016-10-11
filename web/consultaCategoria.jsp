@@ -19,13 +19,13 @@
         <tr>
           <td><c:out value="${categoria.codCategoria}"></c:out></td>
           <td><c:out value="${categoria.nome}"></c:out></td>
-          <td><a href="ConsultaCategoriaController?acao=prepararEditar&codCategoria=<c:out value="${categoria.codCategoria}"></c:out>">Editar</a></td>
-          <td><a href="ConsultaCategoriaController?acao=prepararExcluir&nome=<c:out value="${categoria.nome}"></c:out>">Excluir</a></td>
+          <td><a href="ManterCategoriaController?acao=prepararEditar&codCategoria=<c:out value="${categoria.codCategoria}"></c:out>">Editar</a></td>
+          <td><a href="ManterCategoriaController?acao=prepararExcluir&nome=<c:out value="${categoria.nome}"></c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
        </table></br>  
      
-      <form action="ConsultaCategoriaController?acao=prepararIncluir" method="post">
+      <form action="ManterCategoriaController?acao=prepararIncluir" method="post">
         <input type="submit" name="btnIncluir" value="Incluir">
       </form>
   </body>

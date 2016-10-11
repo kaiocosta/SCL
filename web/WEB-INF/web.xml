@@ -36,6 +36,10 @@
         <servlet-name>ConsultaClienteController</servlet-name>
         <servlet-class>controller.ConsultaClienteController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterCategoriaController</servlet-name>
+        <servlet-class>controller.ManterCategoriaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmesController</servlet-name>
         <url-pattern>/ConsultaFilmesController</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>ConsultaClienteController</servlet-name>
         <url-pattern>/ConsultaClienteController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterCategoriaController</servlet-name>
+        <url-pattern>/ManterCategoriaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
