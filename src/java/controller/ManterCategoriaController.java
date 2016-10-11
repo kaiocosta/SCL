@@ -63,8 +63,7 @@ public class ManterCategoriaController extends HttpServlet {
             view.forward(request, response);
         } catch (ServletException ex){
         } catch (IOException ex) { 
-        } //catch (ClassNotFoundException ex){
-        //}
+        } 
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
