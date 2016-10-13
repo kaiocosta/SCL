@@ -1,5 +1,9 @@
+<html>
+<head>
+    <title>Cadastro de Filmes</title>
+</head>
 <body>
-	<h2>Cadastro de Filmes</h2>
+	<h2>Cadastro de Filmes - ${operacao}</h2>
 	<form>
                 Código <input type="text" id="codigo" value="${filme.codFilme}"/><br/>
 		Título <input type="text" id="titulo" value="${filme.titulo}"/><br/>
@@ -7,29 +11,14 @@
 		Cód. Cópia <input type="text" id="copia" /><br/>
 		Mídia <input type="text" id="midia" /><br/>
 		Custo <input type="text" id="custo" /><br/>
-		
-		Categoria <select>
-				<option value="default">Selecione</option>
-  				<option value="Lança">Lançaamento</option>
-  				<option value="Norm">Normal</option>
-  				<option value="Ant">Antigo</option>
-			</select><br/>
-
-		Gênero <select>
-				<option value="default">Selecione</option>
-  				<option value="Av">Aventura</option>
-  				<option value="Ação">Ação</option>
-  				<option value="Romance">Romance</option>
-			</select><br/>	
-
+		Genero <input type="text" id="genero" value="${genero.codGenero}"/><br/>
+                Categoria <input type="text" id="categoria" value="${categoria.codCategoria}"/><br/>
 		Diretor(a) <input type="text" id="diretor" /><br/>
 		Ator Principal <input type="text" id="ator" /><br/>
-		Premiações <input type="text" id="premiações" /><br/>	
-		
-		
+		Premiações <input type="text" id="premiações" /><br/>		
 		Ano de Produção <input type="date" id=""/>
 		Ano de Lançamento <input type="date" id=""/>		
-		Fornecedor <input type="text" id="fornecedor" /><br/>
+		Fornecedor <input type="text" id="fornecedor" value="${fornecedor.codFornecedor}"/><br/>
 		
 		<br/>
 		<br/>

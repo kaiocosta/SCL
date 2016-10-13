@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
 	<meta charset="UTF-8"/>
-	<title>Castro de Usuarios</title>
+	<title>Cadastro de Usuarios</title>
 
 </head>
 <body>
@@ -9,8 +9,9 @@
 	<form>
 		Código <input type="text" id="codigo" value="${usuario.codUsuario}"/><br/>
 		Nome <input type="text" id="" value="${usuario.nome}"/>
-		Senha <input type="password" id=""/><br/>
-		CPF <input type="text" id=""/>
+                Login <input type="text" id="" value="${usuario.login}"/>
+		Senha <input type="password" id="" value="${usuario.senha}"/><br/>
+		CPF <input type="text" id="" value="${usuario.cpf}"/>
 		RG <input type="text" id=""/>
 		Sexo <select>
 				<option value="default">Selecione</option>
@@ -27,14 +28,16 @@
   				<option value="divor">Divorciado</option>
 			</select><br/>
 
-		CEP <input type="text" id="" /><br/>
-		Logradouro <input type="text" id=""/>
-		Nº <input type="number" id=""/>
-		Complemento <input type="text" id=""/><br/>
-		Telefone 1 <input type="number" id=""/>
-		Telefone 2 <input type="number" id=""/>
-		Celular <input type="number" id=""/><br/>
-		E-mail<input type="email" id="" />
+		CEP <input type="text" id="" value="${usuario.cep}"/><br/>
+                Logradouro <input type="text" id="" value="${usuario.logradouro}"/>
+                Nº <input type="number" id="" value="${usuario.numero}"/>
+                Complemento <input type="text" id="" value="${usuario.complemento}"/><br/>
+                Estado <input type="text" id="" value="${usuario.estado}"/>
+                Cidade <input type="text" id="" value="${usuario.cidade}"/>
+                Telefone 1 <input type="number" id="" value="${usuario.telefone1}"/>
+                Telefone 2 <input type="number" id="" value="${usuario.telefone2}"/>
+                Celular <input type="number" id="" value="${usuario.celular}"/><br/>
+                E-mail<input type="email" id="" value="${usuario.email}"/>
 		<br/>
 		<br/>
 		<input type="reset" value="Cancelar" />
