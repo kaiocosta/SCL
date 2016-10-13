@@ -2,7 +2,6 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Cadastro de Usuarios</title>
-
 </head>
 <body>
 	<h2>Cadastro de usuarios - ${operacao}</h2>

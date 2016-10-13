@@ -1,7 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
 <html>
 <head>
 	<meta charset="UTF-8"/>
@@ -11,7 +7,7 @@
 <body>
 	<h2>Categoria de Clientes - ${operacao}</h2>
 	<form>
-		CÃ³digo <input type="text" value="${cliente.codCliente}"/><br/>
+		Código <input type="text" value="${cliente.codCliente}"/><br/>
 		Nome <input type="text" value="${cliente.nome}"/>
 		CPF <input type="text" id="" value="${cliente.cpf}"/>
 		RG <input type="text" id="" value="${cliente.rg}"/>
@@ -32,7 +28,7 @@
 
 		CEP <input type="text" id="" value="${cliente.cep}"/><br/>
                 Logradouro <input type="text" id="" value="${cliente.logradouro}"/>
-                NÂº <input type="number" id="" value="${cliente.numero}"/>
+                Nº <input type="number" id="" value="${cliente.numero}"/>
                 Complemento <input type="text" id="" value="${cliente.complemento}"/><br/>
                 Estado <input type="text" id="" value="${cliente.estado}"/>
                 Cidade <input type="text" id="" value="${cliente.cidade}"/>
