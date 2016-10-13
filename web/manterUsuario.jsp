@@ -5,10 +5,10 @@
 
 </head>
 <body>
-	<h2>Cadastro de usuarios</h2>
+	<h2>Cadastro de usuarios - ${operacao}</h2>
 	<form>
-		Código <input type="text" id="codigo" /><br/>
-		Nome <input type="text" id=""/>
+		Código <input type="text" id="codigo" value="${usuario.codUsuario}"/><br/>
+		Nome <input type="text" id="" value="${usuario.nome}"/>
 		Senha <input type="password" id=""/><br/>
 		CPF <input type="text" id=""/>
 		RG <input type="text" id=""/>

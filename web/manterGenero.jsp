@@ -17,5 +17,7 @@
         Codigo: <input type="text" name="" value="${genero.codGenero}"> <br>
         Nome: <input type="text" name="" value="${genero.nome}"> <br>
         Descrição <textarea name="" rows="8" cols="40" value="${genero.descricao}"></textarea> <br>
+        <input type="button" name="" value="Cancelar">
+        <input type="submit" name="" value="Concluir">
     </body>
 </html>

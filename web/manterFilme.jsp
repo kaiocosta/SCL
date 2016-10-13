@@ -1,10 +1,10 @@
 <body>
 	<h2>Cadastro de Filmes</h2>
 	<form>
-		Título <input type="text" id="titulo" /><br/>
-		Título original <input type="text" id=""/>
-		Código <input type="text" id="codigo" /><br/>
-		CÃ³d. CÃ³pia <input type="text" id="cÃ³pia" /><br/>
+                Código <input type="text" id="codigo" value="${filme.codFilme}"/><br/>
+		Título <input type="text" id="titulo" value="${filme.titulo}"/><br/>
+		Título original <input type="text" id="" value="${filme.tituloOriginal}"/>
+		Cód. Cópia <input type="text" id="copia" /><br/>
 		Mídia <input type="text" id="midia" /><br/>
 		Custo <input type="text" id="custo" /><br/>
 		

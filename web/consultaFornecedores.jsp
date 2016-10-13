@@ -17,14 +17,14 @@
         <tr>
           <td><c:out value="${fornecedores.codFornecedor}"></c:out></td>
           <td><c:out value="${fornecedores.nomeFantasia}"></c:out></td>
-          <td><a href="ManterFornecedoresController?acao=prepararEditar&codFornecedores=<c:out value="${fornecedores.codFornecedor}"></c:out>">Editar</a></td>
-          <td><a href="ManterFornecedoresController?acao=prepararExcluir&codFornecedores=<c:out value="${fornecedores.codFornecedor}"></c:out>">Excluir</a></td>
+          <td><a href="ManterFornecedorController?acao=prepararEditar&codFornecedores=<c:out value="${fornecedores.codFornecedor}"></c:out>">Editar</a></td>
+          <td><a href="ManterFornecedorController?acao=prepararExcluir&codFornecedores=<c:out value="${fornecedores.codFornecedor}"></c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
 
 
     </table>
-    <form class="" action="ManterFornecedoresController?acao=prepararIncluir" method="post">
+    <form class="" action="ManterFornecedorController?acao=prepararIncluir" method="post">
       <input type="submit" name="btnIncluir" value="Incluir">
     </form>
   </body>
