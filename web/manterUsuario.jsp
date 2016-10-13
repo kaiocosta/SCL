@@ -11,14 +11,14 @@
                 Login <input type="text" id="" value="${usuario.login}"/>
 		Senha <input type="password" id="" value="${usuario.senha}"/><br/>
 		CPF <input type="text" id="" value="${usuario.cpf}"/>
-		RG <input type="text" id=""/>
+		RG <input type="text" id="" value="${usuario.rg}"/>
 		Sexo <select>
 				<option value="default">Selecione</option>
   				<option value="Masc">Masculino</option>
   				<option value="Fem">Feminino</option>
-			</select><br/>
+		</select><br/>
 
-		Data de nascimento <input type="date" id=""/>
+		Data de nascimento <input type="date" id=""value="${usuario.dataDeNascimento}"/>
 		Estado Civil
 			<select>
 				<option value="default">Selecione</option>
