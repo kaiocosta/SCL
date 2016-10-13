@@ -60,6 +60,14 @@
         <servlet-name>ManterFilmeController</servlet-name>
         <servlet-class>controller.ManterFilmeController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultaTipoDeMidiaController</servlet-name>
+        <servlet-class>controller.ConsultaTipoDeMidiaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterTipoDeMidiaController</servlet-name>
+        <servlet-class>controller.ManterTipoDeMidiaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmesController</servlet-name>
         <url-pattern>/ConsultaFilmesController</url-pattern>
@@ -119,6 +127,14 @@
     <servlet-mapping>
         <servlet-name>ManterFilmeController</servlet-name>
         <url-pattern>/ManterFilmeController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaTipoDeMidiaController</servlet-name>
+        <url-pattern>/ConsultaTipoDeMidiaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterTipoDeMidiaController</servlet-name>
+        <url-pattern>/ManterTipoDeMidiaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
