@@ -15,17 +15,17 @@ public class Filme {
     private String nomePremiacoes;
     private String anoProducao;
     private String anoLancamento;
-    private Genero genero;
-    private int codGenero;
     private Categoria categoria;
     private int codCategoria;
+    private Genero genero;
+    private int codGenero;
     private TipoDeMidia tipoDeMidia;
     private int codTipoDeMidia;
     private Fornecedor fornecedor;
     private int codFornecedor;
     //private Cadastro cadastro; criar classe cadastro
 
-    public Filme(int codFilme, String titulo, String tituloOriginal, String nomeDiretor, String nomeAtorPrincipal, String nomePremiacoes, String anoProducao, String anoLancamento, Genero genero, Categoria categoria, TipoDeMidia tipoDeMidia,Fornecedor fornecedor) {
+    public Filme(int codFilme, String titulo, String tituloOriginal, String nomeDiretor, String nomeAtorPrincipal, String nomePremiacoes, String anoProducao, String anoLancamento, Categoria categoria, Genero genero, TipoDeMidia tipoDeMidia, Fornecedor fornecedor) {
         
         this.codFilme = codFilme;
         this.titulo = titulo;
@@ -35,8 +35,8 @@ public class Filme {
         this.nomePremiacoes = nomePremiacoes;
         this.anoProducao = anoProducao;
         this.anoLancamento = anoLancamento;
-        this.genero = genero;
         this.categoria = categoria;
+        this.genero = genero;
         this.tipoDeMidia = tipoDeMidia;
         this.fornecedor = fornecedor;
         
@@ -46,6 +46,16 @@ public class Filme {
         throws ClassNotFoundException, SQLException {
          return FilmeDAO.obterFilmes();
     }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    
+    
     
     public int getCodFilme() {
         return codFilme;
@@ -166,4 +176,10 @@ public class Filme {
     public void setCodCategoria(int codCategoria) {
         this.codCategoria = codCategoria;
     }
+    
+    public void gravar() throws SQLException, ClassNotFoundException {
+        FilmeDAO.gravar(this);    
+    }
+    
+    
 }

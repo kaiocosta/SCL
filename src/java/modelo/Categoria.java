@@ -9,16 +9,16 @@ public class Categoria {
     private int codCategoria;
     private String nome;    
     private String descricao;
-    private String periodoDeTroca;
-    private String proxCategoria;
+    private String periodoTrocaCategoria;
+    private String proximaCategoria;
     
-    public Categoria(int codCategoria, String nome, String descricao, String periodoDeTroca, String proxCategoria) {
+    public Categoria(int codCategoria, String nome, String descricao, String periodoTrocaCategoria, String proximaCategoria) {
         
         this.codCategoria = codCategoria;
         this.nome = nome;
         this.descricao = descricao;
-        this.periodoDeTroca = periodoDeTroca;
-        this.proxCategoria = proxCategoria;
+        this.periodoTrocaCategoria = periodoTrocaCategoria;
+        this.proximaCategoria = proximaCategoria;
         
     }
     
@@ -46,17 +46,17 @@ public class Categoria {
         this.descricao = descricao;
     }
 
-    public String getPeriodoDeTroca() {
-        return periodoDeTroca;
+    public String getPeriodoTrocaCategoria() {
+        return periodoTrocaCategoria;
     }
 
    
-    public String getProxCategoria() {
-        return proxCategoria;
+    public String getProximaCategoria() {
+        return proximaCategoria;
     }
 
-    public void setProxCategoria(String proxCategoria) {
-        this.proxCategoria = proxCategoria;
+    public void setProximaCategoria(String proximaCategoria) {
+        this.proximaCategoria = proximaCategoria;
     }
     
     public static List<Categoria> obterCategorias() 
@@ -64,11 +64,11 @@ public class Categoria {
          return CategoriaDAO.obterCategorias();
         }
 
-    /**
-     * @param periodoDeTroca the periodoDeTroca to set
-     */
-    public void setPeriodoDeTroca(String periodoDeTroca) {
-        this.periodoDeTroca = periodoDeTroca;
+    public void setPeriodoTrocaCategoria(String periodoTrocaCategoria) {
+        this.periodoTrocaCategoria = periodoTrocaCategoria;
     }
 
+    public void gravar() throws SQLException, ClassNotFoundException {
+        CategoriaDAO.gravar(this);    
+    }
 }

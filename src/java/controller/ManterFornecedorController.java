@@ -7,11 +7,15 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Fornecedor;
 
 /**
  *
@@ -29,13 +33,13 @@ public class ManterFornecedorController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+        throws ServletException, IOException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
         } else {
             if (acao.equals("confirmarIncluir")){
-                //confirmarIncluir(request, response);
+                confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
                     //prepararEditar(request, response);
@@ -59,12 +63,42 @@ public class ManterFornecedorController extends HttpServlet {
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response){
         try{
             request.setAttribute("operacao", "Incluir");
-            RequestDispatcher view = request.getRequestDispatcher("/manterCadastroFornecedor.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/manterFornecedor.jsp");
             view.forward(request, response);
         } catch (ServletException ex){
         } catch (IOException ex) { 
         } 
     }
+    
+     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException{
+        int codFornecedor = Integer.parseInt(request.getParameter("codFornecedor"));
+        String razaoSocial = request.getParameter("razaoSocial");
+        String nomeFantasia = request.getParameter("nomeFantasia");
+        String cnpj = request.getParameter("cnpj");
+        String nomeContato = request.getParameter("nomeContato");
+        String cep = request.getParameter("cep");
+        String bairro = request.getParameter("bairro");
+        String logradouro = request.getParameter("logradouro");
+        String numero = request.getParameter("numero");
+        String complemento = request.getParameter("complemento");
+        String estado = request.getParameter("estado");
+        String cidade = request.getParameter("cidade");
+        String telefone1 = request.getParameter("telefone1");
+        String telefone2 = request.getParameter("telefone2");
+        String celular = request.getParameter("celular");
+        String email = request.getParameter("email");
+        try{
+            Fornecedor fornecedor = new Fornecedor(codFornecedor, razaoSocial, nomeFantasia, cnpj, nomeContato, cep, bairro, logradouro, numero, complemento, estado, cidade,telefone1, telefone2, celular, email);
+            fornecedor.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaFornecedorController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ServletException ex){
+            System.out.println(ex);
+        } 
+        
+    }
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -77,7 +111,11 @@ public class ManterFornecedorController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -91,7 +129,11 @@ public class ManterFornecedorController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

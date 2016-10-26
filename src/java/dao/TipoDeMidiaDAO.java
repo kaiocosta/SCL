@@ -3,6 +3,7 @@ package dao;
 
 import static dao.BD.fecharConexao;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -37,6 +38,46 @@ public class TipoDeMidiaDAO {
     
         }
         return tiposdemidias;
+    }
+    
+    public static TipoDeMidia obterTipoDeMidia(int codTipoDeMidia) throws ClassNotFoundException, SQLException {
+        Connection conexao = null;
+        Statement comando = null;
+        TipoDeMidia tipoDeMidia = null;
+        try{
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+            ResultSet rs = comando.executeQuery("select * from tipodemidia where codTipoDeMidia = " + codTipoDeMidia);
+            rs.first();
+            
+            tipoDeMidia = new TipoDeMidia
+                          (rs.getInt("codTipoDeMidia"),
+                           rs.getString("nome"),
+                           rs.getString("descricao"));
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+        }
+        return tipoDeMidia;
+    }
+    
+    public static void gravar(TipoDeMidia tipoDeMidia) throws SQLException, ClassNotFoundException{
+        Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "insert into tipodemidia (codTipoDeMidia, nome, descricao) values (?,?,?)";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, tipoDeMidia.getCodTipoDeMidia());
+            comando.setString(2, tipoDeMidia.getNome());
+            comando.setString(3, tipoDeMidia.getDescricao());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
 }

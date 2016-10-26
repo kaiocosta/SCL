@@ -36,7 +36,7 @@ public class ConsultaTipoDeMidiaController extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            request.setAttribute("midias", TipoDeMidia.obterTipoDeMidias());
+            request.setAttribute("tipodemidia", TipoDeMidia.obterTipoDeMidias());
             RequestDispatcher view = 
                     request.getRequestDispatcher("/consultaTipoDeMidia.jsp");
             view.forward(request, response);

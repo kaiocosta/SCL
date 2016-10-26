@@ -20,13 +20,16 @@
     <table border = 1>
         <th>Cod.</th>
         <th>Nome</th>
+        <th>Descrição</th>
+        
         <th colspan="2">Ação</th>
-      <c:forEach items="${tipoDeMidia}" var="tipoDeMidia">
+      <c:forEach items="${tipodemidia}" var="tipoDeMidia">
         <tr>
           <td><c:out value="${tipoDeMidia.codTipoDeMidia}"></c:out></td>
           <td><c:out value="${tipoDeMidia.nome}"></c:out></td>
-          <td><a href="ManterTipoDeMidiaController?acao=prepararEditar&codCategoria=<c:out value="${tipoDeMidia.codTipoDeMidia}"></c:out>">Editar</a></td>
-          <td><a href="ManterTipoDeMidiaController?acao=prepararExcluir&nome=<c:out value="${tipoDeMidia.nome}"></c:out>">Excluir</a></td>
+          <td><c:out value="${tipoDeMidia.descricao}"></c:out></td>
+          <td><a href="ManterTipoDeMidiaController?acao=prepararEditar&codTipoDeMidia=<c:out value="${tipoDeMidia.codTipoDeMidia}"></c:out>">Editar</a></td>
+          <td><a href="ManterTipoDeMidiaController?acao=prepararExcluir&codTipoDeMidia=<c:out value="${tipoDeMidia.codTipoDeMidia}"></c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
        </table></br>  

@@ -35,7 +35,7 @@ public class ConsultaUsuarioController extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            request.setAttribute("usuario", Usuario.obterUsuarios());
+            request.setAttribute("usuarios", Usuario.obterUsuarios());
             RequestDispatcher view = 
                     request.getRequestDispatcher("/consultaUsuario.jsp");
             view.forward(request, response);

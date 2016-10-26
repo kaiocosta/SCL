@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,7 +34,7 @@ public class ConsultaCategoriaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         try {
-            request.setAttribute("categoria", Categoria.obterCategorias());
+            request.setAttribute("categorias", Categoria.obterCategorias());
             RequestDispatcher view = 
                     request.getRequestDispatcher("/consultaCategoria.jsp");
             view.forward(request, response);

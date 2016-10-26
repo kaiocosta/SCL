@@ -7,11 +7,15 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Usuario;
 
 /**
  *
@@ -29,13 +33,13 @@ public class ManterUsuarioController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+        throws ServletException, IOException, ClassNotFoundException, SQLException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
         } else {
             if (acao.equals("confirmarIncluir")){
-                //confirmarIncluir(request, response);
+                confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
                     //prepararEditar(request, response);
@@ -77,7 +81,13 @@ public class ManterUsuarioController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -91,7 +101,13 @@ public class ManterUsuarioController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -103,5 +119,36 @@ public class ManterUsuarioController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+   public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
+        int codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
+        String nome = request.getParameter("nome");
+        String sexo = request.getParameter("sexo");
+        String dataDeNasc = request.getParameter("dataDeNasc");
+        String estadoCivil = request.getParameter("estadoCivil");
+        String cpf = request.getParameter("cpf");
+        String rg = request.getParameter("rg");
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        String cep = request.getParameter("cep");
+        String bairro = request.getParameter("bairro");
+        String logradouro = request.getParameter("logradouro");
+        String numero = request.getParameter("numero");
+        String complemento = request.getParameter("complemento");
+        String estado = request.getParameter("estado");
+        String cidade = request.getParameter("cidade");
+        String telefone1 = request.getParameter("telefone1");
+        String telefone2 = request.getParameter("telefone2");
+        String celular = request.getParameter("celular");
+        String email = request.getParameter("email");
+        
+        try{
+            Usuario usuario = new Usuario(codUsuario, nome, sexo, dataDeNasc, estadoCivil, cpf, rg, login, senha, cep, bairro, logradouro, numero, complemento, estado, cidade, telefone1, telefone2, celular, email);
+            usuario.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaUsuarioController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ServletException ex){
+        }
+    }
 
 }

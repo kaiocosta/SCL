@@ -36,7 +36,7 @@ public class ConsultaFornecedorController extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            request.setAttribute("fornecedor", Fornecedor.obterFornecedores());
+            request.setAttribute("fornecedores", Fornecedor.obterFornecedores());
             RequestDispatcher view = 
                     request.getRequestDispatcher("/consultaFornecedores.jsp");
             view.forward(request, response);

@@ -13,14 +13,29 @@
     <h1>Pesquisa Filme</h1>
     <table border = 1>
         <th>Cod.</th>
-        <th>Nome</th>
+        <th>Título</th>
+        <th>Título Original</th>
+        <th>Nome do Diretor</th>
+        <th>Ator Principal</th>
+        <th>Premiações</th>
+        <th>Ano de Produção</th>
+        <th>Ano de Lançamento</th>
+        
         <th colspan="2">Ação</th>
-      <c:forEach items="${filme}" var="filme">
+      <c:forEach items="${filmes}" var="filme">
         <tr>
           <td><c:out value="${filme.codFilme}"></c:out></td>
           <td><c:out value="${filme.titulo}"></c:out></td>
-          <td><a href="ManterFilmeController?acao=prepararEditar&id_Filme=<c:out value="${filme.codFilme}"></c:out>">Editar</a></td>
-          <td><a href="ManterFilmeController?acao=prepararExcluir&titulo=<c:out value="${filme.titulo}"></c:out>">Excluir</a></td>
+          <td><c:out value="${filme.tituloOriginal}"></c:out></td>
+          <td><c:out value="${filme.nomeDiretor}"></c:out></td>
+          <td><c:out value="${filme.nomeAtorPrincipal}"></c:out></td>
+          <td><c:out value="${filme.nomePremiacoes}"></c:out></td>
+          <td><c:out value="${filme.anoProducao}"></c:out></td>
+          <td><c:out value="${filme.anoLancamento}"></c:out></td>
+          
+          
+          <td><a href="ManterFilmeController?acao=prepararEditar&codFilme=<c:out value="${filme.codFilme}"></c:out>">Editar</a></td>
+          <td><a href="ManterFilmeController?acao=prepararExcluir&codFilme=<c:out value="${filme.codFilme}"></c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
        </table></br>  

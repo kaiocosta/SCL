@@ -55,4 +55,8 @@ public class Genero {
         this.codGenero = codGenero;
     }
     
+     public void gravar() throws SQLException, ClassNotFoundException{
+        GeneroDAO.gravar(this);
+    }
+     
 }

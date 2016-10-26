@@ -47,4 +47,8 @@ public class TipoDeMidia {
         throws ClassNotFoundException, SQLException {
          return TipoDeMidiaDAO.obterTipoDeMidias();
     }
+    
+    public void gravar() throws SQLException, ClassNotFoundException{
+        TipoDeMidiaDAO.gravar(this);
+    }
 }

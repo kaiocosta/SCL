@@ -11,11 +11,14 @@
     <table border = 1>
       <th>Cod.</th>
       <th>Nome</th>
+      <th>Descrição</th>
+      
       <th colspan="2">Ação</th>
       <c:forEach items="${generos}" var="genero">
         <tr>
           <td><c:out value="${genero.codGenero}"></c:out></td>
           <td><c:out value="${genero.nome}"></c:out></td>
+          <td><c:out value="${genero.descricao}"></c:out></td>
           <td><a href="ManterGeneroController?acao=prepararEditar&codGenero=<c:out value="${genero.codGenero}"> </c:out>">Editar</a></td>
           <td><a href="ManterGeneroController?acao=prepararExcluir&codGenero=<c:out value="${genero.codGenero}"> </c:out>">Excluir</a></td>
         </tr>

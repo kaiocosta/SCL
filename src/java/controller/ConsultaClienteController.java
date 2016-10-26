@@ -35,7 +35,7 @@ public class ConsultaClienteController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         try {
-            request.setAttribute("cliente", Cliente.obterClientes());
+            request.setAttribute("clientes", Cliente.obterClientes());
             RequestDispatcher view = 
                     request.getRequestDispatcher("/consultaCliente.jsp");
             view.forward(request, response);

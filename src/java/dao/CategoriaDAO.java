@@ -7,6 +7,7 @@ package dao;
 
 import static dao.BD.fecharConexao;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,11 +21,11 @@ public class CategoriaDAO {
     public static List<Categoria> obterCategorias() throws ClassNotFoundException, SQLException{
         Connection conexao = null;
         Statement comando = null;
-        List<Categoria> categorias = new ArrayList<Categoria>();
+        List<Categoria> categorias = new ArrayList();
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from categoria");
+            ResultSet rs = comando.executeQuery("select * from categorias");
             while (rs.next()){
                 Categoria categoria = new Categoria
                                    (rs.getInt("codCategoria"),
@@ -44,6 +45,50 @@ public class CategoriaDAO {
     
         }
         return categorias;
+    }
+    
+    public static Categoria obterCategoria(int codCategoria) throws ClassNotFoundException, SQLException {
+        Connection conexao = null;
+        Statement comando = null;
+        Categoria categoria = null;
+        try{
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+            ResultSet rs = comando.executeQuery("select * from categorias where codCategoria = " + codCategoria);
+            rs.first();
+            
+            categoria = new Categoria(rs.getInt("codCategoria"),
+                                    rs.getString("nome"),
+                                    rs.getString("descricao"),
+                                    rs.getString("periodoTrocaCategoria"),
+                                    rs.getString("proximaCategoria"));
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+        }
+        return categoria;
+    }    
+            
+    public static void gravar(Categoria categoria) throws SQLException, ClassNotFoundException {
+       Connection conexao = null;
+       try{
+           conexao = BD.getConexao();
+           String sql = "insert into categorias (codCategoria, nome, descricao, periodoTrocaCategoria, proximaCategoria)values (?, ?, ?, ?, ?)";
+           PreparedStatement comando = conexao.prepareStatement(sql);
+           comando.setInt(1, categoria.getCodCategoria());
+           comando.setString(2, categoria.getNome());
+           comando.setString(3, categoria.getDescricao());
+           comando.setString(4, categoria.getPeriodoTrocaCategoria());
+           comando.setString(5, categoria.getProximaCategoria());
+           comando.execute();
+           comando.close();
+           conexao.close();
+    } catch (SQLException e) {
+        throw e;
+    }
+    
     }
     
 }
