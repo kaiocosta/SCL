@@ -42,7 +42,7 @@ public class ManterClienteController extends HttpServlet {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
-                    //prepararEditar(request, response);
+                    prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
                         //confirmarEditar(request, response);
@@ -98,6 +98,21 @@ public class ManterClienteController extends HttpServlet {
         } catch (ServletException ex){
         }
     }    
+    
+    private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("cliente", Cliente.obterClientes());
+            int codCliente = Integer.parseInt(request.getParameter("codCliente"));
+            Cliente cliente = Cliente.obterCliente(codCliente);
+            request.setAttribute("cliente", cliente);
+            RequestDispatcher view = request.getRequestDispatcher("/manterCliente.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

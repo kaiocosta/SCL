@@ -32,7 +32,7 @@ public class ManterCategoriaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException, ClassNotFoundException {
+        throws ServletException, IOException, ClassNotFoundException, SQLException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
@@ -41,7 +41,7 @@ public class ManterCategoriaController extends HttpServlet {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
-                    //prepararEditar(request, response);
+                    prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
                         //confirmarEditar(request, response);
@@ -84,6 +84,22 @@ public class ManterCategoriaController extends HttpServlet {
         } 
         
     }
+    
+    private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("categorias", Categoria.obterCategorias());
+            int codCategoria = Integer.parseInt(request.getParameter("codCategoria"));
+            Categoria categoria = Categoria.obterCategoria(codCategoria);
+            request.setAttribute("categoria", categoria);
+            RequestDispatcher view = request.getRequestDispatcher("/manterCategoria.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -99,6 +115,8 @@ public class ManterCategoriaController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterCategoriaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(ManterCategoriaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -118,6 +136,8 @@ public class ManterCategoriaController extends HttpServlet {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ManterCategoriaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterCategoriaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -130,5 +150,7 @@ public class ManterCategoriaController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    
 
 }

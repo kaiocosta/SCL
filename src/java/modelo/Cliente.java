@@ -205,4 +205,9 @@ public class Cliente {
     public void gravar() throws SQLException, ClassNotFoundException {
         ClienteDAO.gravar(this);    
     }
+    
+    public static Cliente obterCliente(int codCliente) 
+        throws ClassNotFoundException, SQLException {
+            return ClienteDAO.obterCliente(codCliente);
+        }
 }

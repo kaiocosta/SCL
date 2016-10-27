@@ -42,7 +42,7 @@ public class ManterTipoDeMidiaController extends HttpServlet {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
-                    //prepararEditar(request, response);
+                    prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
                         //confirmarEditar(request, response);
@@ -84,6 +84,22 @@ public class ManterTipoDeMidiaController extends HttpServlet {
         } catch (ServletException ex){
         }
     }
+    
+    private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("tipoDeMidia", TipoDeMidia.obterTipoDeMidias());
+            int codTipoDeMidia = Integer.parseInt(request.getParameter("codTipoDeMidia"));
+            TipoDeMidia tipoDeMidia = TipoDeMidia.obterTipoDeMidia(codTipoDeMidia);
+            request.setAttribute("tipoDeMidia", tipoDeMidia);
+            RequestDispatcher view = request.getRequestDispatcher("/manterTipoDeMidia.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

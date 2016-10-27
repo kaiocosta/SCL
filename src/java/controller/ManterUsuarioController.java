@@ -42,7 +42,7 @@ public class ManterUsuarioController extends HttpServlet {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
-                    //prepararEditar(request, response);
+                    prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
                         //confirmarEditar(request, response);
@@ -69,6 +69,54 @@ public class ManterUsuarioController extends HttpServlet {
         } catch (IOException ex) { 
         } 
     }
+    
+    public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
+        int codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
+        String nome = request.getParameter("nome");
+        String sexo = request.getParameter("sexo");
+        String dataDeNasc = request.getParameter("dataDeNasc");
+        String estadoCivil = request.getParameter("estadoCivil");
+        String cpf = request.getParameter("cpf");
+        String rg = request.getParameter("rg");
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        String cep = request.getParameter("cep");
+        String bairro = request.getParameter("bairro");
+        String logradouro = request.getParameter("logradouro");
+        String numero = request.getParameter("numero");
+        String complemento = request.getParameter("complemento");
+        String estado = request.getParameter("estado");
+        String cidade = request.getParameter("cidade");
+        String telefone1 = request.getParameter("telefone1");
+        String telefone2 = request.getParameter("telefone2");
+        String celular = request.getParameter("celular");
+        String email = request.getParameter("email");
+        
+        try{
+            Usuario usuario = new Usuario(codUsuario, nome, sexo, dataDeNasc, estadoCivil, cpf, rg, login, senha, cep, bairro, logradouro, numero, complemento, estado, cidade, telefone1, telefone2, celular, email);
+            usuario.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaUsuarioController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ServletException ex){
+        }
+    }
+   
+    private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("usuario", Usuario.obterUsuarios());
+            int codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
+            Usuario usuario = Usuario.obterUsuario(codUsuario);
+            request.setAttribute("usuario", usuario);
+            RequestDispatcher view = request.getRequestDispatcher("/manterUsuario.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -119,36 +167,4 @@ public class ManterUsuarioController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-   public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
-        int codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
-        String nome = request.getParameter("nome");
-        String sexo = request.getParameter("sexo");
-        String dataDeNasc = request.getParameter("dataDeNasc");
-        String estadoCivil = request.getParameter("estadoCivil");
-        String cpf = request.getParameter("cpf");
-        String rg = request.getParameter("rg");
-        String login = request.getParameter("login");
-        String senha = request.getParameter("senha");
-        String cep = request.getParameter("cep");
-        String bairro = request.getParameter("bairro");
-        String logradouro = request.getParameter("logradouro");
-        String numero = request.getParameter("numero");
-        String complemento = request.getParameter("complemento");
-        String estado = request.getParameter("estado");
-        String cidade = request.getParameter("cidade");
-        String telefone1 = request.getParameter("telefone1");
-        String telefone2 = request.getParameter("telefone2");
-        String celular = request.getParameter("celular");
-        String email = request.getParameter("email");
-        
-        try{
-            Usuario usuario = new Usuario(codUsuario, nome, sexo, dataDeNasc, estadoCivil, cpf, rg, login, senha, cep, bairro, logradouro, numero, complemento, estado, cidade, telefone1, telefone2, celular, email);
-            usuario.gravar();
-            RequestDispatcher view = request.getRequestDispatcher("ConsultaUsuarioController");
-            view.forward(request, response);
-        } catch (IOException | SQLException | ServletException ex){
-        }
-    }
-
 }

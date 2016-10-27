@@ -24,6 +24,12 @@ public class Genero {
          return GeneroDAO.obterGeneros();
     }
     
+    
+    public static Genero obterGenero(int codGenero) 
+        throws ClassNotFoundException, SQLException {
+            return GeneroDAO.obterGenero(codGenero);
+        }
+    
     public String getNome() {
         return nome;
     }
@@ -58,5 +64,5 @@ public class Genero {
      public void gravar() throws SQLException, ClassNotFoundException{
         GeneroDAO.gravar(this);
     }
-     
+    
 }

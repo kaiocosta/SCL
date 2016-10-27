@@ -42,7 +42,7 @@ public class ManterGeneroController extends HttpServlet {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
-                    //prepararEditar(request, response);
+                    prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
                         //confirmarEditar(request, response);
@@ -84,7 +84,23 @@ public class ManterGeneroController extends HttpServlet {
         } catch (ServletException ex){
         }
     }    
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
+    private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("generos", Genero.obterGeneros());
+            int codGenero = Integer.parseInt(request.getParameter("codGenero"));
+            Genero genero = Genero.obterGenero(codGenero);
+            request.setAttribute("genero", genero);
+            RequestDispatcher view = request.getRequestDispatcher("/manterGenero.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+    
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

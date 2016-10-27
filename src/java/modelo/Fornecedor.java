@@ -52,7 +52,12 @@ public class Fornecedor {
         
         return FornecedorDAO.obterFornecedores();
     }
-
+    
+    public static Fornecedor obterFornecedor(int codFornecedor) 
+        throws ClassNotFoundException, SQLException {
+            return FornecedorDAO.obterFornecedor(codFornecedor);
+        }
+    
     public String getRazaoSocial() {
         return razaoSocial;
     }

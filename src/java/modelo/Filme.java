@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Filme {
+
+    
     
     private int codFilme;
     private String titulo;
@@ -46,7 +48,12 @@ public class Filme {
         throws ClassNotFoundException, SQLException {
          return FilmeDAO.obterFilmes();
     }
-
+    
+    public static Filme obterFilme(int codFilme) 
+        throws ClassNotFoundException, SQLException {
+            return FilmeDAO.obterFilme(codFilme);
+        }
+    
     public Categoria getCategoria() {
         return categoria;
     }

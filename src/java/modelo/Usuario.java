@@ -7,11 +7,6 @@ import java.util.List;
 
 public class Usuario{
 
-    public static List<Usuario> obterUsuarios() 
-        throws ClassNotFoundException, SQLException {
-         return UsuarioDAO.obterUsuarios();
-    }
-    
     private int codUsuario;
     private String nome;
     private String sexo;
@@ -228,5 +223,14 @@ public class Usuario{
     public void setRg(String rg) {
         this.rg = rg;
     }
-
+    
+    public static List<Usuario> obterUsuarios() 
+        throws ClassNotFoundException, SQLException {
+         return UsuarioDAO.obterUsuarios();
+    }
+    public static Usuario obterUsuario(int codUsuario) 
+        throws ClassNotFoundException, SQLException {
+            return UsuarioDAO.obterUsuario(codUsuario);
+        }
+    
 }

@@ -63,7 +63,13 @@ public class Categoria {
         throws ClassNotFoundException, SQLException {
          return CategoriaDAO.obterCategorias();
         }
-
+    
+    public static Categoria obterCategoria(int codCategoria) 
+        throws ClassNotFoundException, SQLException {
+            return CategoriaDAO.obterCategoria(codCategoria);
+        }
+    
+    
     public void setPeriodoTrocaCategoria(String periodoTrocaCategoria) {
         this.periodoTrocaCategoria = periodoTrocaCategoria;
     }

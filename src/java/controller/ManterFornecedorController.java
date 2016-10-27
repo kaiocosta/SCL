@@ -33,7 +33,7 @@ public class ManterFornecedorController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException, ClassNotFoundException {
+        throws ServletException, IOException, ClassNotFoundException, SQLException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
@@ -42,7 +42,7 @@ public class ManterFornecedorController extends HttpServlet {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
-                    //prepararEditar(request, response);
+                    prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
                         //confirmarEditar(request, response);
@@ -98,7 +98,22 @@ public class ManterFornecedorController extends HttpServlet {
         
     }
     
-    
+    private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("fornecedor", Fornecedor.obterFornecedores());
+            int codFornecedor = Integer.parseInt(request.getParameter("codFornecedor"));
+            Fornecedor fornecedor = Fornecedor.obterFornecedor(codFornecedor);
+            request.setAttribute("fornecedor", fornecedor);
+            RequestDispatcher view = request.getRequestDispatcher("/manterFornecedor.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+
+     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -114,6 +129,8 @@ public class ManterFornecedorController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(ManterFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -132,6 +149,8 @@ public class ManterFornecedorController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(ManterFornecedorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

@@ -46,7 +46,7 @@ public class ManterFilmeController extends HttpServlet {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararEditar")){
-                    //prepararEditar(request, response);
+                    prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
                         //confirmarEditar(request, response);
@@ -93,8 +93,6 @@ public class ManterFilmeController extends HttpServlet {
         Genero genero = new Genero(Integer.parseInt(request.getParameter("codGenero")), null, null);
         TipoDeMidia tipoDeMidia = new TipoDeMidia(Integer.parseInt(request.getParameter("codTipoDeMidia")), null, null);
         Fornecedor fornecedor = new Fornecedor(Integer.parseInt(request.getParameter("codFornecedor")), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-        
-        
         try{
             Filme filme = new Filme(codFilme, titulo, tituloOriginal, nomeDiretor, nomeAtorPrincipal, nomePremiacoes, anoProducao, anoLancamento, categoria, genero, tipoDeMidia, fornecedor);
             filme.gravar();
@@ -104,6 +102,22 @@ public class ManterFilmeController extends HttpServlet {
         } catch (ServletException ex){
         }
     }    
+    
+    private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("filme", Filme.obterFilmes());
+            int codFilme = Integer.parseInt(request.getParameter("codFilme"));
+            Filme filme = Filme.obterFilme(codFilme);
+            request.setAttribute("filme", filme);
+            RequestDispatcher view = request.getRequestDispatcher("/manterFilme.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
