@@ -91,7 +91,7 @@ public class ManterCategoriaController extends HttpServlet {
             request.setAttribute("categorias", Categoria.obterCategorias());
             int codCategoria = Integer.parseInt(request.getParameter("codCategoria"));
             Categoria categoria = Categoria.obterCategoria(codCategoria);
-            request.setAttribute("categoria", categoria);
+            request.setAttribute("categorias", categoria);
             RequestDispatcher view = request.getRequestDispatcher("/manterCategoria.jsp");
             view.forward(request, response);
         } catch (ServletException ex){
