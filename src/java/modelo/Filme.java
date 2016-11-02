@@ -188,5 +188,7 @@ public class Filme {
         FilmeDAO.gravar(this);    
     }
     
-    
+    public void alterar() throws SQLException, ClassNotFoundException {
+        FilmeDAO.alterar(this);
+    }
 }

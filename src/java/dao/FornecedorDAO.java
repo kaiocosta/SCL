@@ -125,4 +125,37 @@ public class FornecedorDAO {
         throw e;
     }
     }
+    
+    public static void alterar(Fornecedor fornecedor) throws SQLException, ClassNotFoundException {
+       Connection conexao = null;
+       try{
+           conexao = BD.getConexao();
+           String sql = " update fornecedores set razaoSocial = ?, nomeFantasia = ?, cnpj = ?, nomeCOntato = ?, "
+                   + "cep = ?, bairro = ?, logradouro = ?, numero = ?, complemento = ?, estado = ?, cidade = ?, "
+                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ?, codFornecedor = ? ";
+           PreparedStatement comando = conexao.prepareStatement(sql);
+           comando.setString(1, fornecedor.getRazaoSocial());
+           comando.setString(2, fornecedor.getNomeFantasia());
+           comando.setString(3, fornecedor.getCnpj());
+           comando.setString(4, fornecedor.getNomeContato());
+           comando.setString(5, fornecedor.getCep());
+           comando.setString(6, fornecedor.getBairro());
+           comando.setString(7, fornecedor.getLogradouro());
+           comando.setString(8, fornecedor.getNumero());
+           comando.setString(9, fornecedor.getComplemento());
+           comando.setString(10, fornecedor.getEstado());
+           comando.setString(11, fornecedor.getCidade());
+           comando.setString(12, fornecedor.getTelefone1());
+           comando.setString(13, fornecedor.getTelefone2());
+           comando.setString(14, fornecedor.getCelular());
+           comando.setString(15, fornecedor.getEmail());
+           comando.setInt(16, fornecedor.getCodFornecedor());
+           
+           comando.execute();
+           comando.close();
+           conexao.close();
+    } catch (SQLException e) {
+        throw e;
+    }
+    }
 }

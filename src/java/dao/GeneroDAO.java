@@ -80,6 +80,22 @@ public class GeneroDAO {
         }
     }
     
+     public static void alterar(Genero genero) throws SQLException, ClassNotFoundException{
+        Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "update generos set nome = ?, descricao = ?, codGenero = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, genero.getNome());
+            comando.setString(2, genero.getDescricao());
+            comando.setInt(3, genero.getCodGenero());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
 }
 
 

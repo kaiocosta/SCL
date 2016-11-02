@@ -45,7 +45,7 @@ public class ManterGeneroController extends HttpServlet {
                     prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
-                        //confirmarEditar(request, response);
+                        confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
                             //prepararExcluir(request, response);
@@ -100,6 +100,19 @@ public class ManterGeneroController extends HttpServlet {
         }
     }
     
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
+        int codGenero = Integer.parseInt(request.getParameter("codGenero"));
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        try{
+            Genero genero = new Genero(codGenero, nome, descricao);
+            genero.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaGeneroController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (ServletException ex){
+        }
+    }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

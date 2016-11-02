@@ -45,7 +45,7 @@ public class ManterClienteController extends HttpServlet {
                     prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
-                        //confirmarEditar(request, response);
+                        confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
                             //prepararExcluir(request, response);
@@ -114,6 +114,34 @@ public class ManterClienteController extends HttpServlet {
         }
     }
     
+    private void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+        int codCliente = Integer.parseInt(request.getParameter("codCliente"));
+        String nome = request.getParameter("nome");
+        String sexo = request.getParameter("sexo");
+        String dataDeNasc = request.getParameter("dataDeNasc");
+        String estadoCivil = request.getParameter("estadoCivil");        
+        String cpf = request.getParameter("cpf");       
+        String rg = request.getParameter("rg");                            
+        String cep = request.getParameter("cep");                            
+        String bairro = request.getParameter("bairro");                            
+        String logradouro = request.getParameter("logradouro");                            
+        String numero = request.getParameter("numero");                            
+        String complemento = request.getParameter("complemento");                            
+        String estado = request.getParameter("estado");                            
+        String cidade = request.getParameter("cidade");                           
+        String telefone1 = request.getParameter("telefone1");                            
+        String telefone2 = request.getParameter("telefone2");                            
+        String celular = request.getParameter("celular");                            
+        String email = request.getParameter("email");                            
+        try{
+            Cliente cliente = new Cliente(codCliente, nome, sexo, dataDeNasc, estadoCivil, cpf, rg, cep, bairro, logradouro, numero, complemento, estado, cidade, telefone1, telefone2, celular, email);
+            cliente.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaClienteController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (ServletException ex){
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

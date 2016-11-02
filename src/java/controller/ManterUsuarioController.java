@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
 import java.io.IOException;
@@ -45,7 +41,7 @@ public class ManterUsuarioController extends HttpServlet {
                     prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
-                        //confirmarEditar(request, response);
+                        confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
                             //prepararExcluir(request, response);
@@ -115,7 +111,37 @@ public class ManterUsuarioController extends HttpServlet {
         } catch (ClassNotFoundException ex){
         }
     }
-
+        
+        public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
+        int codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
+        String nome = request.getParameter("nome");
+        String sexo = request.getParameter("sexo");
+        String dataDeNasc = request.getParameter("dataDeNasc");
+        String estadoCivil = request.getParameter("estadoCivil");
+        String cpf = request.getParameter("cpf");
+        String rg = request.getParameter("rg");
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        String cep = request.getParameter("cep");
+        String bairro = request.getParameter("bairro");
+        String logradouro = request.getParameter("logradouro");
+        String numero = request.getParameter("numero");
+        String complemento = request.getParameter("complemento");
+        String estado = request.getParameter("estado");
+        String cidade = request.getParameter("cidade");
+        String telefone1 = request.getParameter("telefone1");
+        String telefone2 = request.getParameter("telefone2");
+        String celular = request.getParameter("celular");
+        String email = request.getParameter("email");
+        
+        try{
+            Usuario usuario = new Usuario(codUsuario, nome, sexo, dataDeNasc, estadoCivil, cpf, rg, login, senha, cep, bairro, logradouro, numero, complemento, estado, cidade, telefone1, telefone2, celular, email);
+            usuario.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaUsuarioController");
+            view.forward(request, response);
+        } catch (IOException | ServletException ex){
+        }
+        }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

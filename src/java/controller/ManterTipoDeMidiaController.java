@@ -45,7 +45,7 @@ public class ManterTipoDeMidiaController extends HttpServlet {
                     prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
-                        //confirmarEditar(request, response);
+                        confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
                             //prepararExcluir(request, response);
@@ -97,6 +97,21 @@ public class ManterTipoDeMidiaController extends HttpServlet {
         } catch (ServletException ex){
         } catch (IOException ex){
         } catch (ClassNotFoundException ex){
+        }
+    }
+    
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
+        int codTipoDeMidia = Integer.parseInt(request.getParameter("codTipoDeMidia"));
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        try{
+           TipoDeMidia tipoDeMidia = new TipoDeMidia(codTipoDeMidia, nome, descricao);
+            tipoDeMidia.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaTipoDeMidiaController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (SQLException ex){
+        } catch (ServletException ex){
         }
     }
     

@@ -80,4 +80,21 @@ public class TipoDeMidiaDAO {
         }
     }
     
+    public static void alterar(TipoDeMidia tipoDeMidia) throws SQLException, ClassNotFoundException{
+        Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "update tipodemidia set nome = ?, descricao = ?, codTipoDeMidia = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, tipoDeMidia.getNome());
+            comando.setString(2, tipoDeMidia.getDescricao());
+            comando.setInt(3, tipoDeMidia.getCodTipoDeMidia());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+    
 }

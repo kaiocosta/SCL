@@ -139,6 +139,42 @@ public class UsuarioDAO {
     }
     }
     
+    public static void alterar(Usuario usuario) throws SQLException, ClassNotFoundException {
+       Connection conexao = null;
+       try{
+           conexao = BD.getConexao();
+           String sql = "update usuarios set nome = ?, sexo = ?, dataDeNasc = ?, estadoCivil = ?, cpf = ?, rg = ?, login = ?, senha = ?, "
+                   + "cep = ?, bairro = ?, logradouro = ?, numero = ?, complemento = ?, estado = ?, cidade = ?, "
+                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ?, codUsuario = ?";
+           PreparedStatement comando = conexao.prepareStatement(sql);
+           comando.setString(1, usuario.getNome());
+           comando.setString(2, usuario.getSexo());
+           comando.setString(3, usuario.getDataDeNasc());
+           comando.setString(4, usuario.getEstadoCivil());
+           comando.setString(5, usuario.getCpf());
+           comando.setString(6, usuario.getRg());
+           comando.setString(7, usuario.getLogin());
+           comando.setString(8, usuario.getSenha());
+           comando.setString(9, usuario.getCep());
+           comando.setString(10, usuario.getBairro());
+           comando.setString(11, usuario.getLogradouro());
+           comando.setString(12, usuario.getNumero());
+           comando.setString(13, usuario.getComplemento());
+           comando.setString(14, usuario.getEstado());
+           comando.setString(15, usuario.getCidade());
+           comando.setString(16, usuario.getTelefone1());
+           comando.setString(17, usuario.getTelefone2());
+           comando.setString(18, usuario.getCelular());
+           comando.setString(19, usuario.getEmail());
+           comando.setInt(20, usuario.getCodUsuario());
+          
+           comando.execute();
+           comando.close();
+           conexao.close();
+    } catch (SQLException e) {
+        throw e;
+    }
+    }
     
 }
 

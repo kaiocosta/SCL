@@ -45,7 +45,7 @@ public class ManterFornecedorController extends HttpServlet {
                     prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
-                        //confirmarEditar(request, response);
+                        confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
                             //prepararExcluir(request, response);
@@ -101,7 +101,7 @@ public class ManterFornecedorController extends HttpServlet {
     private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
-            request.setAttribute("fornecedor", Fornecedor.obterFornecedores());
+            request.setAttribute("fornecedores", Fornecedor.obterFornecedores());
             int codFornecedor = Integer.parseInt(request.getParameter("codFornecedor"));
             Fornecedor fornecedor = Fornecedor.obterFornecedor(codFornecedor);
             request.setAttribute("fornecedor", fornecedor);
@@ -113,6 +113,33 @@ public class ManterFornecedorController extends HttpServlet {
         }
     }
 
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException{
+        int codFornecedor = Integer.parseInt(request.getParameter("codFornecedor"));
+        String razaoSocial = request.getParameter("razaoSocial");
+        String nomeFantasia = request.getParameter("nomeFantasia");
+        String cnpj = request.getParameter("cnpj");
+        String nomeContato = request.getParameter("nomeContato");
+        String cep = request.getParameter("cep");
+        String bairro = request.getParameter("bairro");
+        String logradouro = request.getParameter("logradouro");
+        String numero = request.getParameter("numero");
+        String complemento = request.getParameter("complemento");
+        String estado = request.getParameter("estado");
+        String cidade = request.getParameter("cidade");
+        String telefone1 = request.getParameter("telefone1");
+        String telefone2 = request.getParameter("telefone2");
+        String celular = request.getParameter("celular");
+        String email = request.getParameter("email");
+        try{
+            Fornecedor fornecedor = new Fornecedor(codFornecedor, razaoSocial, nomeFantasia, cnpj, nomeContato, cep, bairro, logradouro, numero, complemento, estado, cidade,telefone1, telefone2, celular, email);
+            fornecedor.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaFornecedorController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ServletException ex){
+            System.out.println(ex);
+        } 
+        
+    }
      
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

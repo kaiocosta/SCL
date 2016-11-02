@@ -189,4 +189,8 @@ public class Fornecedor {
     public void gravar() throws SQLException, ClassNotFoundException {
         FornecedorDAO.gravar(this);    
     }
+    
+    public void alterar() throws SQLException, ClassNotFoundException {
+        FornecedorDAO.alterar(this);    
+    }
 }

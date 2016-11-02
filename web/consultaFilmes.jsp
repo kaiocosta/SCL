@@ -32,6 +32,10 @@
           <td><c:out value="${filme.nomePremiacoes}"></c:out></td>
           <td><c:out value="${filme.anoProducao}"></c:out></td>
           <td><c:out value="${filme.anoLancamento}"></c:out></td>
+          <td><c:out value="${filme.getCategoria().getCodCategoria()}"></c:out></td>
+          <td><c:out value="${filme.filme.getGenero().getCodGenero()}"></c:out></td>
+          <td><c:out value="${filme.filme.getTipoDeMidia().getCodTipoDeMidia()}"></c:out></td>
+          <td><c:out value="${filme.filme.getFornecedor().getCodFornecedor()}"></c:out></td>
           
           
           <td><a href="ManterFilmeController?acao=prepararEditar&codFilme=<c:out value="${filme.codFilme}"></c:out>">Editar</a></td>

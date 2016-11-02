@@ -134,4 +134,39 @@ public class ClienteDAO {
     }
     }
     
+    public static void alterar(Cliente cliente) throws SQLException, ClassNotFoundException {
+    Connection conexao = null;
+       try{
+           conexao = BD.getConexao();
+           String sql = "update clientes set nome = ?, sexo = ?, dataDeNasc = ?, estadoCivil = ?, cpf = ?, rg = ?, "
+                   + "cep = ?, bairro = ?, logradouro = ?, numero = ?, complemento = ?, estado = ?, cidade = ?, "
+                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ?,  codCliente = ? ";
+           
+           PreparedStatement comando = conexao.prepareStatement(sql);
+           comando.setString(1, cliente.getNome());
+           comando.setString(2, cliente.getSexo());
+           comando.setString(3, cliente.getDataDeNasc());
+           comando.setString(4, cliente.getEstadoCivil());
+           comando.setString(5, cliente.getCpf());
+           comando.setString(6, cliente.getRg());
+           comando.setString(7, cliente.getCep());
+           comando.setString(8, cliente.getBairro());
+           comando.setString(9, cliente.getLogradouro());
+           comando.setString(10, cliente.getNumero());
+           comando.setString(11, cliente.getComplemento());
+           comando.setString(12, cliente.getEstado());
+           comando.setString(13, cliente.getCidade());
+           comando.setString(14, cliente.getTelefone1());
+           comando.setString(15, cliente.getTelefone2());
+           comando.setString(16, cliente.getCelular());
+           comando.setString(17, cliente.getEmail());
+           comando.setInt(18, cliente.getCodCliente());
+           
+           comando.execute();
+           comando.close();
+           conexao.close();
+    } catch (SQLException e) {
+        throw e;
+    }
+    }
 }

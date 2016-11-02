@@ -56,4 +56,8 @@ public class TipoDeMidia {
     public void gravar() throws SQLException, ClassNotFoundException{
         TipoDeMidiaDAO.gravar(this);
     }
+    
+     public void alterar() throws SQLException, ClassNotFoundException{
+        TipoDeMidiaDAO.alterar(this);
+    }
 }

@@ -75,7 +75,7 @@ public class CategoriaDAO {
        Connection conexao = null;
        try{
            conexao = BD.getConexao();
-           String sql = "insert into categorias (codCategoria, nome, descricao, periodoTrocaCategoria, proximaCategoria)values (?, ?, ?, ?, ?)";
+           String sql = "insert into categorias (codCategoria, nome, descricao, periodoTrocaCategoria, proximaCategoria) values (?, ?, ?, ?, ?)";
            PreparedStatement comando = conexao.prepareStatement(sql);
            comando.setInt(1, categoria.getCodCategoria());
            comando.setString(2, categoria.getNome());
@@ -89,6 +89,25 @@ public class CategoriaDAO {
         throw e;
     }
     
+    }
+    
+    public static void alterar(Categoria categoria) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        try{
+           conexao = BD.getConexao();
+           String sql = "update categorias set nome = ?, descricao = ?, periodoTrocaCategoria = ?, proximaCategoria = ? where codCategoria = ?";
+           PreparedStatement comando = conexao.prepareStatement(sql);
+           comando.setString(1, categoria.getNome());
+           comando.setString(2, categoria.getDescricao());
+           comando.setString(3, categoria.getPeriodoTrocaCategoria());
+           comando.setString(4, categoria.getProximaCategoria());
+           comando.setInt(5, categoria.getCodCategoria());
+           comando.execute();
+           comando.close();
+           conexao.close();
+    }   catch (SQLException e) {
+        throw e;
+    }
     }
     
 }

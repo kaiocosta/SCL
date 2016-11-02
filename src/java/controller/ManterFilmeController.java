@@ -49,7 +49,7 @@ public class ManterFilmeController extends HttpServlet {
                     prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
-                        //confirmarEditar(request, response);
+                        confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
                             //prepararExcluir(request, response);
@@ -118,6 +118,29 @@ public class ManterFilmeController extends HttpServlet {
         }
     }
 
+    private void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+        int codFilme = Integer.parseInt(request.getParameter("codFilme"));
+        String titulo = request.getParameter("titulo");
+        String tituloOriginal = request.getParameter("tituloOriginal");
+        String nomeDiretor = request.getParameter("nomeDiretor");
+        String nomeAtorPrincipal = request.getParameter("nomeAtorPrincipal");
+        String nomePremiacoes = request.getParameter("nomePremiacoes");
+        String anoProducao = request.getParameter("anoProducao");
+        String anoLancamento = request.getParameter("anoLancamento");
+        Categoria categoria = new Categoria(Integer.parseInt(request.getParameter("codCategoria")), null, null, null, null);
+        Genero genero = new Genero(Integer.parseInt(request.getParameter("codGenero")), null, null);
+        TipoDeMidia tipoDeMidia = new TipoDeMidia(Integer.parseInt(request.getParameter("codTipoDeMidia")), null, null);
+        Fornecedor fornecedor = new Fornecedor(Integer.parseInt(request.getParameter("codFornecedor")), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        try{
+            Filme filme = new Filme(codFilme, titulo, tituloOriginal, nomeDiretor, nomeAtorPrincipal, nomePremiacoes, anoProducao, anoLancamento, categoria, genero, tipoDeMidia, fornecedor);
+            filme.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaFilmeController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (ServletException ex){
+        }
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -168,5 +191,6 @@ public class ManterFilmeController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 
 }

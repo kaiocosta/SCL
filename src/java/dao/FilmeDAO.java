@@ -123,4 +123,31 @@ public class FilmeDAO {
         throw e;
     }
     }
+
+    public static void alterar(Filme filme) throws ClassNotFoundException, SQLException {
+        Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "update filmes set titulo = ?, tituloOriginal = ?, nomeDiretor = ?, nomeAtorPrincipal = ?, nomePremiacoes = ?, anoProducao = ?, anoLancamento = ?, codCategoria = ?, codGenero = ?, codTipoDeMidia = ?, codFornecedor = ? where codFilme = ?";
+           
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, filme.getTitulo());
+            comando.setString(2, filme.getTituloOriginal());
+            comando.setString(3, filme.getNomeDiretor());
+            comando.setString(4, filme.getNomeAtorPrincipal());
+            comando.setString(5, filme.getNomePremiacoes());
+            comando.setString(6, filme.getAnoProducao());
+            comando.setString(7, filme.getAnoLancamento());
+            comando.setInt(8, filme.getCategoria().getCodCategoria());
+            comando.setInt(9, filme.getGenero().getCodGenero());
+            comando.setInt(10, filme.getTipoDeMidia().getCodTipoDeMidia());
+            comando.setInt(11, filme.getFornecedor().getCodFornecedor());
+            comando.setInt(12, filme.getCodFilme());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        }   catch (SQLException e) {
+        throw e;
+    }
+    }
 }

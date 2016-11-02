@@ -232,5 +232,9 @@ public class Usuario{
         throws ClassNotFoundException, SQLException {
             return UsuarioDAO.obterUsuario(codUsuario);
         }
+
+    public void alterar() throws SQLException, ClassNotFoundException {
+        UsuarioDAO.alterar(this);    
+    }
     
 }

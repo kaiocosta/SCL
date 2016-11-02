@@ -44,7 +44,7 @@ public class ManterCategoriaController extends HttpServlet {
                     prepararEditar(request, response);
                 } else {
                     if (acao.equals("confirmarEditar")){
-                        //confirmarEditar(request, response);
+                        confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
                             //prepararExcluir(request, response);
@@ -100,6 +100,22 @@ public class ManterCategoriaController extends HttpServlet {
         }
     }
     
+    private void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+        int codCategoria = Integer.parseInt(request.getParameter("codCategoria"));
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        String periodoTrocaCategoria = request.getParameter("periodoTrocaCategoria");
+        String proximaCategoria = request.getParameter("proximaCategoria");
+        try{
+            Categoria categoria = new Categoria(codCategoria, nome, descricao, periodoTrocaCategoria, proximaCategoria);
+            categoria.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaCategoriaController");
+            view.forward(request, response);
+            } catch (IOException | ServletException ex){
+            System.out.println(ex);
+        } 
+        
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -150,6 +166,8 @@ public class ManterCategoriaController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    
 
     
 

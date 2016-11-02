@@ -47,22 +47,20 @@ public class Genero {
         this.descricao = descricao;
     }
 
-    /**
-     * @return the codGenero
-     */
     public int getCodGenero() {
         return codGenero;
     }
 
-    /**
-     * @param codGenero the codGenero to set
-     */
     public void setCodGenero(int codGenero) {
         this.codGenero = codGenero;
     }
     
-     public void gravar() throws SQLException, ClassNotFoundException{
+    public void gravar() throws SQLException, ClassNotFoundException{
         GeneroDAO.gravar(this);
+    }
+     
+    public void alterar() throws SQLException, ClassNotFoundException{
+        GeneroDAO.alterar(this);
     }
     
 }
