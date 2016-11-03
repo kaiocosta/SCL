@@ -61,9 +61,7 @@ public class Filme {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-    
-    
-    
+ 
     public int getCodFilme() {
         return codFilme;
     }

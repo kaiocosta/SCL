@@ -42,13 +42,11 @@ public class FilmeDAO {
            filme.setFornecedor(FornecedorDAO.obterFornecedor(Integer.parseInt(rs.getString("codFornecedor"))));
            filmes.add(filme);
             }
-            
         }
         catch(SQLException e){
                     e.printStackTrace();
             } finally {
                     fecharConexao(conexao, comando);
-    
         }
         return filmes;
     }
