@@ -145,7 +145,7 @@ public class UsuarioDAO {
            conexao = BD.getConexao();
            String sql = "update usuarios set nome = ?, sexo = ?, dataDeNasc = ?, estadoCivil = ?, cpf = ?, rg = ?, login = ?, senha = ?, "
                    + "cep = ?, bairro = ?, logradouro = ?, numero = ?, complemento = ?, estado = ?, cidade = ?, "
-                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ?, codUsuario = ?";
+                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ? where codUsuario = ?";
            PreparedStatement comando = conexao.prepareStatement(sql);
            comando.setString(1, usuario.getNome());
            comando.setString(2, usuario.getSexo());

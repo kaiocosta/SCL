@@ -84,7 +84,7 @@ public class TipoDeMidiaDAO {
         Connection conexao = null;
         try{
             conexao = BD.getConexao();
-            String sql = "update tipodemidia set nome = ?, descricao = ?, codTipoDeMidia = ?";
+            String sql = "update tipodemidia set nome = ?, descricao = ? where codTipoDeMidia = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, tipoDeMidia.getNome());
             comando.setString(2, tipoDeMidia.getDescricao());

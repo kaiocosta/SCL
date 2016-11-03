@@ -23,13 +23,11 @@ import modelo.Filme;
 public class ConsultaFilmeController extends HttpServlet {
 protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
-        response.setContentType("text/html;charset=UTF-8");
         try {
             request.setAttribute("filmes", Filme.obterFilmes());
             RequestDispatcher view = 
                     request.getRequestDispatcher("/consultaFilmes.jsp");
             view.forward(request, response);
-            
         }catch (ClassNotFoundException e){
         }
     }

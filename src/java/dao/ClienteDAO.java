@@ -140,7 +140,7 @@ public class ClienteDAO {
            conexao = BD.getConexao();
            String sql = "update clientes set nome = ?, sexo = ?, dataDeNasc = ?, estadoCivil = ?, cpf = ?, rg = ?, "
                    + "cep = ?, bairro = ?, logradouro = ?, numero = ?, complemento = ?, estado = ?, cidade = ?, "
-                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ?,  codCliente = ? ";
+                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ? where codCliente = ? ";
            
            PreparedStatement comando = conexao.prepareStatement(sql);
            comando.setString(1, cliente.getNome());

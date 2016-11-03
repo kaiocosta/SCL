@@ -132,7 +132,7 @@ public class FornecedorDAO {
            conexao = BD.getConexao();
            String sql = " update fornecedores set razaoSocial = ?, nomeFantasia = ?, cnpj = ?, nomeCOntato = ?, "
                    + "cep = ?, bairro = ?, logradouro = ?, numero = ?, complemento = ?, estado = ?, cidade = ?, "
-                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ?, codFornecedor = ? ";
+                   + "telefone1 = ?, telefone2 = ?, celular = ?, email = ? where codFornecedor = ? ";
            PreparedStatement comando = conexao.prepareStatement(sql);
            comando.setString(1, fornecedor.getRazaoSocial());
            comando.setString(2, fornecedor.getNomeFantasia());
@@ -150,7 +150,6 @@ public class FornecedorDAO {
            comando.setString(14, fornecedor.getCelular());
            comando.setString(15, fornecedor.getEmail());
            comando.setInt(16, fornecedor.getCodFornecedor());
-           
            comando.execute();
            comando.close();
            conexao.close();

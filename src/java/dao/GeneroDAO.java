@@ -84,7 +84,7 @@ public class GeneroDAO {
         Connection conexao = null;
         try{
             conexao = BD.getConexao();
-            String sql = "update generos set nome = ?, descricao = ?, codGenero = ?";
+            String sql = "update generos set nome = ?, descricao = ? where codGenero = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, genero.getNome());
             comando.setString(2, genero.getDescricao());
