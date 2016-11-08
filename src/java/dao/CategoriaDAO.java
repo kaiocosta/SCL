@@ -109,9 +109,9 @@ public class CategoriaDAO {
         throw e;
     }
     }
-    public void excluir(Categoria categoria){
+    public void excluir(Categoria categoria) throws ClassNotFoundException{
 	try{
-            Connection db = Conexao.getConnection ();
+            Connection db = BD.getConexao ();
             PreparedStatement st = db.prepareStatement ("delete from categorias where codCategoria = ?");
             st.setInt(1, categoria.getCodCategoria());
             st.executeUpdate();

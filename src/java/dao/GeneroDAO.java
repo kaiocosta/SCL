@@ -96,9 +96,9 @@ public class GeneroDAO {
             throw e;
         }
     }
-    public void excluir(Genero genero){
+    public void excluir(Genero genero) throws ClassNotFoundException{
 	try{
-            Connection db = conexao.getConnection();
+            Connection db = BD.getConexao ();
             PreparedStatement st = db.prepareStatement ("delete from generos where codGenero = ?");
             st.setInt(1, genero.getCodGenero());
             st.executeUpdate();

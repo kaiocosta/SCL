@@ -97,9 +97,9 @@ public class TipoDeMidiaDAO {
         }
     }
     
-    public void excluir(TipoDeMidia tipoDeMidia){
+    public void excluir(TipoDeMidia tipoDeMidia) throws ClassNotFoundException{
 	try{
-	Connection db = Conexao.getConnection ();
+	Connection db = BD.getConexao ();
 	PreparedStatement st = db.prepareStatement ("delete from tipodemidia where codTipoDeMidia = ?");
 	st.setInt(1, tipoDeMidia.getCodTipoDeMidia());
 	st.executeUpdate();

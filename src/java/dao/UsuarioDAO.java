@@ -175,9 +175,9 @@ public class UsuarioDAO {
         throw e;
     }
     }
-    public void excluir(Usuario usuario){
+    public void excluir(Usuario usuario) throws ClassNotFoundException{
 	try{
-	Connection db = Conexao.getConnection();
+	Connection db = BD.getConexao ();
 	PreparedStatement st = db.prepareStatement ("delete from usuarios where codUsuario = ?");
 	st.setInt(1, usuario.getCodUsuario());
 	st.executeUpdate();

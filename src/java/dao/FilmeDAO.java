@@ -149,9 +149,9 @@ public class FilmeDAO {
     }
     }
     
-    public void excluir(Filme filme){
+    public void excluir(Filme filme) throws ClassNotFoundException{
 	try{
-	Connection db = Conexao.getConnection ();
+	Connection db = BD.getConexao ();
 	PreparedStatement st = db.prepareStatement ("delete from filmes where codFilme = ?");
 	st.setInt(1, filme.getCodFilme());
 	st.executeUpdate();

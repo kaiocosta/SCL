@@ -158,9 +158,9 @@ public class FornecedorDAO {
     }
     }
     
-    public void excluir(Fornecedor fornecedor){
+    public void excluir(Fornecedor fornecedor) throws ClassNotFoundException{
 	try{
-	Connection db = Conexao.getConnection ();
+	Connection db = BD.getConexao ();
 	PreparedStatement st = db.prepareStatement ("delete from fornecedores where codFornecedor = ?");
 	st.setInt(1, fornecedor.getCodFornecedor());
 	st.executeUpdate();

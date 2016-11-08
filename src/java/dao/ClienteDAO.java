@@ -170,9 +170,9 @@ public class ClienteDAO {
     }
     }
     
-    public void excluir(Cliente cliente){
+    public void excluir(Cliente cliente) throws ClassNotFoundException{
 	try{
-	Connection db = Conexao.getConnection ();
+	Connection db = BD.getConexao ();
 	PreparedStatement st = db.prepareStatement ("delete from clientes where codCliente = ?");
 	st.setInt(1, cliente.getCodCliente());
 	st.executeUpdate();

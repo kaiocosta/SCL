@@ -106,10 +106,10 @@ public class ManterFilmeController extends HttpServlet {
     private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
-            request.setAttribute("filme", Filme.obterFilmes());
+            request.setAttribute("filmes", Filme.obterFilmes());
             int codFilme = Integer.parseInt(request.getParameter("codFilme"));
             Filme filme = Filme.obterFilme(codFilme);
-            request.setAttribute("filme", filme);
+            request.setAttribute("filmes", filme);
             RequestDispatcher view = request.getRequestDispatcher("/manterFilme.jsp");
             view.forward(request, response);
         } catch (ServletException ex){
