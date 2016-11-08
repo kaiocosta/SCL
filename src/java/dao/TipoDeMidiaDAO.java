@@ -97,4 +97,14 @@ public class TipoDeMidiaDAO {
         }
     }
     
+    public void excluir(TipoDeMidia tipoDeMidia){
+	try{
+	Connection db = Conexao.getConnection ();
+	PreparedStatement st = db.prepareStatement ("delete from tipodemidia where codTipoDeMidia = ?");
+	st.setInt(1, tipoDeMidia.getCodTipoDeMidia());
+	st.executeUpdate();
+	st.close();
+	} catch(SQLException ex){
+	}
+}
 }

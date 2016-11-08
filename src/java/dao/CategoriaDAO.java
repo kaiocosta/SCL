@@ -109,6 +109,16 @@ public class CategoriaDAO {
         throw e;
     }
     }
+    public void excluir(Categoria categoria){
+	try{
+            Connection db = Conexao.getConnection ();
+            PreparedStatement st = db.prepareStatement ("delete from categorias where codCategoria = ?");
+            st.setInt(1, categoria.getCodCategoria());
+            st.executeUpdate();
+            st.close();
+        } catch(SQLException ex){
+	}
+    }
     
 }
 

@@ -96,6 +96,16 @@ public class GeneroDAO {
             throw e;
         }
     }
+    public void excluir(Genero genero){
+	try{
+            Connection db = conexao.getConnection();
+            PreparedStatement st = db.prepareStatement ("delete from generos where codGenero = ?");
+            st.setInt(1, genero.getCodGenero());
+            st.executeUpdate();
+            st.close();
+        } catch(SQLException ex){
+	}
+    }
 }
 
 

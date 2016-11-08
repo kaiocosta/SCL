@@ -157,4 +157,15 @@ public class FornecedorDAO {
         throw e;
     }
     }
+    
+    public void excluir(Fornecedor fornecedor){
+	try{
+	Connection db = Conexao.getConnection ();
+	PreparedStatement st = db.prepareStatement ("delete from fornecedores where codFornecedor = ?");
+	st.setInt(1, fornecedor.getCodFornecedor());
+	st.executeUpdate();
+	st.close();
+	} catch(SQLException ex){
+	}
+}
 }

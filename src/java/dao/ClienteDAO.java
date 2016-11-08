@@ -169,4 +169,15 @@ public class ClienteDAO {
         throw e;
     }
     }
+    
+    public void excluir(Cliente cliente){
+	try{
+	Connection db = Conexao.getConnection ();
+	PreparedStatement st = db.prepareStatement ("delete from clientes where codCliente = ?");
+	st.setInt(1, cliente.getCodCliente());
+	st.executeUpdate();
+	st.close();
+	} catch(SQLException ex){
+	}
+}
 }

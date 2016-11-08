@@ -175,6 +175,15 @@ public class UsuarioDAO {
         throw e;
     }
     }
-    
+    public void excluir(Usuario usuario){
+	try{
+	Connection db = Conexao.getConnection();
+	PreparedStatement st = db.prepareStatement ("delete from usuarios where codUsuario = ?");
+	st.setInt(1, usuario.getCodUsuario());
+	st.executeUpdate();
+	st.close();
+	} catch(SQLException ex){
+	}
+    }
 }
 

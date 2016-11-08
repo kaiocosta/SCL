@@ -148,4 +148,15 @@ public class FilmeDAO {
         throw e;
     }
     }
+    
+    public void excluir(Filme filme){
+	try{
+	Connection db = Conexao.getConnection ();
+	PreparedStatement st = db.prepareStatement ("delete from filmes where codFilme = ?");
+	st.setInt(1, filme.getCodFilme());
+	st.executeUpdate();
+	st.close();
+	} catch(SQLException ex){
+	}
+    }
 }
