@@ -158,14 +158,18 @@ public class FornecedorDAO {
     }
     }
     
-    public void excluir(Fornecedor fornecedor) throws ClassNotFoundException{
-	try{
-	Connection db = BD.getConexao ();
-	PreparedStatement st = db.prepareStatement ("delete from fornecedores where codFornecedor = ?");
-	st.setInt(1, fornecedor.getCodFornecedor());
-	st.executeUpdate();
-	st.close();
-	} catch(SQLException ex){
-	}
-}
+    public static void excluir(Fornecedor fornecedor) throws ClassNotFoundException, SQLException{
+	Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "delete from fornecedores where codFornecedor = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, fornecedor.getCodFornecedor());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
 }

@@ -97,14 +97,18 @@ public class TipoDeMidiaDAO {
         }
     }
     
-    public void excluir(TipoDeMidia tipoDeMidia) throws ClassNotFoundException{
-	try{
-	Connection db = BD.getConexao ();
-	PreparedStatement st = db.prepareStatement ("delete from tipodemidia where codTipoDeMidia = ?");
-	st.setInt(1, tipoDeMidia.getCodTipoDeMidia());
-	st.executeUpdate();
-	st.close();
-	} catch(SQLException ex){
-	}
-}
+    public static void excluir(TipoDeMidia tipoDeMidia) throws ClassNotFoundException, SQLException{
+	Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "delete from tipodemidia where codTipoDeMidia = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, tipoDeMidia.getCodTipoDeMidia());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
 }

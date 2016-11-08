@@ -109,15 +109,20 @@ public class CategoriaDAO {
         throw e;
     }
     }
-    public void excluir(Categoria categoria) throws ClassNotFoundException{
-	try{
-            Connection db = BD.getConexao ();
-            PreparedStatement st = db.prepareStatement ("delete from categorias where codCategoria = ?");
-            st.setInt(1, categoria.getCodCategoria());
-            st.executeUpdate();
-            st.close();
-        } catch(SQLException ex){
-	}
+    
+    public static void excluir(Categoria categoria) throws ClassNotFoundException, SQLException{
+	Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "delete from categorias where codCategoria = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, categoria.getCodCategoria());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
 }

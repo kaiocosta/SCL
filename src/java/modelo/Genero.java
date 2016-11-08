@@ -63,4 +63,8 @@ public class Genero {
         GeneroDAO.alterar(this);
     }
     
+    public void excluir() throws SQLException, ClassNotFoundException{
+        GeneroDAO.excluir(this);
+    }
+    
 }

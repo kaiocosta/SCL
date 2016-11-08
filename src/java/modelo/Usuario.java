@@ -237,4 +237,8 @@ public class Usuario{
         UsuarioDAO.alterar(this);    
     }
     
+    public void excluir() throws SQLException, ClassNotFoundException {
+        UsuarioDAO.excluir(this);    
+    }
+    
 }

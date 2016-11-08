@@ -189,4 +189,8 @@ public class Filme {
     public void alterar() throws SQLException, ClassNotFoundException {
         FilmeDAO.alterar(this);
     }
+    
+    public void excluir() throws SQLException, ClassNotFoundException{
+        FilmeDAO.excluir(this);
+    }
 }

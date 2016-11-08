@@ -48,10 +48,10 @@ public class ManterClienteController extends HttpServlet {
                         confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
-                            //prepararExcluir(request, response);
+                            prepararExcluir(request, response);
                         } else {
                             if (acao.equals("confirmarExcluir")){
-                                //confirmarExcluir(request, response);
+                                confirmarExcluir(request, response);
                             }
                         }
                     }
@@ -136,6 +136,50 @@ public class ManterClienteController extends HttpServlet {
         try{
             Cliente cliente = new Cliente(codCliente, nome, sexo, dataDeNasc, estadoCivil, cpf, rg, cep, bairro, logradouro, numero, complemento, estado, cidade, telefone1, telefone2, celular, email);
             cliente.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaClienteController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (ServletException ex){
+        }
+    }
+    
+    private void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Excluir");
+            request.setAttribute("cliente", Cliente.obterClientes());
+            int codCliente = Integer.parseInt(request.getParameter("codCliente"));
+            Cliente cliente = Cliente.obterCliente(codCliente);
+            request.setAttribute("cliente", cliente);
+            RequestDispatcher view = request.getRequestDispatcher("/manterCliente.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+    
+    private void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+        int codCliente = Integer.parseInt(request.getParameter("codCliente"));
+        String nome = request.getParameter("nome");
+        String sexo = request.getParameter("sexo");
+        String dataDeNasc = request.getParameter("dataDeNasc");
+        String estadoCivil = request.getParameter("estadoCivil");        
+        String cpf = request.getParameter("cpf");       
+        String rg = request.getParameter("rg");                            
+        String cep = request.getParameter("cep");                            
+        String bairro = request.getParameter("bairro");                            
+        String logradouro = request.getParameter("logradouro");                            
+        String numero = request.getParameter("numero");                            
+        String complemento = request.getParameter("complemento");                            
+        String estado = request.getParameter("estado");                            
+        String cidade = request.getParameter("cidade");                           
+        String telefone1 = request.getParameter("telefone1");                            
+        String telefone2 = request.getParameter("telefone2");                            
+        String celular = request.getParameter("celular");                            
+        String email = request.getParameter("email");                            
+        try{
+            Cliente cliente = new Cliente(codCliente, nome, sexo, dataDeNasc, estadoCivil, cpf, rg, cep, bairro, logradouro, numero, complemento, estado, cidade, telefone1, telefone2, celular, email);
+            cliente.excluir();
             RequestDispatcher view = request.getRequestDispatcher("ConsultaClienteController");
             view.forward(request, response);
         } catch (IOException ex){

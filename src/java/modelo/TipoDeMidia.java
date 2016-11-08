@@ -60,4 +60,8 @@ public class TipoDeMidia {
      public void alterar() throws SQLException, ClassNotFoundException{
         TipoDeMidiaDAO.alterar(this);
     }
+     
+     public void excluir() throws SQLException, ClassNotFoundException{
+        TipoDeMidiaDAO.excluir(this);
+    }
 }

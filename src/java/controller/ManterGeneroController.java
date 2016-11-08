@@ -49,10 +49,10 @@ public class ManterGeneroController extends HttpServlet {
                         confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
-                            //prepararExcluir(request, response);
+                            prepararExcluir(request, response);
                         } else {
                             if (acao.equals("confirmarExcluir")){
-                                //confirmarExcluir(request, response);
+                                confirmarExcluir(request, response);
                             }
                         }
                     }
@@ -108,6 +108,35 @@ public class ManterGeneroController extends HttpServlet {
         try{
             Genero genero = new Genero(codGenero, nome, descricao);
             genero.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaGeneroController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (ServletException ex){
+        }
+    }
+
+    private void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Excluir");
+            request.setAttribute("generos", Genero.obterGeneros());
+            int codGenero = Integer.parseInt(request.getParameter("codGenero"));
+            Genero genero = Genero.obterGenero(codGenero);
+            request.setAttribute("genero", genero);
+            RequestDispatcher view = request.getRequestDispatcher("/manterGenero.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+    
+    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
+        int codGenero = Integer.parseInt(request.getParameter("codGenero"));
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        try{
+            Genero genero = new Genero(codGenero, nome, descricao);
+            genero.excluir();
             RequestDispatcher view = request.getRequestDispatcher("ConsultaGeneroController");
             view.forward(request, response);
         } catch (IOException ex){

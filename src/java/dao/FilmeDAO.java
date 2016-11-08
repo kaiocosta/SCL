@@ -149,14 +149,18 @@ public class FilmeDAO {
     }
     }
     
-    public void excluir(Filme filme) throws ClassNotFoundException{
-	try{
-	Connection db = BD.getConexao ();
-	PreparedStatement st = db.prepareStatement ("delete from filmes where codFilme = ?");
-	st.setInt(1, filme.getCodFilme());
-	st.executeUpdate();
-	st.close();
-	} catch(SQLException ex){
-	}
+    public static void excluir(Filme filme) throws ClassNotFoundException, SQLException{
+	Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "delete from filmes where codFilme = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, filme.getCodFilme());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 }

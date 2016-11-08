@@ -210,6 +210,10 @@ public class Cliente {
         ClienteDAO.alterar(this);
     }
     
+    public void excluir() throws SQLException, ClassNotFoundException {
+        ClienteDAO.excluir(this);
+    }
+     
     public static Cliente obterCliente(int codCliente) 
         throws ClassNotFoundException, SQLException {
             return ClienteDAO.obterCliente(codCliente);

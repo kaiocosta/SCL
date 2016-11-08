@@ -28,7 +28,7 @@
           <td><c:out value="${categoria.proximaCategoria}"></c:out></td>
           
           <td><a href="ManterCategoriaController?acao=prepararEditar&codCategoria=<c:out value="${categoria.codCategoria}"></c:out>">Editar</a></td>
-          <td><a href="ManterCategoriaController?acao=prepararExcluir&nome=<c:out value="${categoria.codCategoria}"></c:out>">Excluir</a></td>
+          <td><a href="ManterCategoriaController?acao=prepararExcluir&codCategoria=<c:out value="${categoria.codCategoria}"></c:out>">Excluir</a></td>
         </tr>
       </c:forEach>
        </table></br>  

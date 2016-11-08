@@ -47,10 +47,10 @@ public class ManterCategoriaController extends HttpServlet {
                         confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
-                            //prepararExcluir(request, response);
+                            prepararExcluir(request, response);
                         } else {
                             if (acao.equals("confirmarExcluir")){
-                                //confirmarExcluir(request, response);
+                                confirmarExcluir(request, response);
                             }
                         }
                     }
@@ -116,6 +116,40 @@ public class ManterCategoriaController extends HttpServlet {
         } 
         
     }
+    
+        
+    private void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Excluir");
+            request.setAttribute("categorias", Categoria.obterCategorias());
+            int codCategoria = Integer.parseInt(request.getParameter("codCategoria"));
+            Categoria categoria = Categoria.obterCategoria(codCategoria);
+            request.setAttribute("categorias", categoria);
+            RequestDispatcher view = request.getRequestDispatcher("/manterCategoria.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+    
+    private void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+        int codCategoria = Integer.parseInt(request.getParameter("codCategoria"));
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        String periodoTrocaCategoria = request.getParameter("periodoTrocaCategoria");
+        String proximaCategoria = request.getParameter("proximaCategoria");
+        try{
+            Categoria categoria = new Categoria(codCategoria, nome, descricao, periodoTrocaCategoria, proximaCategoria);
+            categoria.excluir();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaCategoriaController");
+            view.forward(request, response);
+            } catch (IOException | ServletException ex){
+            System.out.println(ex);
+        } 
+        
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

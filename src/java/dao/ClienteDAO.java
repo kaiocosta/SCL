@@ -170,14 +170,18 @@ public class ClienteDAO {
     }
     }
     
-    public void excluir(Cliente cliente) throws ClassNotFoundException{
-	try{
-	Connection db = BD.getConexao ();
-	PreparedStatement st = db.prepareStatement ("delete from clientes where codCliente = ?");
-	st.setInt(1, cliente.getCodCliente());
-	st.executeUpdate();
-	st.close();
-	} catch(SQLException ex){
-	}
-}
+    public static void excluir(Cliente cliente) throws ClassNotFoundException, SQLException{
+	Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "delete from clientes where codCliente = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, cliente.getCodCliente());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
 }

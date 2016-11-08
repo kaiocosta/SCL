@@ -96,16 +96,32 @@ public class GeneroDAO {
             throw e;
         }
     }
-    public void excluir(Genero genero) throws ClassNotFoundException{
-	try{
-            Connection db = BD.getConexao ();
-            PreparedStatement st = db.prepareStatement ("delete from generos where codGenero = ?");
-            st.setInt(1, genero.getCodGenero());
-            st.executeUpdate();
-            st.close();
-        } catch(SQLException ex){
-	}
+    
+      public static void excluir(Genero genero) throws SQLException, ClassNotFoundException{
+        Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "delete from generos where codGenero = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, genero.getCodGenero());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
+     
+//     public void excluir(Genero genero) throws ClassNotFoundException{
+//	try{
+//            Connection db = BD.getConexao ();
+//            PreparedStatement st = db.prepareStatement ("delete from generos where codGenero = ?");
+//            st.setInt(1, genero.getCodGenero());
+//            st.executeUpdate();
+//            st.close();
+//        } catch(SQLException ex){
+//	}
+//    }
 }
 
 

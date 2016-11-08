@@ -52,10 +52,10 @@ public class ManterFilmeController extends HttpServlet {
                         confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
-                            //prepararExcluir(request, response);
+                            prepararExcluir(request, response);
                         } else {
                             if (acao.equals("confirmarExcluir")){
-                                //confirmarExcluir(request, response);
+                                confirmarExcluir(request, response);
                             }
                         }
                     }
@@ -133,7 +133,45 @@ public class ManterFilmeController extends HttpServlet {
         Fornecedor fornecedor = new Fornecedor(Integer.parseInt(request.getParameter("codFornecedor")), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
         try{
             Filme filme = new Filme(codFilme, titulo, tituloOriginal, nomeDiretor, nomeAtorPrincipal, nomePremiacoes, anoProducao, anoLancamento, categoria, genero, tipoDeMidia, fornecedor);
-            filme.alterar();
+            filme.excluir();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaFilmeController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (ServletException ex){
+        }
+    }
+    
+    private void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Excluir");
+            request.setAttribute("filmes", Filme.obterFilmes());
+            int codFilme = Integer.parseInt(request.getParameter("codFilme"));
+            Filme filme = Filme.obterFilme(codFilme);
+            request.setAttribute("filmes", filme);
+            RequestDispatcher view = request.getRequestDispatcher("/manterFilme.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+
+    private void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+        int codFilme = Integer.parseInt(request.getParameter("codFilme"));
+        String titulo = request.getParameter("titulo");
+        String tituloOriginal = request.getParameter("tituloOriginal");
+        String nomeDiretor = request.getParameter("nomeDiretor");
+        String nomeAtorPrincipal = request.getParameter("nomeAtorPrincipal");
+        String nomePremiacoes = request.getParameter("nomePremiacoes");
+        String anoProducao = request.getParameter("anoProducao");
+        String anoLancamento = request.getParameter("anoLancamento");
+        Categoria categoria = new Categoria(Integer.parseInt(request.getParameter("codCategoria")), null, null, null, null);
+        Genero genero = new Genero(Integer.parseInt(request.getParameter("codGenero")), null, null);
+        TipoDeMidia tipoDeMidia = new TipoDeMidia(Integer.parseInt(request.getParameter("codTipoDeMidia")), null, null);
+        Fornecedor fornecedor = new Fornecedor(Integer.parseInt(request.getParameter("codFornecedor")), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        try{
+            Filme filme = new Filme(codFilme, titulo, tituloOriginal, nomeDiretor, nomeAtorPrincipal, nomePremiacoes, anoProducao, anoLancamento, categoria, genero, tipoDeMidia, fornecedor);
+            filme.excluir();
             RequestDispatcher view = request.getRequestDispatcher("ConsultaFilmeController");
             view.forward(request, response);
         } catch (IOException ex){

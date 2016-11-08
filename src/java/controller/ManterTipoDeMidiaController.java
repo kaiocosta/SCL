@@ -48,10 +48,10 @@ public class ManterTipoDeMidiaController extends HttpServlet {
                         confirmarEditar(request, response);
                     } else {
                         if (acao.equals("prepararExcluir")){
-                            //prepararExcluir(request, response);
+                            prepararExcluir(request, response);
                         } else {
                             if (acao.equals("confirmarExcluir")){
-                                //confirmarExcluir(request, response);
+                                confirmarExcluir(request, response);
                             }
                         }
                     }
@@ -115,6 +115,36 @@ public class ManterTipoDeMidiaController extends HttpServlet {
         }
     }
     
+    
+    private void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Excluir");
+            request.setAttribute("tipoDeMidia", TipoDeMidia.obterTipoDeMidias());
+            int codTipoDeMidia = Integer.parseInt(request.getParameter("codTipoDeMidia"));
+            TipoDeMidia tipoDeMidia = TipoDeMidia.obterTipoDeMidia(codTipoDeMidia);
+            request.setAttribute("tipoDeMidia", tipoDeMidia);
+            RequestDispatcher view = request.getRequestDispatcher("/manterTipoDeMidia.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex){
+        } catch (ClassNotFoundException ex){
+        }
+    }
+    
+    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, ClassNotFoundException, SQLException{
+        int codTipoDeMidia = Integer.parseInt(request.getParameter("codTipoDeMidia"));
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        try{
+           TipoDeMidia tipoDeMidia = new TipoDeMidia(codTipoDeMidia, nome, descricao);
+            tipoDeMidia.excluir();
+            RequestDispatcher view = request.getRequestDispatcher("ConsultaTipoDeMidiaController");
+            view.forward(request, response);
+        } catch (IOException ex){
+        } catch (SQLException ex){
+        } catch (ServletException ex){
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

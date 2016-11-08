@@ -175,15 +175,19 @@ public class UsuarioDAO {
         throw e;
     }
     }
-    public void excluir(Usuario usuario) throws ClassNotFoundException{
-	try{
-	Connection db = BD.getConexao ();
-	PreparedStatement st = db.prepareStatement ("delete from usuarios where codUsuario = ?");
-	st.setInt(1, usuario.getCodUsuario());
-	st.executeUpdate();
-	st.close();
-	} catch(SQLException ex){
-	}
+    public static void excluir(Usuario usuario) throws ClassNotFoundException, SQLException{
+	Connection conexao = null;
+        try{
+            conexao = BD.getConexao();
+            String sql = "delete from usuarios where codUsuario = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, usuario.getCodUsuario());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 }
 
