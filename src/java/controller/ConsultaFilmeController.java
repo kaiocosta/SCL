@@ -21,8 +21,18 @@ import modelo.Filme;
  * @author Kaio
  */
 public class ConsultaFilmeController extends HttpServlet {
-protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ClassNotFoundException, SQLException {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException, SQLException {
         try {
             request.setAttribute("filmes", Filme.obterFilmes());
             RequestDispatcher view = 
@@ -31,7 +41,6 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         }catch (ClassNotFoundException e){
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -48,9 +57,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-        Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        }
     }
 
     /**
@@ -68,9 +75,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-        Logger.getLogger(ConsultaFilmeController.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        }
     }
 
     /**

@@ -49,7 +49,6 @@ public class Fornecedor {
     
     public static List<Fornecedor> obterFornecedores() 
         throws ClassNotFoundException, SQLException {
-        
         return FornecedorDAO.obterFornecedores();
     }
     

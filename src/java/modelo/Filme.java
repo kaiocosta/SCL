@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Filme {
-
-    
-    
     private int codFilme;
     private String titulo;
     private String tituloOriginal;
