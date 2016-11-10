@@ -8,7 +8,7 @@
 <body>
 	<h2>Cadastro de Filmes - ${operacao}</h2>
         <form action="ManterFilmeController?acao=confirmar${operacao}" method="post" name="frmManterFilme" onsubmit="return validarFormulario(this)">
-                Código <input type="text" name="codFilme" value="${filme.codFilme}"/>
+            Código <input type="text" name="codFilme" value="${filme.codFilme}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/>
 		Título <input type="text" name="titulo" value="${filme.titulo}"/>
                 Título original <input type="text" name="tituloOriginal" value="${filme.tituloOriginal}"/>
 		Diretor(a) <input type="text" name="nomeDiretor" value="${filme.nomeDiretor}"/><br/>
