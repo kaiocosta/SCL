@@ -106,10 +106,13 @@ public class ManterFilmeController extends HttpServlet {
     private void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
-            request.setAttribute("filmes", Filme.obterFilmes());
+            request.setAttribute("categorias", Categoria.obterCategorias());
+            request.setAttribute("generos", Genero.obterGeneros());
+            request.setAttribute("tiposdemidias", TipoDeMidia.obterTipoDeMidias());
+            request.setAttribute("fornecedores", Fornecedor.obterFornecedores());
             int codFilme = Integer.parseInt(request.getParameter("codFilme"));
             Filme filme = Filme.obterFilme(codFilme);
-            request.setAttribute("filmes", filme);
+            request.setAttribute("filme", filme);
             RequestDispatcher view = request.getRequestDispatcher("/manterFilme.jsp");
             view.forward(request, response);
         } catch (ServletException ex){
@@ -144,10 +147,13 @@ public class ManterFilmeController extends HttpServlet {
     private void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
-            request.setAttribute("filmes", Filme.obterFilmes());
+            request.setAttribute("categorias", Categoria.obterCategorias());
+            request.setAttribute("generos", Genero.obterGeneros());
+            request.setAttribute("tiposdemidias", TipoDeMidia.obterTipoDeMidias());
+            request.setAttribute("fornecedores", Fornecedor.obterFornecedores());
             int codFilme = Integer.parseInt(request.getParameter("codFilme"));
             Filme filme = Filme.obterFilme(codFilme);
-            request.setAttribute("filmes", filme);
+            request.setAttribute("filme", filme);
             RequestDispatcher view = request.getRequestDispatcher("/manterFilme.jsp");
             view.forward(request, response);
         } catch (ServletException ex){
