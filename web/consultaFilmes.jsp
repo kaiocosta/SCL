@@ -20,7 +20,10 @@
         <th>Premiações</th>
         <th>Ano de Produção</th>
         <th>Ano de Lançamento</th>
-        
+        <th>Categoria</th>
+        <th>Genero</th>
+        <th>Tipo de Mídia</th>
+        <th>Fornecedor</th>
         <th colspan="2">Ação</th>
       <c:forEach items="${filmes}" var="filme">
         <tr>
@@ -32,10 +35,10 @@
           <td><c:out value="${filme.nomePremiacoes}"></c:out></td>
           <td><c:out value="${filme.anoProducao}"></c:out></td>
           <td><c:out value="${filme.anoLancamento}"></c:out></td>
-          <td><c:out value="${filme.getCategoria().getCodCategoria()}"></c:out></td>
-          <td><c:out value="${filme.getGenero().getCodGenero()}"></c:out></td>
-          <td><c:out value="${filme.getTipoDeMidia().getCodTipoDeMidia()}"></c:out></td>
-          <td><c:out value="${filme.getFornecedor().getCodFornecedor()}"></c:out></td>
+          <td><c:out value="${filme.getCategoria().getNome()}"></c:out></td>
+          <td><c:out value="${filme.getGenero().getNome()}"></c:out></td>
+          <td><c:out value="${filme.getTipoDeMidia().getNome()}"></c:out></td>
+          <td><c:out value="${filme.getFornecedor().getRazaoSocial()}"></c:out></td>
           
           
           <td><a href="ManterFilmeController?acao=prepararEditar&codFilme=<c:out value="${filme.codFilme}"></c:out>">Editar</a></td>
