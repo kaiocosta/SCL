@@ -6,9 +6,54 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+  <style >
+    a{
+      margin: 1em 0.2em 0.2em 0.2em;
+      color: #000;
+      text-decoration: none;
+      background-color: #BBB;
+      font-weight: bolder;
+      padding: 0.5em;
+    }
+      a:visited{
+        color: #000;
+        text-decoration: none;
+        background-color: #BBB;
+        font-weight: bolder;
+        padding: 0.5em;
+      }
+      
+
+      h1,h2,h3,h4{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;}
+        th{
+          border-bottom:  0.9em;
+          border: solid;
+          background-color: #000;
+          padding: 1em;
+          color: #FFF;
+        }
+        table,td,tr{
+
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          border-collapse: collapse;
+          border-width: thin;
+          border: none;
+          }
+      input[type=submit]{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
   </head>
   <body>
-    <h1>Pesquisa fornecedores</h1>
+      <div class="centro">
+          <h1>Pesquisa fornecedores</h1>
     <table border = 1>
         <th>Cod.</th>
         <th>Razão Social</th>
@@ -58,5 +103,6 @@
     <form class="" action="ManterFornecedorController?acao=prepararIncluir" method="post">
       <input type="submit" name="btnIncluir" value="Incluir">
     </form>
+      </div>
   </body>
 </html>

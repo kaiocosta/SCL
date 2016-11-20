@@ -16,10 +16,10 @@
 						<option value="default">Selecione</option>
 						<option value="dvd">DVD</option>
 						<option value="blueray">Blueray</option>
-					</select><br/>			
+					</select><br/>
 		<input type="submit" value="Adicionar Filme" />
 		<input type="submit" value="Retirar Filme" />
-		
+
 		Nome do Cliente:
 		Dependente:
 		Valor Total:
@@ -29,7 +29,7 @@
 		Data da locação:
 		Hora:
 		Código do Cliente:
-		
+
 		<br/>
 		<br/>
 		<input type="reset" value="Cancelar" />
