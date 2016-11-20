@@ -51,7 +51,11 @@ public class Filme {
             return FilmeDAO.obterFilme(codFilme);
         }
     
-    public Categoria getCategoria() {
+       
+    public Categoria getCategoria() throws ClassNotFoundException, SQLException{
+        if ((categoria == null) && (codCategoria != 0)) {
+            categoria = Categoria.obterCategoria(codCategoria);
+        }
         return categoria;
     }
 
@@ -123,7 +127,10 @@ public class Filme {
         this.anoLancamento = anoLancamento;
     }
 
-    public TipoDeMidia getTipoDeMidia() {
+    public TipoDeMidia getTipoDeMidia() throws ClassNotFoundException, SQLException {
+        if ((tipoDeMidia == null) && (codTipoDeMidia != 0)) {
+            tipoDeMidia = TipoDeMidia.obterTipoDeMidia(codTipoDeMidia);
+        }
         return tipoDeMidia;
     }
 
@@ -131,7 +138,10 @@ public class Filme {
         this.tipoDeMidia = tipoDeMidia;
     }
 
-    public Genero getGenero() {
+    public Genero getGenero() throws SQLException, ClassNotFoundException {
+        if ((genero == null) && (codGenero != 0)) {
+            genero = Genero.obterGenero(codGenero);
+        }
         return genero;
     }
 
@@ -139,7 +149,10 @@ public class Filme {
         this.genero = genero;
     }
     
-    public Fornecedor getFornecedor() {
+    public Fornecedor getFornecedor() throws ClassNotFoundException, SQLException {
+        if ((fornecedor == null) && (codFornecedor != 0)) {
+            fornecedor = Fornecedor.obterFornecedor(codFornecedor);
+        }
         return fornecedor;
     }
 

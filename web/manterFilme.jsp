@@ -80,7 +80,8 @@
             Premiações<br> <input type="text" name="nomePremiacoes" value="${filme.nomePremiacoes}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/><br>
             Ano de Produção<br> <input type="text" name="anoProducao" value="${filme.anoProducao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Ano de Lançamento <input type="text" name="anoLancamento" value="${filme.anoLancamento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br><br>
-            Categoria <select name="codCategoria" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>><br>
+            
+            Categoria <select name="codCategoria"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>><br>
                 <option value="0" <c:if test="${categoria.codCategoria != null}"> selected</c:if>> </option><br>
                     <c:forEach items="${categorias}" var="categoria">
                         <option value="${categoria.codCategoria}" <c:if test="${filme.categoria.codCategoria == categoria.codCategoria}"> selected</c:if>>${categoria.nome}</option>
@@ -98,7 +99,6 @@
                         <option value="${tipoDeMidia.codTipoDeMidia}" <c:if test="${filme.tipoDeMidia.codTipoDeMidia == tipoDeMidia.codTipoDeMidia}"> selected</c:if>>${tipoDeMidia.nome}</option>
                     </c:forEach>
             </select>
-
             Fornecedor <select name="codFornecedor" <c:if test="${operacao == 'Excluir'}"> readonly </c:if>>
                 <option value="0" <c:if test="${fornecedor.codFornecedor != null}"> selected</c:if>> </option>
                     <c:forEach items="${fornecedores}" var="fornecedor">
