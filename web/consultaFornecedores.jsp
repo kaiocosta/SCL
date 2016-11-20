@@ -7,14 +7,13 @@
     <meta charset="utf-8">
     <title></title>
   <style >
-    a{
-      margin: 1em 0.2em 0.2em 0.2em;
-      color: #000;
-      text-decoration: none;
-      background-color: #BBB;
-      font-weight: bolder;
-      padding: 0.5em;
-    }
+      a{
+        color: #000;
+        text-decoration: none;
+        background-color: #BBB;
+        font-weight: bolder;
+        padding: 0.5em;
+      }
       a:visited{
         color: #000;
         text-decoration: none;
@@ -22,34 +21,48 @@
         font-weight: bolder;
         padding: 0.5em;
       }
-      
+      .centro{
+        border-radius: 20px;
+        margin-top: 2em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+        box-shadow: 4px 4px 45px grey;
+        padding: 1em 3em 3em 3em;  }
 
       h1,h2,h3,h4{
         text-align: center;
         margin-left: auto;
         margin-right: auto;}
         th{
-          border-bottom:  0.9em;
           border: solid;
           background-color: #000;
           padding: 1em;
           color: #FFF;
         }
         table,td,tr{
-
+          border: none;
           text-align: center;
+          padding: 0.8em;
           margin-left: auto;
           margin-right: auto;
           border-collapse: collapse;
           border-width: thin;
-          border: none;
           }
       input[type=submit]{
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 5em;
+        position: relative;
+        border: none;
+        color: #FFF;
+        text-decoration: none;
+        background-color: #000;
+        padding: 0.5em;
+        width: 48%;
+        left: 26%;
+
       }
     </style>
+
   </head>
   <body>
       <div class="centro">
@@ -58,19 +71,7 @@
         <th>Cod.</th>
         <th>Razão Social</th>
         <th>Nome Fantasia</th>
-        <th>Cnpj</th>
-        <th>Nome do Contato</th>
-        <th>Cep</th>
-        <th>Bairro</th>
-        <th>Logradouro</th>
-        <th>Número</th>
-        <th>Complemento</th>
-        <th>Estado</th>
-        <th>Cidade</th>
-        <th>Telefone 1</th>
-        <th>Telefone 2</th>
-        <th>Celular</th>
-        <th>Email</th>
+        
         
         
         <th colspan="2">Ação</th>
@@ -79,20 +80,6 @@
           <td><c:out value="${fornecedor.codFornecedor}"></c:out></td>
           <td><c:out value="${fornecedor.razaoSocial}"></c:out></td>
           <td><c:out value="${fornecedor.nomeFantasia}"></c:out></td>
-          <td><c:out value="${fornecedor.cnpj}"></c:out></td>
-          <td><c:out value="${fornecedor.nomeContato}"></c:out></td>
-          <td><c:out value="${fornecedor.cep}"></c:out></td>
-          <td><c:out value="${fornecedor.bairro}"></c:out></td>
-          <td><c:out value="${fornecedor.logradouro}"></c:out></td>
-          <td><c:out value="${fornecedor.numero}"></c:out></td>
-          <td><c:out value="${fornecedor.complemento}"></c:out></td>
-          <td><c:out value="${fornecedor.estado}"></c:out></td>
-          <td><c:out value="${fornecedor.cidade}"></c:out></td>
-          <td><c:out value="${fornecedor.telefone1}"></c:out></td>
-          <td><c:out value="${fornecedor.telefone2}"></c:out></td>
-          <td><c:out value="${fornecedor.celular}"></c:out></td>
-          <td><c:out value="${fornecedor.email}"></c:out></td>
-          
           <td><a href="ManterFornecedorController?acao=prepararEditar&codFornecedor=<c:out value="${fornecedor.codFornecedor}"></c:out>">Editar</a></td>
           <td><a href="ManterFornecedorController?acao=prepararExcluir&codFornecedor=<c:out value="${fornecedor.codFornecedor}"></c:out>">Excluir</a></td>
         </tr>

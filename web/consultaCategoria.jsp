@@ -73,18 +73,14 @@
           <th>Cod.</th>
           <th>Nome</th>
           <th>Descrição</th>
-          <th>Período de troca de categoria</th>
-          <th>Próxima Categoria</th>
-
+          
           <th colspan="2">Ação</th>
         <c:forEach items="${categorias}" var="categoria">
           <tr>
             <td><c:out value="${categoria.codCategoria}"></c:out></td>
             <td><c:out value="${categoria.nome}"></c:out></td>
             <td><c:out value="${categoria.descricao}"></c:out></td>
-            <td><c:out value="${categoria.periodoTrocaCategoria}"></c:out></td>
-            <td><c:out value="${categoria.proximaCategoria}"></c:out></td>
-
+            
             <td><a href='ManterCategoriaController?acao=prepararEditar&codCategoria=<c:out value="${categoria.codCategoria}"></c:out>'>Editar</a></td>
             <td><a href='ManterCategoriaController?acao=prepararExcluir&codCategoria=<c:out value="${categoria.codCategoria}"></c:out>'>Excluir</a></td>
           </tr>
