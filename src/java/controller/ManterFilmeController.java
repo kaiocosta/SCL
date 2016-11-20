@@ -136,7 +136,7 @@ public class ManterFilmeController extends HttpServlet {
         Fornecedor fornecedor = new Fornecedor(Integer.parseInt(request.getParameter("codFornecedor")), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
         try{
             Filme filme = new Filme(codFilme, titulo, tituloOriginal, nomeDiretor, nomeAtorPrincipal, nomePremiacoes, anoProducao, anoLancamento, categoria, genero, tipoDeMidia, fornecedor);
-            filme.excluir();
+            filme.alterar();
             RequestDispatcher view = request.getRequestDispatcher("ConsultaFilmeController");
             view.forward(request, response);
         } catch (IOException ex){
