@@ -73,23 +73,23 @@
 	<div class="centro">
 		<h2>Categoria de Clientes - ${operacao}</h2>
 		<form action="ManterClienteController?acao=confirmar${operacao}" method="post" name="frmManterCliente" onsubmit="return validarFormulario(this)">
-                    Código <br><input type="text" name="codCliente" value="${cliente.codCliente}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/><br/>
-                    Nome <br><input type="text" name="nome" value="${cliente.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
-                    Sexo <input type="text" name="sexo" value="${cliente.sexo}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
-	            Data de nascimento <br><input type="text" name="dataDeNasc" value="${cliente.dataDeNasc}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+                    Código <br><input type="number" required="" name="codCliente" value="${cliente.codCliente}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/><br/>
+                    Nome <br><input type="text" required="" name="nome" value="${cliente.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+                    Sexo <input type="text" required="" name="sexo" value="${cliente.sexo}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
+	            Data de nascimento <br><input type="date" required="" name="dataDeNasc" value="${cliente.dataDeNasc}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
                     Estado Civil <input type="text" name="estadoCivil" value="${cliente.estadoCivil}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
-	            CPF <br><input type="text" name="cpf" value="${cliente.cpf}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
-                    RG <input type="text" name="rg" value="${cliente.rg}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
-	            CEP <br><input type="text" name="cep" value="${cliente.cep}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/><br>
+	            CPF <br><input type="number" required="" name="cpf" value="${cliente.cpf}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+                    RG <input type="text" required="" name="rg" value="${cliente.rg}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
+	            CEP <br><input type="number" required="" name="cep" value="${cliente.cep}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/><br>
 	            Bairro <br><input type="text" name="bairro" value="${cliente.bairro}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
 		    Logradouro <input type="text" name="logradouro" value="${cliente.logradouro}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
 	            Nº <br><input type="text" name="numero" value="${cliente.numero}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
                     Estado <input type="text" name="estado" value="${cliente.estado}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
                     Cidade <br><input type="text" name="cidade" value="${cliente.cidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
 	            Complemento <input type="text" name="complemento" value="${cliente.complemento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/>
-	            Telefone 1 <br><input type="text" name="telefone1" value="${cliente.telefone1}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+	            Telefone 1 <br><input type="number" required="" name="telefone1" value="${cliente.telefone1}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
 	            Telefone 2 <input type="text" name="telefone2" value="${cliente.telefone2}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
-	            Celular <br><input type="text" name="celular" value="${cliente.celular}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/><br>
+	            Celular <br><input type="number" required="" name="celular" value="${cliente.celular}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/><br>
 	            E-mail<br><input type="text" name="email" value="${cliente.email}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
                     <br/>
                     <input type="submit" value="Enviar" /><br>

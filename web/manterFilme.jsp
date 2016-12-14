@@ -108,14 +108,14 @@
 <div class="centro">
   <h2>Cadastro de Filmes - ${operacao}</h2>
         <form action="ManterFilmeController?acao=confirmar${operacao}" method="post" name="frmManterFilme" onsubmit="return validarFormulario(this)">
-            Código <br><input type="text" name="codFilme" required value="${filme.codFilme}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>/><br>
-            Título <br><input type="text" name="titulo" value="${filme.titulo}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+            Código <br><input type="number" required="" name="codFilme" required value="${filme.codFilme}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>/><br>
+            Título <br><input type="text" required="" name="titulo" value="${filme.titulo}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Título original <input type="text" name="tituloOriginal" value="${filme.tituloOriginal}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
             Diretor(a)<br> <input type="text" name="nomeDiretor" value="${filme.nomeDiretor}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Ator Principal <input type="text" name="nomeAtorPrincipal" value="${filme.nomeAtorPrincipal}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/><br>
             Premiações<br> <input type="text" name="nomePremiacoes" value="${filme.nomePremiacoes}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/><br>
-            Ano de Produção<br> <input type="text" name="anoProducao" value="${filme.anoProducao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
-            Ano de Lançamento <input type="text" name="anoLancamento" value="${filme.anoLancamento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br><br>
+            Ano de Produção<br> <input type="number" name="anoProducao" value="${filme.anoProducao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+            Ano de Lançamento <input type="number" name="anoLancamento" value="${filme.anoLancamento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br><br>
             
             Categoria <select name="codCategoria"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>><br>
                 <option value="0" <c:if test="${categoria.codCategoria != null}"> selected</c:if>> </option><br>

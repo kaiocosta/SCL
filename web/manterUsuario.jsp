@@ -73,23 +73,23 @@
 <div class="centro">
 	<h2>Cadastro de usuarios - ${operacao}</h2>
 	<form action="ManterUsuarioController?acao=confirmar${operacao}" method="post" name="frmManterUsuario" onsubmit="return validarFormulario(this)">
-            Código <input type="text" name="codUsuario" value="${usuario.codUsuario}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/>  <br/>
-            Nome <input type="text" name="nome" value="${usuario.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
+            Código <input type="number" required="" name="codUsuario" value="${usuario.codUsuario}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/>  <br/>
+            Nome <input type="text" required="" name="nome" value="${usuario.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
             Sexo <input type="text" name="sexo" value="${usuario.sexo}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
-            Data de Nasc.<input type="text" name="dataDeNasc" value="${usuario.dataDeNasc}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+            Data de Nasc.<input type="number" required="" name="dataDeNasc" value="${usuario.dataDeNasc}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Estado Civil <input type="text" name="estadoCivil" value="${usuario.estadoCivil}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
-            CPF <input type="text" name="cpf" value="${usuario.cpf}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
-            RG <input type="text" name="rg" value="${usuario.rg}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
-            Login <input type="text" name="login" value="${usuario.login}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
-            Senha <input type="text" name="senha" value="${usuario.senha}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
-            CEP <input type="text" name="cep" value="${usuario.cep}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
+            CPF <input type="number" required="" name="cpf" value="${usuario.cpf}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
+            RG <input type="text" required="" name="rg" value="${usuario.rg}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
+            Login <input type="text" required="" name="login" value="${usuario.login}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+            Senha <input type="text" required="" name="senha" value="${usuario.senha}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
+            CEP <input type="number" required="" name="cep" value="${usuario.cep}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
             Bairro <input type="text" name="bairro" value="${usuario.bairro}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
             Logradouro <input type="text" name="logradouro" value="${usuario.logradouro}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Nº <input type="text" name="numero" value="${usuario.numero}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
             Complemento <input type="text" name="complemento" value="${usuario.complemento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
             Cidade <input type="text" name="cidade" value="${usuario.cidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Estado <input type="text" name="estado" value="${usuario.estado}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
-            Telefone 1 <input type="text" name="telefone1" value="${usuario.telefone1}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+            Telefone 1 <input type="number" required="" name="telefone1" value="${usuario.telefone1}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Telefone 2 <input type="text" name="telefone2" value="${usuario.telefone2}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
             Celular <input type="text" name="celular" value="${usuario.celular}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br/>  <br/>
             E-mail<input type="text" name="email" value="${usuario.email}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>  <br/>
