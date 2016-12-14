@@ -60,7 +60,5 @@ and open the template in the editor.
           <a href="ConsultaTipoDeMidiaController"><button class="botao">Consultar Tipo de Midia</button></a>
           <a href="ConsultaFilmeController"><button class="botao">Consultar Filmes</button></a>
         </div>
-
-
     </body>
 </html>

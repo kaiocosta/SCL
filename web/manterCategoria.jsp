@@ -72,8 +72,8 @@
     <div class="centro">
       <h2>Categoria Cadastro - ${operacao}</h2>
       <form action="ManterCategoriaController?acao=confirmar${operacao}" method="post">
-        Codigo: <input type="text" name="codCategoria" value="${categorias.codCategoria}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/> <br>
-        Nome: <input type="text" name="nome" value="${categorias.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
+        Codigo: <input type="number" required="" name="codCategoria" value="${categorias.codCategoria}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/> <br>
+        Nome: <input type="text" required="" name="nome" value="${categorias.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
         Descrição <input name="descricao" rows="8" cols="40" value="${categorias.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
         Período de troca: <input type="text" name="periodoTrocaCategoria" value="${categorias.periodoTrocaCategoria}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
         Próxima categoria: <input type="text" name="proximaCategoria" value="${categorias.proximaCategoria}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>

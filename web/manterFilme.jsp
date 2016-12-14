@@ -1,12 +1,48 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html> 
 <html>
 <head>
   <meta charset="utf-8">
     <title>Cadastro de Filmes</title>
+<script language="JavaScript">
+            function campoNumerico(valor)
+            {
+                var caracteresValidos = "0123456789";
+                var ehNumero = true;
+                var umCaracter;
+                for (i = 0; i < valor.length && ehNumero == true; i++) 
+                { 
+                    umCaracter = valor.charAt(i); 
+                    if (caracteresValidos.indexOf(umCaracter) == -1) 
+                    {
+                        ehNumero = false;
+                    }
+                }
+                return ehNumero;
+            }
+            
+            function validarFormulario(form) { 
+                var mensagem;
+                mensagem = "";
+                if (form.codFilme.value == ""){
+                    mensagem = mensagem + "Informe o Código do Filme\n";
+                }                             
+                if (form.titulo.value == ""){
+                    mensagem = mensagem + "Informe o Título do Filme\n";
+                }             
+                if (mensagem == ""){
+                    return true;
+                }else{
+                    alert(mensagem);
+                    return false;
+                }                
+            } 
+            
+        </script>
 
-    <style>
+   <style>
       select,input[type=text]{
         width: 40%;
         margin: 8px 0;
@@ -72,7 +108,7 @@
 <div class="centro">
   <h2>Cadastro de Filmes - ${operacao}</h2>
         <form action="ManterFilmeController?acao=confirmar${operacao}" method="post" name="frmManterFilme" onsubmit="return validarFormulario(this)">
-            Código <br><input type="text" name="codFilme" value="${filme.codFilme}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/><br>
+            Código <br><input type="text" name="codFilme" required value="${filme.codFilme}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>/><br>
             Título <br><input type="text" name="titulo" value="${filme.titulo}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Título original <input type="text" name="tituloOriginal" value="${filme.tituloOriginal}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
             Diretor(a)<br> <input type="text" name="nomeDiretor" value="${filme.nomeDiretor}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
@@ -105,16 +141,18 @@
                         <option value="${fornecedor.codFornecedor}" <c:if test="${filme.fornecedor.codFornecedor == fornecedor.codFornecedor}"> selected</c:if>>${fornecedor.razaoSocial}</option>
                     </c:forEach>
             </select>
+            
     <br/>
     <br/>
     <input type="reset" value="Cancelar" /><br>
-    <input type="submit" value="Confirmar" />
-
+    <input type="submit" value="Confirmar" onclick="alerta()"  />
+    
 
   </form>
 
 </div>
+                           
+                    
 </body>
-
 
 </html>

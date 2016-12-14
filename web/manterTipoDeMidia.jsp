@@ -71,9 +71,9 @@
       <div class="centro">
         <h2>Cadastrar Tipo de Midia - ${operacao}</h2>
         <form action="ManterTipoDeMidiaController?acao=confirmar${operacao}" method="post">
-        Código: <input type="text" name="codTipoDeMidia" value="${tipoDeMidia.codTipoDeMidia}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/>  <br/>
-        Nome: <input type="text" name="nome" value="${tipoDeMidia.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
-        Descrição <input name="descricao" rows="8" cols="40" value="${tipoDeMidia.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
+        Código: <input type="number" required="" name="codTipoDeMidia" value="${tipoDeMidia.codTipoDeMidia}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/>  <br/>
+        Nome: <input type="text" name="nome" required="" value="${tipoDeMidia.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
+        Descrição <input type="text" name="descricao" rows="8" cols="40" value="${tipoDeMidia.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
         <input type="submit" name="" value="Concluir">
         <input type="button" name="" value="Cancelar">
         </form>
