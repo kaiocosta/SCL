@@ -9,11 +9,10 @@ and open the template in the editor.
         <title>SCL - Sistema de Cadastro para Locadoras</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-          <style >
+          <style>
           a{
     				color: #000;
     				text-decoration: none;
-    				background-color: #BBB;
     				font-weight: bolder;
     				padding: 0.5em;
     			}
