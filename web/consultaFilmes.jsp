@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <title>Consulta Filmes</title>
-
+    
     <style >
       a{
         color: #000;
@@ -95,9 +95,6 @@
           </c:forEach>
           </table></br>
           
-        
-         
-
         <form action="ManterFilmeController?acao=prepararIncluir" method="post">
           <input type="submit" name="btnIncluir" value="Incluir">
         </form>

@@ -40,6 +40,7 @@
                 }                
             } 
             
+            
         </script>
 
    <style>
@@ -117,25 +118,25 @@
             Ano de Produção<br> <input type="number" name="anoProducao" value="${filme.anoProducao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
             Ano de Lançamento <input type="number" name="anoLancamento" value="${filme.anoLancamento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br><br>
             
-            Categoria <select name="codCategoria"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>><br>
+            Categoria <select name="codCategoria" <c:if test="${operacao == 'Excluir'}"> disabled </c:if>><br>
                 <option value="0" <c:if test="${categoria.codCategoria != null}"> selected</c:if>> </option><br>
                     <c:forEach items="${categorias}" var="categoria">
                         <option value="${categoria.codCategoria}" <c:if test="${filme.categoria.codCategoria == categoria.codCategoria}"> selected</c:if>>${categoria.nome}</option>
                     </c:forEach>
             </select>
-            Genero <select name="codGenero" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+            Genero <select name="codGenero" <c:if test="${operacao == 'Excluir'}"> disabled </c:if>>
                 <option value="0" <c:if test="${genero.codGenero != null}"> selected</c:if>> </option>
                     <c:forEach items="${generos}" var="genero">
                         <option value="${genero.codGenero}" <c:if test="${filme.genero.codGenero == genero.codGenero}"> selected</c:if>>${genero.nome}</option>
                     </c:forEach>
             </select>
-            <br>Mídia <select name="codTipoDeMidia" <c:if test="${operacao == 'Excluir'}"> readonly </c:if>>
+            <br>Mídia <select name="codTipoDeMidia" <c:if test="${operacao == 'Excluir'}"> disabled </c:if>>
                 <option value="0" <c:if test="${tipoDeMidia.codTipoDeMidia != null}"> selected</c:if>> </option>
                     <c:forEach items="${tiposdemidias}" var="tipoDeMidia">
                         <option value="${tipoDeMidia.codTipoDeMidia}" <c:if test="${filme.tipoDeMidia.codTipoDeMidia == tipoDeMidia.codTipoDeMidia}"> selected</c:if>>${tipoDeMidia.nome}</option>
                     </c:forEach>
             </select>
-            Fornecedor <select name="codFornecedor" <c:if test="${operacao == 'Excluir'}"> readonly </c:if>>
+            Fornecedor <select name="codFornecedor" <c:if test="${operacao == 'Excluir'}"> disabled </c:if>>
                 <option value="0" <c:if test="${fornecedor.codFornecedor != null}"> selected</c:if>> </option>
                     <c:forEach items="${fornecedores}" var="fornecedor">
                         <option value="${fornecedor.codFornecedor}" <c:if test="${filme.fornecedor.codFornecedor == fornecedor.codFornecedor}"> selected</c:if>>${fornecedor.razaoSocial}</option>
