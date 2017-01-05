@@ -69,6 +69,7 @@
     </style>
   </head>
   <body>
+    
       <div class="centro">
         <h2>Cadastrar Fornecedor - ${operacao}</h2>
         <form action="ManterFornecedorController?acao=confirmar${operacao}" method="post" name="frmManterFornecedor" onsubmit="return validarFormulario(this)">
@@ -93,4 +94,5 @@
         <input type="button" name="" value="Cancelar">
         </form>
       </div>
+    
 </html>

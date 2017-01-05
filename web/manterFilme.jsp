@@ -12,7 +12,7 @@
   background: #eee; 
   pointer-events: none;
   touch-action: none;
-  background-color: white;
+  background-color: #DDD;
 } 
       
       select,input[type=text]{

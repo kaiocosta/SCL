@@ -72,13 +72,18 @@
     <body>
         <div class="centro">
           <h2>Cadastro Genero - ${operacao}</h2>
+          
           <form action="ManterGeneroController?acao=confirmar${operacao}" method="post">
-          Codigo: <input type="number" name="codGenero" required="" value="${genero.codGenero}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/> <br>
-          Nome: <input type="text" name="nome" required="" value="${genero.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
-          Descrição <input type="text" name="descricao" rows="8" cols="40" value="${genero.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/><br>
+          
+          Codigo: <input type="number" name="codGenero" required="" value="${genero.codGenero}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/>
+          Nome: <input type="text" name="nome" required="" size="20"  value="${genero.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+          
+          Descrição:<input type="text" name="descricao" size="20" rows="8" cols="40" value="${genero.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/>
+          
+          </form>
+          
           <input type="submit" name="" value="Concluir">
           <input type="button" name="" value="Cancelar">
-          </form>
         </div>
     </body>
 </html>
