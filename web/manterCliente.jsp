@@ -8,7 +8,7 @@
 	<title>Cadastro de Clientes</title>
 
 	<style>
-		input[type=text],[type=number]{
+		input{
 
 			margin: 8px 0;
 			padding: 12px 20px;
@@ -56,16 +56,17 @@
 					border-width: thin;
 					text-align: left;
 					}
-			input[type=submit],[type=reset],[type=button]{
-				margin-top: 1em;
-				position: relative;
-				border: none;
-				color: #FFF;
-				text-decoration: none;
-				background-color: #000;
-				padding: 0.5em;
-				width: 48%;
-				left: 26%;}
+					input[type=submit],[type=reset],[type=button]{
+            margin-top: 1em;
+            position: relative;
+            border: none;
+            color: #FFF;
+            text-decoration: none;
+            background-color: #000;
+            padding: 0.5em;
+            width: 48%;
+            margin-left: auto;
+            margin-right: auto;}
 
 	</style>
 </head>

@@ -5,11 +5,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <title>Incluir Categoria</title>
 
     <style>
+    input{
+
+      margin: 8px 0;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      }
           form{
             margin-left: auto;
             margin-right: auto;
@@ -41,33 +45,48 @@
           text-align: center;
           margin-left: auto;
           margin-right: auto;}
-          th{
-            border: solid;
-            background-color: #000;
-            padding: 1em;
+          table,td,tr{
+  					border: none;
+  					margin-left: auto;
+  					margin-right: auto;
+  					border-collapse: collapse;
+  					border-width: thin;
+  					text-align: left;
+  					}
+          input[type=submit],[type=reset],[type=button]{
+            text-align: center;
+            margin-top: .5em;
+            position: relative;
+            border: none;
             color: #FFF;
-          }
-
-
-
+            text-decoration: none;
+            background-color: #000;
+            padding: 0.5em;
+            width: 48%;
+            margin-left: auto;
+            margin-right: auto;}
+            
     </style>
   </head>
   <body>
     <div class="centro">
       <h2>Categoria Cadastro - ${operacao}</h2>
-      <form action="ManterCategoriaController?acao=confirmar${operacao}" method="post">
-        Codigo: <input class="span3" type="number" required="" name="codCategoria" value="${categorias.codCategoria}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/> <br>
-        Nome: <input class="span3" type="text" required="" name="nome" value="${categorias.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
-        Descrição <input class="span3" type="text"name="descricao" value="${categorias.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
-        Período de troca: <input class="span3" type="text" name="periodoTrocaCategoria" value="${categorias.periodoTrocaCategoria}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
-        Próxima categoria: <input class="span3" type="text" name="proximaCategoria" value="${categorias.proximaCategoria}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> <br>
-<br>
-        <input type="button" name="" value="Cancelar" class="btn btn-danger">
-        <input type="submit" name="" value="Concluir" class="btn btn-primary pull-right">
+<div class="tabela">
+  <table>
 
+  <form action="ManterCategoriaController?acao=confirmar${operacao}" method="post">
+    <tr><td>Codigo:</td><td> <input   type="number" required="" name="codCategoria" value="${categorias.codCategoria}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/></td></tr>
+    <tr><td>Nome:</td><td> <input   type="text" required="" name="nome" value="${categorias.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> </td></tr>
+    <tr><td>Descrição</td><td> <input   type="text"name="descricao" value="${categorias.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> </td></tr>
+    <tr><td>Período de troca:</td><td> <input   type="text" name="periodoTrocaCategoria" value="${categorias.periodoTrocaCategoria}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/></td></tr>
+    <tr><td>Próxima categoria:</td><td> <input   type="text" name="proximaCategoria" value="${categorias.proximaCategoria}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>/> </td></tr>
+
+  </table>
+</div>
+
+        <input type="submit" name="" value="Concluir" ><br>
+        <input type="button" name="" value="Cancelar">
       </form>
     </div>
   </body>
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 </html>
