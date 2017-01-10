@@ -1,63 +1,77 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>SCL - Sistema de Cadastro para Locadoras</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-          <style>
-          a{
-    				color: #000;
-    				text-decoration: none;
-    				font-weight: bolder;
-    				padding: 0.5em;
-    			}
-    			a:visited{
-    				color: #000;
-    				text-decoration: none;
-    				background-color: #BBB;
-    				font-weight: bolder;
-    				padding: 0.5em;
-    			}
-    			.centro{
+<html lang="pt-br">
 
-            text-align: center;
-    				border-radius: 20px;
-    				margin-top: 2em;
-    				margin-left: auto;
-    				margin-right: auto;
-    				width: 65%;
-    				box-shadow: 4px 4px 45px grey;
-    				padding: 1em 3em 3em 3em;  }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/logo-nav.css" rel="stylesheet">
+    <title>SCL - Sistema de Cadastro para Locadoras</title>
+</head>
 
-            .botao{
-              margin: 2em;
-              margin-top: 1em;
-              position: relative;
-              border: none;
-              color: #FFF;
-              text-decoration: none;
-              background-color: #000;
-              padding: 0.9em;
-              width: 35%;
-      }
-          </style>
+<body>
 
-    </head>
-    <body>
-        <div class="centro">
-          <h1>Bem-vindo ao SCL</h1>
-          <a href="ConsultaFornecedorController"><button class="botao">Consultar Fornecedores</button></a>
-          <a href="ConsultaGeneroController"><button class="botao">Consultar Generos</button></a>
-          <a href="ConsultaUsuarioController"><button class="botao">Consultar Usuarios</button></a>
-          <a href="ConsultaCategoriaController"><button class="botao">Consultar Categorias</button></a>
-          <a href="ConsultaClienteController"><button class="botao">Consultar Clientes</button></a>
-          <a href="ConsultaTipoDeMidiaController"><button class="botao">Consultar Tipo de Midia</button></a>
-          <a href="ConsultaFilmeController"><button class="botao">Consultar Filmes</button></a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="ConsultaFornecedorController">Consultar Fornecedores</a>
+                    </li>
+                    <li>
+                        <a href="ConsultaGeneroController">Consultar Generos</a>
+                    </li>
+                    <li>
+                        <a href="ConsultaUsuarioController">Consultar Usuarios</a>
+                    </li>
+                    <li>
+                        <a href="ConsultaCategoriaController"> Consultar Categorias </a>
+                    </li>
+                    <li>
+                        <a href="ConsultaClienteController"> Consultar Clientes </a>
+                    </li>
+                    <li>
+                      <a href="ConsultaTipoDeMidiaController"> Consultar Tipo de Midia </a>
+                    </li>
+                    <li>
+                        <a href="ConsultaFilmeController"> Consultar Filmes </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-    </body>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Bem-vindo ao SCL</h1>
+                <p>Sistema de Cadastro para Locadoras</p>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
 </html>
