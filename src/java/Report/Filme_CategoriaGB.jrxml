@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-04-10T21:59:02 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Filme_CategoriaGB" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb469ec1-a95f-425e-9ce6-08939f69fcac">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="c2NsYmQuZmlsbWVzIEFTICwyMSwtNCw5N2M0NTJlZS1mMmNiLTQwMWEtYjM2NS1jNWVmMThjYWU0&#xA;M2E7c2NsYmQuY2F0ZWdvcmlhcyBBUyAsMjQ2LC01LGNhNWJlZjdjLTQwNDEtNDBiMS1hNDA3LTVh&#xA;MDZhZTQzNDU2Mjs="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sclbd"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT sclbd.filmes.`codFilme`,
+	sclbd.filmes.titulo,
+	sclbd.categorias.nome
+FROM sclbd.filmes
+	INNER JOIN sclbd.categorias ON 
+	 sclbd.filmes.`codCategoria` = sclbd.categorias.`codCategoria`]]>
+	</queryString>
+	<field name="codFilme" class="java.lang.Integer"/>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="40b55223-58bf-40e9-ae22-602ea7cc8440"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Categoria]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="6c48bfb9-652f-41d1-9af7-033dd8f3b868"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="3ead2b95-694f-4c0f-8cad-923d43cbcc76"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="bbb985c5-3496-4b33-aa00-427e11edd983"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="f3c2d9da-aeea-4651-8bae-07aebeeda674"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SCL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="43" width="235" height="20" forecolor="#FFFFFF" uuid="75fbb37f-9728-442f-aa81-826e63b8590d"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Filmes agrupados por categoria]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="7b6d1133-15d8-476b-b95d-e388171adef2"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="130" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4460a7df-2bec-47c9-a9da-6ee374571a36"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cód. Filme]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="130" y="0" width="424" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ea71e81e-b9a7-4418-9f1f-780c4b32e8d4"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Filme]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="7649d7ee-cd35-4485-a1d9-ef1f62702d99"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="130" height="20" uuid="a7501eba-1f41-476b-9b99-c2dbf87dce16"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codFilme}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="130" y="0" width="424" height="20" uuid="36f194a8-301c-48a1-a23a-3c2793bfba71"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="dc21f344-9cd3-4071-972f-88bf3a35e11b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="c954ea7d-e47c-49d5-b47d-e597f95ccedb"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="28f84f0b-767f-40ad-976c-2e80bdd1f579"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
