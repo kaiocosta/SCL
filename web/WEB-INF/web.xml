@@ -68,6 +68,18 @@
         <servlet-name>TratamentoExcecao</servlet-name>
         <servlet-class>exception.TratamentoExcecao</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerCliente</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerCliente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerFilme</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerFilme</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerMidia</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerMidia</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmeController</servlet-name>
         <url-pattern>/ConsultaFilmeController</url-pattern>
@@ -135,6 +147,18 @@
     <servlet-mapping>
         <servlet-name>TratamentoExcecao</servlet-name>
         <url-pattern>/TratamentoExcecao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerCliente</servlet-name>
+        <url-pattern>/RelatorioControllerCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerFilme</servlet-name>
+        <url-pattern>/RelatorioControllerFilme</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerMidia</servlet-name>
+        <url-pattern>/RelatorioControllerMidia</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

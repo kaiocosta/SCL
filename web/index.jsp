@@ -51,6 +51,7 @@
                     <li>
                         <a href="ConsultaFilmeController"> Consultar Filmes </a>
                     </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

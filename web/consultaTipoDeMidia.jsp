@@ -95,7 +95,7 @@
         <form action="ManterTipoDeMidiaController?acao=prepararIncluir" method="post">
           <input type="submit" name="btnIncluir" value="Incluir">
         </form>
-
    </div>
+        <a href="RelatorioControllerMidia"> Relatorio de Midias </a>
     </body>
 </html>

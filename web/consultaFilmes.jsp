@@ -98,6 +98,7 @@
         <form action="ManterFilmeController?acao=prepararIncluir" method="post">
           <input type="submit" name="btnIncluir" value="Incluir">
         </form>
+        <a href="RelatorioControllerFilme"> Relatorio de Filmes </a>
     </div>
   </body>
 </html>
