@@ -80,6 +80,10 @@
         <servlet-name>RelatorioControllerMidia</servlet-name>
         <servlet-class>relatorio.RelatorioControllerMidia</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerUsuario</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmeController</servlet-name>
         <url-pattern>/ConsultaFilmeController</url-pattern>
@@ -159,6 +163,10 @@
     <servlet-mapping>
         <servlet-name>RelatorioControllerMidia</servlet-name>
         <url-pattern>/RelatorioControllerMidia</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerUsuario</servlet-name>
+        <url-pattern>/RelatorioControllerUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

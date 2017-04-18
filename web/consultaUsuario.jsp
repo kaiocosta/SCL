@@ -97,5 +97,6 @@
       <form action="ManterUsuarioController?acao=prepararIncluir" method="post">
         <input type="submit" name="btnIncluir" value="Incluir">
       </form>
+       <a href="RelatorioControllerUsuario"> Relatorio de Usuarios </a>
   </body>
 </html>
