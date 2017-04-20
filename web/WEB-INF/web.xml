@@ -96,6 +96,14 @@
         <servlet-name>RelatorioControllerCategoria</servlet-name>
         <servlet-class>relatorio.RelatorioControllerCategoria</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerFilmePGenero</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerFilmePGenero</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerFilmePCategoria</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerFilmePCategoria</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmeController</servlet-name>
         <url-pattern>/ConsultaFilmeController</url-pattern>
@@ -191,6 +199,14 @@
     <servlet-mapping>
         <servlet-name>RelatorioControllerCategoria</servlet-name>
         <url-pattern>/RelatorioControllerCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerFilmePGenero</servlet-name>
+        <url-pattern>/RelatorioControllerFilmePGenero</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerFilmePCategoria</servlet-name>
+        <url-pattern>/RelatorioControllerFilmePCategoria</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
