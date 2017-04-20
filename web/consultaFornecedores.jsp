@@ -91,5 +91,6 @@
       <input type="submit" name="btnIncluir" value="Incluir">
     </form>
       </div>
+      <a href="RelatorioControllerFornecedor"> Relatorio de Fornecedores </a>
   </body>
 </html>

@@ -84,6 +84,18 @@
         <servlet-name>RelatorioControllerUsuario</servlet-name>
         <servlet-class>relatorio.RelatorioControllerUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerFornecedor</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerFornecedor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerGenero</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerGenero</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerCategoria</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerCategoria</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmeController</servlet-name>
         <url-pattern>/ConsultaFilmeController</url-pattern>
@@ -167,6 +179,18 @@
     <servlet-mapping>
         <servlet-name>RelatorioControllerUsuario</servlet-name>
         <url-pattern>/RelatorioControllerUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerFornecedor</servlet-name>
+        <url-pattern>/RelatorioControllerFornecedor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerGenero</servlet-name>
+        <url-pattern>/RelatorioControllerGenero</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerCategoria</servlet-name>
+        <url-pattern>/RelatorioControllerCategoria</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

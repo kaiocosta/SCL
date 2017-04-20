@@ -88,5 +88,6 @@
       <input type="submit" name="btnIncluir" value="Incluir">
     </form>
   </div>
+      <a href="RelatorioControllerGenero"> Relatorio de Generos </a>
   </body>
 </html>

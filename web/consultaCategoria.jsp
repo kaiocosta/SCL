@@ -91,5 +91,6 @@
           <input type="submit" name="btnIncluir" value="Incluir">
         </form>
     </div>
+      <a href="RelatorioControllerCategoria"> Relatorio de Categorias </a>
   </body>
 </html>
