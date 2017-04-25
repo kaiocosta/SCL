@@ -104,6 +104,10 @@
         <servlet-name>RelatorioControllerFilmePCategoria</servlet-name>
         <servlet-class>relatorio.RelatorioControllerFilmePCategoria</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultaRelatorioController</servlet-name>
+        <servlet-class>controller.ConsultaRelatorioController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmeController</servlet-name>
         <url-pattern>/ConsultaFilmeController</url-pattern>
@@ -207,6 +211,10 @@
     <servlet-mapping>
         <servlet-name>RelatorioControllerFilmePCategoria</servlet-name>
         <url-pattern>/RelatorioControllerFilmePCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaRelatorioController</servlet-name>
+        <url-pattern>/ConsultaRelatorioController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

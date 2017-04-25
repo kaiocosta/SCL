@@ -51,6 +51,9 @@
                     <li>
                         <a href="ConsultaFilmeController"> Consultar Filmes </a>
                     </li>
+                    <li>
+                        <a href="ConsultaRelatorioController"> Consultar Relatorios </a>
+                    </li>
                     
                 </ul>
             </div>
@@ -63,6 +66,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                <br>
+                <br>
                 <h1>Bem-vindo ao SCL</h1>
                 <p>Sistema de Cadastro para Locadoras</p>
             </div>

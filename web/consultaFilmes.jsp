@@ -93,24 +93,13 @@
           
           </tr>  
           </c:forEach>
-          </table></br>
-          
+
+          </table></br>    
         <form action="ManterFilmeController?acao=prepararIncluir" method="post">
           <input type="submit" name="btnIncluir" value="Incluir">
         </form>
         
       </div>
-      <a href="RelatorioControllerFilme"> Relatorio de Filmes </a>
       
-        <form action="RelatorioControllerFilmePGenero" method="post">
-            Entre com o nome do Genero
-            <input type="text" name="txtNomeGenero"/><br/>
-            <input type="submit"/>
-        </form>
-        <form action="RelatorioControllerFilmePCategoria" method="post">
-            Entre com o nome da Categoria
-            <input type="text" name="txtNomeCategoria"/><br/>
-            <input type="submit"/>
-        </form>
   </body>
 </html>
