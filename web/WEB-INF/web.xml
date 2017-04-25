@@ -108,6 +108,10 @@
         <servlet-name>ConsultaRelatorioController</servlet-name>
         <servlet-class>controller.ConsultaRelatorioController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioControllerClientePBairro</servlet-name>
+        <servlet-class>relatorio.RelatorioControllerClientePBairro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConsultaFilmeController</servlet-name>
         <url-pattern>/ConsultaFilmeController</url-pattern>
@@ -215,6 +219,10 @@
     <servlet-mapping>
         <servlet-name>ConsultaRelatorioController</servlet-name>
         <url-pattern>/ConsultaRelatorioController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioControllerClientePBairro</servlet-name>
+        <url-pattern>/RelatorioControllerClientePBairro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

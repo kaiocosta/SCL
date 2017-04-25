@@ -206,6 +206,18 @@
                         </form>
                     </td>
                 </tr>
+                <tr>
+                    <td>Por Bairro</td>
+                    <td>
+                        <form action="RelatorioControllerClientePBairro" method="post">
+                            <input type="text" name="txtNomeBairro"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+
             </table>
         </div>
     </body>
