@@ -75,7 +75,7 @@
     <body>
         <div class="centro">
             <table class="table table-striped">
-                <tr>Relatorios de Filmes</tr>
+                <tr><h2>Relatorios de Filmes</h2></tr>
                 <th>Relatorio</th>
                 <th>Parametro</th>
                 <th>Gerar</th>
@@ -113,10 +113,54 @@
                         </form>
                     </td>
                 </tr>
+                <tr>
+                    <td>Por Tipo de Mídia</td>
+                    <td>
+                        <form action="RelatorioControllerFilmePMidia" method="post">
+                            <input type="text" name="txtNomeMidia"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Por Ano de Lancamento</td>
+                    <td>
+                        <form action="RelatorioControllerFilmePLancamento" method="post">
+                            <input type="text" name="txtNomeLancamento"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Por Ator Principal</td>
+                    <td>
+                        <form action="RelatorioControllerFilmePAtor" method="post">
+                            <input type="text" name="txtNomeAtor"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Por Premiacao</td>
+                    <td>
+                        <form action="RelatorioControllerFilmePPremiacao" method="post">
+                            <input type="text" name="txtNomePremiacao"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
             </table>
-            
+
             <table class="table table-striped">
-                <tr>Relatorios de Categoria</tr>
+                <tr><h2>Relatorios de Categoria</h2></tr>
                 <th>Relatorio</th>
                 <th>Parametro</th>
                 <th>Gerar</th>
@@ -130,9 +174,9 @@
                     </td>
                 </tr>
             </table>
-            
+
             <table class="table table-striped">
-                <tr>Relatorios de Genero</tr>
+                <tr><h2>Relatorios de Genero</h2></tr>
                 <th>Relatorio</th>
                 <th>Parametro</th>
                 <th>Gerar</th>
@@ -146,8 +190,9 @@
                     </td>
                 </tr>
             </table>
+
             <table class="table table-striped">
-                <tr>Relatorios de Fornecedor</tr>
+                <tr><h2>Relatorios de Fornecedor</h2></tr>
                 <th>Relatorio</th>
                 <th>Parametro</th>
                 <th>Gerar</th>
@@ -160,10 +205,32 @@
                         </form>
                     </td>
                 </tr>
+                <tr>
+                    <td>Por Cidade</td>
+                    <td>
+                        <form action="RelatorioControllerFornecedorPCidade" method="post">
+                            <input type="text" name="txtNomeBairro"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Por Estado</td>
+                    <td>
+                        <form action="RelatorioControllerFornecedorPEstado" method="post">
+                            <input type="text" name="txtNomeEstado"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
             </table>
-            
+
             <table class="table table-striped">
-                <tr>Relatorios de Midias</tr>
+                <tr><h2>Relatorios de Midias</h2></tr>
                 <th>Relatorio</th>
                 <th>Parametro</th>
                 <th>Gerar</th>
@@ -177,8 +244,9 @@
                     </td>
                 </tr>
             </table>
+            
             <table class="table table-striped">
-                <tr>Relatorios de Usuario</tr>
+                <tr><h2>Relatorios de Usuario</h2></tr>
                 <th>Relatorio</th>
                 <th>Parametro</th>
                 <th>Gerar</th>
@@ -191,9 +259,43 @@
                         </form>
                     </td>
                 </tr>
+                <tr>
+                    <td>Por Bairro</td>
+                    <td>
+                        <form action="RelatorioControllerUsuarioPBairro" method="post">
+                            <input type="text" name="txtNomeBairro"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Por Sexo</td>
+                    <td>
+                        <form action="RelatorioControllerUsuarioPSexo" method="post">
+                            <input type="text" name="txtNomeSexo"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Por Estado Civil</td>
+                    <td>
+                        <form action="RelatorioControllerUsuarioPEstadoCivil" method="post">
+                            <input type="text" name="txtNomeEstadoCivil"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
             </table>
+
             <table class="table table-striped">
-                <tr>Relatorios de Clientes</tr>
+                <tr><h2>Relatorios de Clientes</h2></tr>
                 <th>Relatorio</th>
                 <th>Parametro</th>
                 <th>Gerar</th>
@@ -217,7 +319,28 @@
                         </form>
                     </td>
                 </tr>
-
+                <tr>
+                    <td>Por Sexo</td>
+                    <td>
+                        <form action="RelatorioControllerClientePSexo" method="post">
+                            <input type="text" name="txtNomeSexo"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Por Estado Civil</td>
+                    <td>
+                        <form action="RelatorioControllerClientePEstadoCivil" method="post">
+                            <input type="text" name="txtNomeEstadoCivil"/><br/>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
+                        </form>
+                    </td>
+                </tr>
             </table>
         </div>
     </body>
