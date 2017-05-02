@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package relatorio;
+package controller;
 
 import dao.BD;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,13 +24,17 @@ import net.sf.jasperreports.engine.JasperPrint;
  *
  * @author Ramon
  */
-public class RelatorioControllerCliente extends HttpServlet {
+public class RelatorioControllerSelect extends HttpServlet {
 
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public class RelatorioController extends HttpServlet {
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
         Connection conexao = null;
         try {
@@ -58,9 +61,7 @@ public class RelatorioControllerCliente extends HttpServlet {
             } catch (SQLException ex) {
             }
         }
-    }
-
-    }
+}
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -99,5 +100,5 @@ public class RelatorioControllerCliente extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }
