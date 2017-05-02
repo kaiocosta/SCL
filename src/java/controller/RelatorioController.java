@@ -31,9 +31,9 @@ public class RelatorioController extends HttpServlet {
             String reportName = request.getParameter("reportName");
             String parameter = request.getParameter("reportParameter");
             HashMap reportParameter = new HashMap();
-            if(!parameter.equals("")){
+            /*if(!parameter.equals("")){
                 reportParameter.put("PAR_report", parameter);
-            }
+            }*/
             String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/" + reportName + ".jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, reportParameter, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp);

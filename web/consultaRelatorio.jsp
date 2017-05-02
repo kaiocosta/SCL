@@ -350,15 +350,15 @@
                 <th>Gerar</th>
                 <tr>
                     <td>
-                        <select name="reportName" id="reportName">
-                            <option value="Clientes" >Clientes</option>
+                        <select name="reportName">
+                            <option value="Clientes">Clientes</option>
                             <option value="Filmes">Filmes</option>
                             <option value="Generos">Generos</option>
                             <option value="Fornecedores">Fornecedores</option>
                         </select>    
                     </td>
                     <td>
-                        <select name="reportParameter">
+                        <select>
                             <option value=""></option>
                         </select>
                     </td>
