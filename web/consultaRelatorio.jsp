@@ -342,6 +342,32 @@
                     </td>
                 </tr>
             </table>
+            <form action="RelatorioController" method="POST">
+                <table class="table table-striped">
+                <tr><h2>Relatorios</h2></tr>
+                <th>Relatorio</th>
+                <th>Parametro</th>
+                <th>Gerar</th>
+                <tr>
+                    <td>
+                        <select name="reportName" id="reportName">
+                            <option value="Clientes" >Clientes</option>
+                            <option value="Filmes">Filmes</option>
+                            <option value="Generos">Generos</option>
+                            <option value="Fornecedores">Fornecedores</option>
+                        </select>    
+                    </td>
+                    <td>
+                        <select name="reportParameter">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" type="submit">Gerar</button>
+                    </td>
+                </tr>
+            </table>
+            </form>
         </div>
     </body>
 </html>
