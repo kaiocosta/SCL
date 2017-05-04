@@ -15,6 +15,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Categoria;
+import modelo.Cliente;
+import modelo.Filme;
+import modelo.Fornecedor;
+import modelo.Genero;
+import modelo.TipoDeMidia;
+import modelo.Usuario;
 
 /**
  *
@@ -30,12 +37,25 @@ public class ConsultaRelatorioController extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     */
+     request.getRequestDispatcher("/consultaRelatorio.jsp");*/
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
-        RequestDispatcher view =
-                request.getRequestDispatcher("/consultaRelatorio.jsp");
-        view.forward(request, response);
+            throws ServletException, IOException, SQLException, ClassNotFoundException{
+        try{
+            
+            request.setAttribute("categorias", Categoria.obterCategorias());
+            request.setAttribute("generos", Genero.obterGeneros());
+            request.setAttribute("tiposdemidias", TipoDeMidia.obterTipoDeMidias());
+            request.setAttribute("fornecedores", Fornecedor.obterFornecedores());
+            request.setAttribute("filmes", Filme.obterFilmes());
+            request.setAttribute("usuarios", Usuario.obterUsuarios());
+            request.setAttribute("clientes", Cliente.obterClientes());
+            
+            RequestDispatcher view = request.getRequestDispatcher("/consultaRelatorio.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex){
+        } catch (IOException ex) { 
+        } 
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -52,6 +72,8 @@ public class ConsultaRelatorioController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
+            Logger.getLogger(ConsultaRelatorioController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConsultaRelatorioController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -70,6 +92,8 @@ public class ConsultaRelatorioController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
+            Logger.getLogger(ConsultaRelatorioController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConsultaRelatorioController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

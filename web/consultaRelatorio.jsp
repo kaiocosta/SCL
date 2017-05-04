@@ -94,7 +94,11 @@
                     <td>Por Genero</td>
                     <td>
                         <form action="RelatorioControllerFilmePGenero" method="post">
-                            <input type="text" name="txtNomeGenero"/><br/>
+                            <select name="txtNomeGenero">
+                            <c:forEach items="${generos}" var="genero">
+                                    <option value="${genero.nome}">${genero.nome}</option>
+                            </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -106,7 +110,11 @@
                     <td>Por Categoria</td>
                     <td>
                         <form action="RelatorioControllerFilmePCategoria" method="post">
-                            <input type="text" name="txtNomeCategoria"/><br/>
+                            <select name="txtNomeCategoria">
+                                <c:forEach items="${categorias}" var="categoria">
+                                    <option value="${categoria.nome}">${categoria.nome}</option>
+                                 </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -117,7 +125,11 @@
                     <td>Por Tipo de Mídia</td>
                     <td>
                         <form action="RelatorioControllerFilmePMidia" method="post">
-                            <input type="text" name="txtNomeMidia"/><br/>
+                            <select name="txtNomeMidia">
+                                <c:forEach items="${tiposdemidias}" var="midia">
+                                    <option value="${midia.nome}">${midia.nome}</option>
+                                </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -128,18 +140,25 @@
                     <td>Por Ano de Lancamento</td>
                     <td>
                         <form action="RelatorioControllerFilmePLancamento" method="post">
-                            <input type="text" name="txtNomeLancamento"/><br/>
+                            <select name="txtNomeLancamento">
+                                <c:forEach items="${filmes}" var="filmes">
+                                    <option value="${filmes.anoLancamento}">${filmes.anoLancamento}</option>
+                                </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
                         </form>
                     </td>
                 </tr>
+                <!--------
                 <tr>
                     <td>Por Ator Principal</td>
                     <td>
                         <form action="RelatorioControllerFilmePAtor" method="post">
-                            <input type="text" name="txtNomeAtor"/><br/>
+                            <select name="txtNomeAtor">
+                                
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -150,7 +169,9 @@
                     <td>Por Premiacao</td>
                     <td>
                         <form action="RelatorioControllerFilmePPremiacao" method="post">
-                            <input type="text" name="txtNomePremiacao"/><br/>
+                            <select name="txtNomePremiacao">
+                                
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -158,7 +179,7 @@
                     </td>
                 </tr>
             </table>
-
+-------->
             <table class="table table-striped">
                 <tr><h2>Relatorios de Categoria</h2></tr>
                 <th>Relatorio</th>
@@ -209,7 +230,11 @@
                     <td>Por Cidade</td>
                     <td>
                         <form action="RelatorioControllerFornecedorPCidade" method="post">
-                            <input type="text" name="txtNomeBairro"/><br/>
+                            <select name="txtNomeCidade">
+                                <c:forEach items="${fornecedores}" var="fornecedores">
+                                    <option value="${fornecedores.cidade}">${fornecedores.cidade}</option>
+                                </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -263,7 +288,11 @@
                     <td>Por Bairro</td>
                     <td>
                         <form action="RelatorioControllerUsuarioPBairro" method="post">
-                            <input type="text" name="txtNomeBairro"/><br/>
+                            <select name="txtNomeBairro">
+                                <c:forEach items="${usuarios}" var="usuario">
+                                    <option value="${usuario.bairro}">${usuario.bairro}</option>
+                                 </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -274,7 +303,10 @@
                     <td>Por Sexo</td>
                     <td>
                         <form action="RelatorioControllerUsuarioPSexo" method="post">
-                            <input type="text" name="txtNomeSexo"/><br/>
+                            <select name="txtNomeSexo">
+                                <option>M</option>
+                                <option>F</option>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -285,7 +317,11 @@
                     <td>Por Estado Civil</td>
                     <td>
                         <form action="RelatorioControllerUsuarioPEstadoCivil" method="post">
-                            <input type="text" name="txtNomeEstadoCivil"/><br/>
+                            <select name="txtNomeEstadoCivil">
+                                <c:forEach items="${usuarios}" var="usuario">
+                                    <option value="${usuario.estadoCivil}">${usuario.estadoCivil}</option>
+                                 </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -312,7 +348,11 @@
                     <td>Por Bairro</td>
                     <td>
                         <form action="RelatorioControllerClientePBairro" method="post">
-                            <input type="text" name="txtNomeBairro"/><br/>
+                            <select name="txtNomeBairro">
+                                <c:forEach items="${clientes}" var="cliente">
+                                    <option value="${cliente.bairro}">${cliente.bairro}</option>
+                                 </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -323,7 +363,10 @@
                     <td>Por Sexo</td>
                     <td>
                         <form action="RelatorioControllerClientePSexo" method="post">
-                            <input type="text" name="txtNomeSexo"/><br/>
+                            <select name="txtNomeSexo">
+                                <option>M</option>
+                                <option>F</option>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -334,7 +377,11 @@
                     <td>Por Estado Civil</td>
                     <td>
                         <form action="RelatorioControllerClientePEstadoCivil" method="post">
-                            <input type="text" name="txtNomeEstadoCivil"/><br/>
+                            <select name="txtNomeEstadoCivil">
+                                <c:forEach items="${clientes}" var="cliente">
+                                    <option value="${cliente.estadoCivil}">${cliente.estadoCivil}</option>
+                                 </c:forEach>
+                            </select>
                     </td>
                     <td>
                         <button class="btn btn-primary btn-block" type="submit" value="Gerar">Gerar</button>
@@ -342,7 +389,8 @@
                     </td>
                 </tr>
             </table>
-            <form action="RelatorioController" method="POST">
+
+            <form action="RelatorioController" method="POST" name="form" >
                 <table class="table table-striped">
                 <tr><h2>Relatorios</h2></tr>
                 <th>Relatorio</th>
@@ -358,8 +406,8 @@
                         </select>    
                     </td>
                     <td>
-                        <select>
-                            <option value=""></option>
+                        <select name="reportParameter"> 
+                            
                         </select>
                     </td>
                     <td>
